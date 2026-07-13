@@ -102,7 +102,7 @@ https://github.com/users/prohorweb/projects/3
 
 ### Repository
 
-https://github.com/prohorweb/nafi
+https://github.com/prohorapp/nafi
 
 ### Figma
 
