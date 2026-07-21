@@ -1,0 +1,705 @@
+:root {
+  color-scheme: dark;
+  --bg: #0F1320;
+  --surface: #1A2031;
+  --surface-2: #21283A;
+  --surface-3: #293246;
+  --border: rgba(255, 255, 255, 0.04);
+  --text: #F5F7FA;
+  --text-secondary: #A8B0C2;
+  --text-muted: #8C96AC;
+  --primary: #6C3EF5;
+  --primary-hover: #7E52FF;
+  --link: #3DB7F5;
+  --success: #44C37D;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #131A2B 0%, #151C2E 100%),
+              radial-gradient(800px circle at 90% 0%, rgba(72, 88, 140, 0.15), transparent 60%);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1110px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(15, 19, 32, 0.8);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.brand__logo {
+  width: 32px;
+  height: 32px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: var(--text-secondary);
+  transition: color 180ms ease;
+}
+
+.nav a:hover {
+  color: var(--link);
+}
+
+.hero {
+  padding: 120px 0 80px;
+}
+
+.hero__inner,
+.hero__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero__text {
+  max-width: 600px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--link);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  margin: 24px 0 0;
+  max-width: 560px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 26px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease, filter 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.hero__media {
+  padding: 32px;
+  background: #1D2435;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 28px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.features,
+.pricing,
+.order,
+.contract,
+.success {
+  padding: 96px 0;
+}
+
+.section-title {
+  margin: 0 0 36px;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.feature-card {
+  padding: 32px;
+  background: #1D2435;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  min-height: 220px;
+}
+
+.feature-card strong {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 1.12rem;
+  color: var(--text);
+}
+
+.feature-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.calculator__inner,
+.order__inner,
+.contract__inner {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.calculator__panel,
+.order__form,
+.summary-card,
+.payment-card,
+.contract__preview,
+.success__content,
+.notfound,
+.pricing-card {
+  padding: 32px;
+  background: #1D2435;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.calculator__panel h2,
+.order__form h2,
+.contract__preview h2,
+.payment-card h2,
+.success__content h2 {
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.calculator__group {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.calculator__group--half {
+  grid-template-columns: 1fr;
+}
+
+.calculator__group label,
+.order__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  min-height: 56px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  color: var(--text);
+}
+
+select {
+  appearance: none;
+}
+
+.range-values,
+.summary-card__list,
+.payment-methods,
+.contract__box,
+.contract__row {
+  color: var(--text);
+}
+
+.range-values {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.option-list {
+  display: grid;
+  gap: 14px;
+}
+
+.option-list label,
+.payment-methods label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+.calculator__summary,
+.summary-card__total {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+}
+
+.calculator__summary div,
+.contract__row,
+.summary-card__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calculator__summary span,
+.summary-card__title,
+.summary-card__list strong,
+.contract__row span {
+  color: var(--text-secondary);
+}
+
+.calculator__summary strong,
+.summary-card__total strong,
+.contract__row strong {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.summary-card {
+  display: grid;
+  gap: 24px;
+}
+
+.summary-card__title {
+  margin: 0;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--link);
+}
+
+.summary-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.summary-card__list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+}
+
+.order__form p,
+.contract__preview p,
+.success__content p,
+.payment__note {
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.form-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.form-checkbox {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  gap: 12px;
+  color: var(--text);
+}
+
+.payment-card {
+  display: grid;
+  gap: 24px;
+}
+
+.payment-methods {
+  display: grid;
+  gap: 14px;
+}
+
+.payment-methods label {
+  justify-content: flex-start;
+}
+
+.contract__box {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+}
+
+.contract__row {
+  display: grid;
+  gap: 12px;
+}
+
+.contract__row strong {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.pricing__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.pricing-card {
+  display: grid;
+  gap: 22px;
+  padding: 32px;
+  background: #1D2435;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.pricing-card--featured {
+  border-color: rgba(126, 82, 255, 0.16);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.pricing-card__head {
+  display: grid;
+  gap: 16px;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.77rem;
+}
+
+.label--primary {
+  background: rgba(110, 62, 245, 0.16);
+  color: var(--link);
+}
+
+.pricing-card__head strong {
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.pricing-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.pricing-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.pricing-card li {
+  color: var(--text);
+}
+
+.pricing-card__btn {
+  align-self: start;
+}
+
+.success {
+  padding: 96px 0;
+}
+
+.success__content {
+  padding: 40px;
+  text-align: center;
+  background: #1D2435;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.04), 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.success__icon {
+  width: 82px;
+  margin: 0 auto 24px;
+}
+
+.success__content h2 {
+  margin: 0 0 16px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.footer {
+  padding: 48px 0 64px;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer__brand {
+  margin: 0 0 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+
+.footer__links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer__links a {
+  color: var(--text-secondary);
+}
+
+.page-shell--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.notfound {
+  text-align: center;
+  padding: 64px 28px;
+  background: rgba(27, 35, 53, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.notfound h1 {
+  margin: 0 0 16px;
+  font-size: 4rem;
+}
+
+.notfound p {
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 980px) {
+  .hero__inner,
+  .calculator__inner,
+  .order__inner,
+  .contract__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .features__grid,
+  .pricing__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .topbar__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .container {
+    width: min(100%, calc(100% - 24px));
+  }
+
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  .hero__media,
+  .calculator__panel,
+  .order__form,
+  .summary-card,
+  .payment-card,
+  .contract__preview,
+  .success__content,
+  .notfound,
+  .pricing-card,
+  .feature-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .btn {
+    min-height: 52px;
+    padding: 0 20px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .payment__note,
+  .order__form p,
+  .contract__preview p {
+    margin-bottom: 0;
+  }
+
+  .summary-card__list li,
+  .contract__box {
+    padding: 16px;
+  }
+}

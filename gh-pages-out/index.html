@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="НАФИ — цифровой продукт для проверки и повышения цифровой грамотности сотрудников. Лендниг для подключения платформы Цифровой гражданин." />
+  <title>НАФИ — цифровой гражданин</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <a class="brand" href="#home">
+          <img class="brand__logo" src="assets/img/logo.svg" alt="НАФИ" />
+          <span>НАФИ</span>
+        </a>
+        <nav class="nav nav--main" aria-label="Главная навигация">
+          <a href="#advantages">Преимущества</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#order">Оформление</a>
+          <a href="#footer">Контакты</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero__content">
+          <div class="hero__text">
+            <span class="eyebrow">Цифровой продукт НАФИ</span>
+            <h1>Платформа «Цифровой гражданин» для развития цифровой грамотности</h1>
+            <p>Комплексное подключение, тестирование и обучение сотрудников без менеджера — от выбора тарифа до оплаты за одну сессию.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#calculator">Начать расчет</a>
+              <a class="btn btn--ghost" href="#order">Оформить договор</a>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img src="assets/img/hero-illustration.svg" alt="Иллюстрация цифровой платформы" />
+          </div>
+        </div>
+      </section>
+
+      <section class="features container" id="advantages">
+        <h2 class="section-title">Задачи, которые решает проект</h2>
+        <div class="features__grid">
+          <article class="feature-card">
+            <strong>Диагностика компетенций</strong>
+            <p>Автоматизированный тест по цифровой грамотности с отчетом и рекомендациями.</p>
+          </article>
+          <article class="feature-card">
+            <strong>Персональная траектория</strong>
+            <p>Индивидуальный путь развития для каждого сотрудника на основе результатов.</p>
+          </article>
+          <article class="feature-card">
+            <strong>Готовое подключение</strong>
+            <p>Полный цикл от тарифа до договора и оплаты — без участия менеджера.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="calculator" id="calculator">
+        <div class="container calculator__inner">
+          <div class="calculator__panel">
+            <span class="eyebrow">Конфигуратор</span>
+            <h2>Рассчитайте стоимость подключения</h2>
+            <div class="calculator__group">
+              <label for="users">Количество участников</label>
+              <input id="users" type="range" min="20" max="500" step="10" value="120" />
+              <div class="range-values"><span id="usersValue">120</span> участников</div>
+            </div>
+            <div class="calculator__group calculator__group--half">
+              <label for="duration">Срок доступа</label>
+              <select id="duration">
+                <option value="1">1 месяц</option>
+                <option value="3" selected>3 месяца</option>
+                <option value="6">6 месяцев</option>
+                <option value="12">12 месяцев</option>
+              </select>
+            </div>
+            <div class="calculator__group calculator__group--half">
+              <label>Поддержка</label>
+              <div class="option-list">
+                <label><input type="radio" name="support" value="0" checked /> Базовая</label>
+                <label><input type="radio" name="support" value="12000" /> Расширенная</label>
+              </div>
+            </div>
+            <div class="calculator__summary">
+              <div>
+                <span>Тариф</span>
+                <strong id="selectedPlan">Профи</strong>
+              </div>
+              <div>
+                <span>Итоговая стоимость</span>
+                <strong id="totalPrice">174 000 ₽</strong>
+              </div>
+            </div>
+          </div>
+          <aside class="calculator__aside">
+            <div class="summary-card">
+              <p class="summary-card__title">Ваши параметры</p>
+              <ul class="summary-card__list">
+                <li><strong id="summaryUsers">120</strong> участников</li>
+                <li><strong id="summaryDuration">3</strong> месяца доступа</li>
+                <li><strong id="summarySupport">Базовая</strong> поддержка</li>
+              </ul>
+              <a class="btn btn--secondary" href="#pricing">Выбрать тариф</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="pricing container" id="pricing">
+        <h2 class="section-title">Тарифы</h2>
+        <div class="pricing__cards">
+          <article class="pricing-card" data-plan="Старт" data-price="49000">
+            <div class="pricing-card__head">
+              <span class="label">Старт</span>
+              <strong>49 000 ₽</strong>
+            </div>
+            <p>Базовый пакет подключения для малого отдела и пилотных проектов.</p>
+            <ul>
+              <li>До 50 участников</li>
+              <li>Диагностика цифровой грамотности</li>
+              <li>Отчет и рекомендации</li>
+            </ul>
+            <button class="btn btn--ghost pricing-card__btn" type="button">Выбрать</button>
+          </article>
+          <article class="pricing-card pricing-card--featured" data-plan="Профи" data-price="79000">
+            <div class="pricing-card__head">
+              <span class="label label--primary">Рекомендуем</span>
+              <strong>79 000 ₽</strong>
+            </div>
+            <p>Оптимальный пакет для компаний, готовых масштабировать обучение.</p>
+            <ul>
+              <li>До 150 участников</li>
+              <li>Отдельный кабинет для HR</li>
+              <li>Персонализированный путь</li>
+            </ul>
+            <button class="btn btn--primary pricing-card__btn" type="button">Выбрать</button>
+          </article>
+          <article class="pricing-card" data-plan="Премиум" data-price="119000">
+            <div class="pricing-card__head">
+              <span class="label">Премиум</span>
+              <strong>119 000 ₽</strong>
+            </div>
+            <p>Полный корпоративный пакет с расширенными возможностями и консультациями.</p>
+            <ul>
+              <li>До 300 участников</li>
+              <li>Глубокий анализ компетенций</li>
+              <li>Поддержка и сопровождение</li>
+            </ul>
+            <button class="btn btn--ghost pricing-card__btn" type="button">Выбрать</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="order container" id="order">
+        <div class="order__inner">
+          <div class="order__form">
+            <span class="eyebrow">Оформление</span>
+            <h2>Заполните форму и подпишите договор</h2>
+            <p>Мы подготовили все условия подключения. Оставьте данные, чтобы продолжить оформление.</p>
+            <form id="registrationForm" class="form-grid" novalidate>
+              <label>
+                ФИО контактного лица
+                <input type="text" id="clientName" name="clientName" placeholder="Иван Иванов" required />
+              </label>
+              <label>
+                Компания
+                <input type="text" id="company" name="company" placeholder="ООО «Решения»" required />
+              </label>
+              <label>
+                Электронная почта
+                <input type="email" id="email" name="email" placeholder="company@example.ru" required />
+              </label>
+              <label>
+                Телефон
+                <input type="tel" id="phone" name="phone" placeholder="+7 900 000 00 00" required />
+              </label>
+              <label class="form-checkbox">
+                <input type="checkbox" id="agreement" required />
+                Я соглашаюсь с условиями на обработку персональных данных
+              </label>
+              <button class="btn btn--primary btn--full" type="submit">Продолжить к договору</button>
+            </form>
+          </div>
+          <aside class="order__summary">
+            <div class="summary-card summary-card--order">
+              <p class="summary-card__title">Итог</p>
+              <ul class="summary-card__list">
+                <li>Тариф: <strong id="orderPlan">Профи</strong></li>
+                <li>Участников: <strong id="orderUsers">120</strong></li>
+                <li>Срок: <strong id="orderDuration">3</strong> месяца</li>
+                <li>Поддержка: <strong id="orderSupport">Базовая</strong></li>
+              </ul>
+              <div class="summary-card__total">
+                <span>К оплате</span>
+                <strong id="orderTotal">174 000 ₽</strong>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="contract container" id="contract">
+        <div class="contract__inner">
+          <div class="contract__preview">
+            <span class="eyebrow">Договор</span>
+            <h2>Просмотрите условия договора</h2>
+            <p>Договор оформляется автоматически на основе выбранного тарифа и параметров подключения.</p>
+            <div class="contract__box">
+              <div class="contract__row">
+                <span>Номер договора</span>
+                <strong>№ 2026-НАФИ-01</strong>
+              </div>
+              <div class="contract__row">
+                <span>Дата</span>
+                <strong id="contractDate">01.09.2026</strong>
+              </div>
+              <p>Платформа «Цифровой гражданин» предоставляет услуги по диагностике и развитию цифровой грамотности сотрудников. Оплата производится по выбранному тарифу, срок доступа действует с момента регистрации.</p>
+            </div>
+          </div>
+          <div class="payment-card">
+            <span class="eyebrow">Оплата</span>
+            <h2>Выберите способ оплаты</h2>
+            <div class="payment-methods">
+              <label><input type="radio" name="paymentMethod" value="card" checked /> Банковская карта</label>
+              <label><input type="radio" name="paymentMethod" value="invoice" /> Выставить счёт</label>
+              <label><input type="radio" name="paymentMethod" value="transfer" /> Банк/трансфер</label>
+            </div>
+            <div class="payment__note">После подтверждения оплаты вы увидите экран успешного подключения.</div>
+            <button class="btn btn--primary btn--full" id="payButton" type="button">Оплатить 174 000 ₽</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="success container" id="success" hidden>
+        <div class="success__content">
+          <img class="success__icon" src="assets/img/success.svg" alt="Успешно" />
+          <h2>Подключение успешно</h2>
+          <p>Платформа «Цифровой гражданин» готова к использованию. Договор оформлен, и вы получите доступ в течение рабочего дня.</p>
+          <a class="btn btn--primary" href="#home">Вернуться на старт</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container footer__inner">
+        <div>
+          <p class="footer__brand">НАФИ</p>
+          <p>Аналитический центр НАФИ, цифровая платформа для оценки и развития компетенций.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#advantages">Преимущества</a>
+          <a href="#pricing">Тарифы</a>
+          <a href="#order">Оформление</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
