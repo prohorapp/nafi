@@ -65,7 +65,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(7, 11, 22, 0.94);
+  background-color: #252323;
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
 
@@ -74,7 +74,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 18px 0;
+  /* padding: 18px 0; */
 }
 
 .brand {
@@ -88,8 +88,8 @@ button {
 }
 
 .brand__logo {
-  width: 32px;
-  height: 32px;
+  width: 113px;
+  height: 43px;
 }
 
 .nav {
@@ -99,7 +99,7 @@ button {
 }
 
 .nav a {
-  color: var(--text-muted);
+  color: var(--text);
   transition: color .2s ease;
 }
 
