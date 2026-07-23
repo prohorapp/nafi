@@ -1,0 +1,31 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: #252323;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__logo {
+        width: 113px;
+        height: 40px;
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+}

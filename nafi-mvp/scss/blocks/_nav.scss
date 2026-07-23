@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    &__link {
+        color: $color-white;
+        transition: color .2s ease;
+    }
+
+    &__link:hover {
+        color: $color-white;
+    }
+}
