@@ -9,8 +9,9 @@
     padding: 36px;
     border-radius: 30px;
     background: $color-white;
-    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);
-
+    box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.04),
+    0 10px 28px rgba(200, 169, 106, 0.28);
 
     &__title {
         margin: 0;

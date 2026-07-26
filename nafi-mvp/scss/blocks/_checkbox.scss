@@ -4,7 +4,9 @@
     gap: 18px;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);
+    box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.04),
+        0 10px 28px rgba(200, 169, 106, 0.28);
     cursor: pointer;
     transform: translateY(0);
     transition: 2s ease-in;
@@ -23,7 +25,9 @@
 
     &:hover+.checkbox__label {
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);
+        box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.04),
+            0 10px 28px rgba(200, 169, 106, 0.28);
     }
 
 
