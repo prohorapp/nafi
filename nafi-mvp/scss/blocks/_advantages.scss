@@ -1,0 +1,26 @@
+.advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    padding: 0 0 15px;
+    list-style: none;
+    border-bottom: 1px solid $color-dim-gray;
+
+    &__wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__icon {
+        color: $color-primary;
+    }
+}

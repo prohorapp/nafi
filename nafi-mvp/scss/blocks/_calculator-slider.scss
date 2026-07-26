@@ -1,0 +1,56 @@
+.calculator-slider {
+    padding: 32px;
+    border-radius: 24px;
+    background: $color-white;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);
+
+    &__points {
+        display: flex;
+        justify-content: space-evenly;
+
+        margin-bottom: 32px;
+    }
+
+    &__point {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    &__point-value {
+        color: $color-primary;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    &__point-text {
+        font-size: 14px;
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price-text {
+        font-weight: 400;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__price-nds {
+        font-weight: 400;
+        font-size: 14px;
+        color: $color-dim-gray;
+    }
+
+    &__price-value {
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+}

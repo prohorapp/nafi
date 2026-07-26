@@ -8,6 +8,7 @@
     content="НАФИ — цифровой продукт для проверки и повышения цифровой грамотности сотрудников. Лендниг для подключения платформы Цифровой гражданин." />
   <title>НАФИ — цифровой гражданин</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
 </head>
 
 <body>
@@ -41,8 +42,8 @@
             Внедрение за&nbsp;1 &minus;2
             дня без сложной интеграции.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#calculator">Подключить платформу</a>
-            <a class="btn btn--ghost" href="#order">Получить консультацию</a>
+            <button class="btn btn--primary" href="#calculator">Подключить платформу</button>
+            <button class="btn btn--ghost" href="#order">Получить консультацию</button>
           </div>
 
           <ul class="hero__list">
@@ -72,12 +73,13 @@
     <section class="platform" id="advantages">
       <div class="container">
         <div class="platform__wrapper">
+          <p class="platform__text-header">Преимущества платформы</p>
           <h2 class="platform__title">Почему выбирают нашу платформу</h2>
           <ul class="platform__list">
             <li class="platdorm__item">
               <div class="platform__inner">
                 <div class="platform__top">
-                  <svg class="platform__logo-icon" width="48" height="48" aria-hidden="true">
+                  <svg class="platform__logo-icon" width="70" height="70" aria-hidden="true">
                     <use xlink:href="images/sprite.svg#icon-platform-1"></use>
                   </svg>
                   <span class="platform__text-top">Готовое решение</span>
@@ -120,84 +122,473 @@
               </div>
             </li>
           </ul>
-          <div class="platform__key">
-            <h3 class="platform__subtitle">Ключевые сценарии использования </h3>
-            <ul class="platform__key-list">
-              <li class="platdorm__key-item">
-                <div class="platform__wrap">
-                  <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
-                    <use xlink:href="images/sprite.svg#icon-platform-1"></use>
-                  </svg>
-                  <div class="platform__middle">
-                    <span class="platform__text-head">Оценка текущего уровня</span>
-                    <p class="platform__text-middel">Проводите оценку цифровых компетенций сотрудников
-                      по&nbsp;актуальной методике</p>
+          <div class="platform__flex-lf">
+            <div class="platform__key">
+              <div class="platform__head">
+                <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-platporm-left"></use>
+                </svg>
+                <h3 class="platform__subtitle">Ключевые сценарии использования </h3>
+              </div>
+              <ul class="platform__list platform__list--key">
+                <li class="platdorm__key-item">
+                  <div class="platform__wrap">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-left-1"></use>
+                    </svg>
+                    <div class="platform__middle">
+                      <span class="platform__text-top platform__text-top--left">Оценка текущего уровня</span>
+                      <p class="platform__text">Проводите оценку цифровых компетенций сотрудников
+                        по&nbsp;актуальной методике</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="platdorm__key-item">
-                <div class="platform__wrap">
-                  <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
-                    <use xlink:href="images/sprite.svg#icon-platform-2"></use>
-                  </svg>
-                  <div class="platform__middle">
-                    <span class="platform__text-head">Выявление зон развития</span>
-                    <p class="platform__text-middel">Получайте рекомендации и&nbsp;формируйте индивидуальные пути
-                      развития</p>
+                </li>
+                <li class="platdorm__key-item">
+                  <div class="platform__wrap">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-left-2"></use>
+                    </svg>
+                    <div class="platform__middle">
+                      <span class="platform__text-top platform__text-top--left">Выявление зон развития</span>
+                      <p class="platform__text">Получайте рекомендации и&nbsp;формируйте индивидуальные пути
+                        развития</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="platdorm__key-item">
-                <div class="platform__wrap">
-                  <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
-                    <use xlink:href="images/sprite.svg#icon-platform-3"></use>
-                  </svg>
-                  <div class="platform__middle">
-                    <span class="platform__text-head">Анализ и отчетность</span>
-                    <p class="platform__text-middel">Отслеживайте динамику, сравнивайте результаты и&nbsp;принимайте
-                      управленческие решения</p>
+                </li>
+                <li class="platdorm__key-item">
+                  <div class="platform__wrap">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-left-3"></use>
+                    </svg>
+                    <div class="platform__middle">
+                      <span class="platform__text-top platform__text-top--left">Анализ и отчетность</span>
+                      <p class="platform__text">Отслеживайте динамику, сравнивайте результаты и&nbsp;принимайте
+                        управленческие решения</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="platdorm__key-item">
-                <div class="platform__wrap">
-                  <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
-                    <use xlink:href="images/sprite.svg#icon-platform-4"></use>
-                  </svg>
-                  <div class="platform__middle">
-                    <span class="platform__text-head">Обучение и развитие</span>
-                    <p class="platform__text-middel">Используйте данные для планирования обучения и&nbsp;повышения
-                      цифровой грамотности команды</p>
+                </li>
+                <li class="platdorm__key-item">
+                  <div class="platform__wrap">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-left-4"></use>
+                    </svg>
+                    <div class="platform__middle">
+                      <span class="platform__text-top platform__text-top--left">Обучение и развитие</span>
+                      <p class="platform__text">Используйте данные для планирования обучения и&nbsp;повышения
+                        цифровой грамотности команды</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="platform__fast">
+              <div class="platform__head platform__head--fast">
+                <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
+                </svg>
+                <h3 class="platform__subtitle">Быстрое внедрение от&nbsp;старта до&nbsp;результата за&nbsp;1-2 дня</h3>
+              </div>
+
+              <ul class="platform__list platform__list--fast">
+                <li class="platform__item">
+                  <div class="platform__wrap platform__wrap--col">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
+                    </svg>
+                    <span class="platform__text-top platform__text-top--fast">Настройка параметровы</span>
+                    <p class="platform__text">Определите параметры подключения и
+                      дополнительные опции.</p>
+                  </div>
+
+                </li>
+                <li class="platform__item">
+                  <div class="platform__wrap platform__wrap--col">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
+                    </svg>
+                    <span class="platform__text-top platform__text-top--fast">Импорт пользователей</span>
+                    <p class="platform__text">Получите доступ к&nbsp;платформе и&nbsp;добавьте пользователей для
+                      прохождения тестирования.</p>
+                  </div>
+
+                </li>
+                <li class="platform__item">
+                  <div class="platform__wrap platform__wrap--col">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
+                    </svg>
+                    <span class="platform__text-top platform__text-top--fast">Запуск тестирования</span>
+                    <p class="platform__text">Предоставьте участникам доступ к&nbsp;оценке цифровых компетенций.</p>
+                  </div>
+
+                </li>
+                <li class="platform__item">
+                  <div class="platform__wrap platform__wrap--col">
+                    <svg class="platform__logo-icon platform__logo-icon--left" width="48" height="48"
+                      aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
+                    </svg>
+                    <span class="platform__text-top platform__text-top--fast"> Получение аналитики</span>
+                    <p class="platform__text">Получайте результаты тестирования и&nbsp;доступную аналитику.</p>
+                  </div>
+                </li>
+              </ul>
+              <button class="btn btn--fast platform__btn" href="#calculator">Подключить платформу</button>
+            </div>
           </div>
 
-          <div class="platform__fast">
-            <h3 class="platform__subtitle">Быстрое внедрение от&nbsp;старта до&nbsp;результата за&nbsp;1-2 дня</h3>
-            <ul class="platform__fast-list">
-              <li class="platform__fast-item">
-                <span class="platform__text-head">Настройка параметров
-                  и&nbsp;подключение платформы</span>
-                <p class="platform__text-middel">Определите параметры подключения и&nbsp;необходимые дополнительные
-                  опции.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="calculator">
+      <div class="container">
+        <div class="calculator__wrapper">
+          <div class="calculator__content">
+            <h2 class="calculator__title">
+              Выберите параметры<br>
+              и рассчитайте стоимость
+            </h2>
+            <div class="calculator__step">
+              <h3 class="calculator__subtitle">
+                1. Укажите точное количество сотрудников
+              </h3>
+              <div class="calculator-slider">
+
+                <div class="calculator-slider__points">
+                  <div class="calculator-slider__point">
+                    <span class="calculator-slider__point-value">500</span>
+                    <span class="calculator-slider__point-text">сотрудников</span>
+                  </div>
+
+                  <div class="calculator-slider__point">
+                    <span class="calculator-slider__point-value">1000</span>
+                    <span class="calculator-slider__point-text">сотрудников</span>
+                  </div>
+
+                  <div class="calculator-slider__point">
+                    <span class="calculator-slider__point-value">4000</span>
+                    <span class="calculator-slider__point-text">сотрудников</span>
+                  </div>
+
+                  <div class="calculator-slider__point">
+                    <span class="calculator-slider__point-value">4000+</span>
+                    <span class="calculator-slider__point-text">сотрудников</span>
+                  </div>
+                </div>
+
+                <div class="calculator-range">
+                  <input class="calculator-range__input" type="range" min="1" max="5000" step="1" value="0">
+                  <div class="calculator-range__tooltip">
+                    <span class="calculator-range__value"></span>
+                    <!-- <span>сотрудников</span> -->
+                  </div>
+
+                </div>
+
+                <div class="calculator-slider__price">
+                  <span class="calculator-slider__price-text">
+                    Стоимость за пользователя <span class="calculator-slider__price-nds">(без учета НДС)</span>
+                  </span>
+                  <span class="calculator-slider__price-value">
+                    490 ₽
+                  </span>
+                </div>
+              </div>
+              <div class="calculator-employees">
+                <label class="calculator-employees__label" for="employees">
+                  Количество сотрудников :
+                </label>
+                <input class="calculator-employees__input" type="number" placeholder="1250" id="employees">
+              </div>
+            </div>
+            <div class="calculator__step">
+              <h3 class="calculator__subtitle">
+                2. Дополнительные опции
+              </h3>
+              <ul class="calculator__options">
+                <li class="calculator__option">
+                  
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="report">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="report" data-price="20000">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-1"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__title">Подготовка полного <span class="checkbox__text-bold">
+                            аналитического отчета</span></span>
+                        <span class="checkbox__description">
+                          Включающего оценку уровня цифровой грамотности, а также рекомендации по его повышению
+                        </span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+20 000 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="processing">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="processing" data-price="5000">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-2"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__description">Обработка результатов</span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+5000 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="microlearning">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="microlearning"
+                        data-price="10000">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-3"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox___description"><span class="checkbox__text-bold">Микрообучение</span>
+                          через показ комментариев к&nbsp;ответам сразу после ответа или
+                          в&nbsp;конце тестирования</span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+10 000 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="automatic">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="automatic" data-price="2500">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-4"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__description">Автоматическое <span
+                            class="checkbox__text-bold">формирование
+                            сертификатов
+                          </span> для сотрудников с результатами диагностики</span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+2500 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="recommendations">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="recommendations"
+                        data-price="3000">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-5"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox____description">Рекомендации по&nbsp;развитию</span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+3000 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="organization">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="organization"
+                        data-price="8500">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-6"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__description">
+                          Организация доступа к&nbsp;платформе по&nbsp;индивидуальным ссылкам или интеграция через API
+                          или фреймворк-интерфейсы в&nbsp;вашу LMS
+                        </span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">8500 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="conclusion">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="conclusion" data-price="2500">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-7"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__description">
+                          Вывод подсказок после неверного ответа
+                        </span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+2500 ₽</span>
+                  </div>
+                </li>
+
+                <li class="calculator__option">
+                  <div class="checkbox">
+                    <label class="checkbox__label" for="results">
+                      <input class="checkbox__input visually-hidden" type="checkbox" id="results" data-price="1500">
+                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                      </svg>
+                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
+                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-8"></use>
+                      </svg>
+                      <div class="checkbox__info">
+                        <span class="checkbox__description">
+                          Вывод подсказок в&nbsp;результатах
+                        </span>
+                      </div>
+                    </label>
+                    <span class="checkbox__price">+1500 ₽</span>
+                  </div>
+                </li>
+
+                <!-- остальные элементы -->
+
+              </ul>
+            </div>
+            <div class="calculator__note">
+              <svg class="calculator__note-icon" width="50" height="50" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-calculator-note"></use>
+              </svg>
+              <p class="calculator__note-text">
+                Также оценке подлежат услуги менеджмента проекта,
+                обработки данных и подготовки аналитического отчета.
+              </p>
+              <button class="btn btn--black" href="#order">Получить консультацию</button>
+            </div>
+          </div>
+          <!-- Правая колонка -->
+          <aside class="summary">
+            <h3 class="summary__title">
+              Наше предложение
+            </h3>
+            <ul class="advantages">
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Базовый функционал платформы</p>
+                </div>
               </li>
-              <li class="platform__fast-item">
-                <span class="platform__text-head">Импорт пользователей</span>
-                <p class="platform__text-middel">Получите доступ к&nbsp;платформе и&nbsp;добавьте пользователей для
-                  прохождения тестирования.</p>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Адаптивное тестирование</p>
+                </div>
               </li>
-              <li class="platform__fast-item">
-                <span class="platform__text-head">Запуск тестирования</span>
-                <p class="platform__text-middel">Предоставьте участникам доступ к&nbsp;оценке цифровых компетенций.</p>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Помощь в настройке рассылки</p>
+                </div>
               </li>
-              <li class="platform__fast-item">
-                <span class="platform__text-head"> Получение аналитики</span>
-                <p class="platform__text-middel">Получайте результаты тестирования и&nbsp;доступную аналитику.</p>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Личный кабинет участника</p>
+                </div>
+              </li>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text"> Базовая аналитика</p>
+                </div>
+              </li>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Техническая поддержка</p>
+                </div>
+              </li>
+              <li class="advantages__item">
+                <div class="advantages__wrapper">
+                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
+                  </svg>
+                  <p class="advantages__text">Обновление контента</p>
+                </div>
               </li>
             </ul>
-          </div>
+
+            <dl class="result  result--bord">
+              <div class="result__row">
+                <dt class="result__term">Количество сотрудников</dt>
+                <dd class="result__value " data-employees>0</dd>
+              </div>
+              <div class="result__row">
+                <dt class="result__term">Цена за пользователя</dt>
+                <dd class="result__value " data-price>490 ₽</dd>
+              </div>
+              <div class="result__row">
+                <dt class="result__row ">Дополнительные опции</dt>
+                <dd class="result__value " data-options>+0 ₽</dd>
+              </div>
+            </dl>
+
+            <div class="advantages__total">
+              <dl class="result">
+                <div class="result__colum">
+                  <dt class="result__total-row">Итого <span class="result__total-nds">(без учета НДС)</span></dt>
+                  <dd class="result__total " data-total>0 ₽</dd>
+                </div>
+              </dl>
+            </div>
+            <button class="btn btn--total" href="#calculator">Продолжить</button>
+            <span class="summary__secure">
+              <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-lock"></use>
+              </svg>
+              Ваши данные защищены
+            </span>
+          </aside>
+          <!-- <img class="calculator__image" src="images/summari-img.png" height="400" width="400" alt="Команда специалистов"> -->
         </div>
       </div>
     </section>
@@ -404,8 +795,6 @@
       </div>
     </div>
   </footer> -->
-
-  <script src="assets/js/app.js"></script>
 </body>
 
 </html>

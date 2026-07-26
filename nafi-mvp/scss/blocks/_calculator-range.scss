@@ -1,0 +1,33 @@
+.calculator-range {
+    padding: 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__input {
+        width: 100%;
+        appearance: none;
+        background: transparent;
+
+        &::-webkit-slider-runnable-track {
+            height: 8px;
+            border-radius: 10px;
+            background: #FFE7B2;
+        }
+
+        &::-webkit-slider-thumb {
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #F8A900;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+    }
+
+    &__value{
+        font-weight: 600;
+        font-size: 16px;
+    }
+}

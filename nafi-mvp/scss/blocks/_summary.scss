@@ -1,0 +1,32 @@
+.summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: sticky;
+    top: 30px;
+    align-self: start;
+    padding: 36px;
+    border-radius: 30px;
+    background: $color-white;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.8);
+
+
+    &__title {
+        margin: 0;
+        font-size: 34px;
+        font-weight: 700;
+    }
+
+    &__secure {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    &__lock-icon {
+        color: $color-primary;
+    }
+}

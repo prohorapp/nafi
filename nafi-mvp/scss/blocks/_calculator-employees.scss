@@ -1,0 +1,19 @@
+.calculator-employees {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    &__label {
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    &__input {
+        padding: 15px;
+        border: 2px solid $color-primary;
+        border-radius: 10px;
+        color: $color-black;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}
