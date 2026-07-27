@@ -23,6 +23,37 @@ body {
   color: $color-black;
 }
 
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .contract-modal,
+  .contract-modal * {
+    visibility: visible;
+  }
+
+  .contract-modal {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    max-height: none;
+
+    box-shadow: none;
+  }
+
+  .contract-modal__header,
+  .contract-modal__footer {
+    display: none;
+  }
+
+  .contract-modal__content {
+    max-height: none;
+    overflow: visible;
+  }
+}
+
 main {
   flex-grow: 1;
 }

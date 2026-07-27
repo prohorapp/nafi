@@ -183,8 +183,112 @@ const initFormSwitcher = () => {
     showForm(activeButton);
   }
 };
+const initContract = () => {
+  const contract = document.querySelector('.contract');
+  const modal = document.querySelector('[data-contract-modal]');
+
+  if (!contract || !modal) {
+    return;
+  }
+
+  const openButton = contract.querySelector(
+    '[data-contract-open]'
+  );
+
+  const closeButtons = modal.querySelectorAll(
+    '[data-contract-close]'
+  );
+
+  const printButton = contract.querySelector(
+    '[data-contract-print]'
+  );
+
+  const agreement = contract.querySelector(
+    '#contract-agreement'
+  );
+
+  const submitButton = contract.querySelector(
+    '[data-contract-submit]'
+  );
+
+  openButton?.addEventListener('click', () => {
+    modal.showModal();
+    document.body.classList.add('scroll-lock');
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      modal.close();
+    });
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
+
+  modal.addEventListener('close', () => {
+    document.body.classList.remove('scroll-lock');
+  });
+
+  printButton?.addEventListener('click', () => {
+    modal.showModal();
+
+    requestAnimationFrame(() => {
+      window.print();
+    });
+  });
+
+  agreement?.addEventListener('change', () => {
+    submitButton.disabled = !agreement.checked;
+  });
+
+};
+const initConnectionAgreements = () => {
+  const forms = document.querySelectorAll(
+    '.connection-form'
+  );
+
+  if (!forms.length) {
+    return;
+  }
+
+  forms.forEach((form) => {
+    const requiredCheckboxes = form.querySelectorAll(
+      'input[type="checkbox"][required]'
+    );
+
+    const submitButton = form.querySelector(
+      'button[type="submit"]'
+    );
+
+    if (!requiredCheckboxes.length || !submitButton) {
+      return;
+    }
+
+    const updateSubmitButton = () => {
+      const allChecked = Array.from(
+        requiredCheckboxes
+      ).every((checkbox) => checkbox.checked);
+
+      submitButton.disabled = !allChecked;
+    };
+
+    requiredCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener(
+        'change',
+        updateSubmitButton
+      );
+    });
+
+    updateSubmitButton();
+  });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
   initFormSwitcher();
+  initContract();
+  initConnectionAgreements();
 });

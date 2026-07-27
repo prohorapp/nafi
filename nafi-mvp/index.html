@@ -31,7 +31,6 @@
       </div>
     </div>
   </header>
-
   <main>
     <section class="hero" id="home">
       <div class="container">
@@ -689,7 +688,7 @@
       <div class="container">
 
         <header class="connection__header">
-          <p class="connection__subtitle">Подключение платформы</p>
+          <p class="connection__subtitle">Шаг 3</p>
           <h2 class="connection__title">Подключение</h2>
           <div class="connection__decor" aria-hidden="true">
             <span></span>
@@ -781,22 +780,41 @@
                 </fieldset>
 
                 <div class="checkbox checkbox--agreement connection-form__agreement">
-                  <label class="checkbox__label" for="person-agreement">
-                    <input class="checkbox__input visually-hidden" id="person-agreement" name="person-agreement"
-                      type="checkbox" required>
+                  <label class="checkbox__label" for="personal-data-consent">
+                    <input class="checkbox__input visually-hidden" id="personal-data-consent"
+                      name="personal-data-consent" type="checkbox" required>
 
-                    <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                    <svg class="checkbox__icon-check" aria-hidden="true">
                       <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
                     </svg>
 
                     <span class="checkbox__text">
-                      Я прочитал(а)
-                      <a class="checkbox__link" href="#">Пользовательское соглашение</a>
-                      и
-                      <a class="checkbox__link" href="#">
-                        Политику в отношении обработки персональных данных
+                      Я даю
+                      <a class="checkbox__link" href="consent.html" target="_blank" rel="noopener">
+                        согласие на обработку персональных данных.
+                      </a>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="checkbox checkbox--agreement connection-form__agreement">
+                  <label class="checkbox__label" for="user-agreement">
+                    <input class="checkbox__input visually-hidden" id="user-agreement" name="user-agreement"
+                      type="checkbox" required>
+
+                    <svg class="checkbox__icon-check" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                    </svg>
+
+                    <span class="checkbox__text">
+                      Я принимаю
+                      <a class="checkbox__link" href="agreement.html" target="_blank" rel="noopener">
+                        пользовательское соглашение
+                      </a>
+                      и ознакомлен(а) с
+                      <a class="checkbox__link" href="privacy.html" target="_blank" rel="noopener">
+                        политикой обработки персональных данных
                       </a>.
-                      Выражаю согласие на обработку моих персональных данных.
                     </span>
                   </label>
                 </div>
@@ -816,8 +834,7 @@
                   </span>
                 </div>
 
-                <button class="btn btn--total" type="submit">Продолжить <span
-                    aria-hidden="true">→</span></button>
+                <button class="btn btn--total" type="submit">Продолжить <span aria-hidden="true">→</span></button>
               </div>
             </form>
 
@@ -960,24 +977,43 @@
                         placeholder="Введите значение" rows="4"></textarea>
                     </label>
                   </div>
-                </fieldset>
+                </fieldset>connection-form__agreement
                 <div class="checkbox checkbox--agreement connection-form__agreement">
-                  <label class="checkbox__label" for="company-agreement">
-                    <input class="checkbox__input visually-hidden" id="company-agreement" name="persons-agreement"
-                      type="checkbox" required>
+                  <label class="checkbox__label" for="personal-data-consent">
+                    <input class="checkbox__input visually-hidden" id="personals-data-consent"
+                      name="personal-data-consent" type="checkbox" required>
 
-                    <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                    <svg class="checkbox__icon-check" aria-hidden="true">
                       <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
                     </svg>
 
                     <span class="checkbox__text">
-                      Я прочитал(а)
-                      <a class="checkbox__link" href="#">Пользовательское соглашение</a>
-                      и
-                      <a class="checkbox__link" href="#">
-                        Политику в отношении обработки персональных данных
+                      Я даю
+                      <a href="consent.html" target="_blank" rel="noopener">
+                        согласие на обработку персональных данных
                       </a>.
-                      Выражаю согласие на обработку моих персональных данных.
+                    </span>
+                  </label>
+                </div>
+
+                <div class="checkbox checkbox--agreement connection-form__agreement">
+                  <label class="checkbox__label" for="user-agreement">
+                    <input class="checkbox__input visually-hidden" id="users-agreement" name="users-agreement"
+                      type="checkbox" required>
+
+                    <svg class="checkbox__icon-check" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                    </svg>
+
+                    <span class="checkbox__text">
+                      Я принимаю
+                      <a class="checkbox__link" href="agreement.html" target="_blank" rel="noopener">
+                        пользовательское соглашение
+                      </a>
+                      и ознакомлен(а) с
+                      <a class="checkbox__link" href="privacy.html" target="_blank" rel="noopener">
+                        политикой обработки персональных данных
+                      </a>.
                     </span>
                   </label>
                 </div>
@@ -994,14 +1030,341 @@
                   </span>
                 </div>
 
-                <button class="btn btn--total" type="submit">Продолжить <span
-                    aria-hidden="true">→</span></button>
+                <button class="btn btn--total" type="submit">Продолжить <span aria-hidden="true">→</span></button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
+    <section class="contract" id="contract">
+      <div class="container">
+        <div class="contract__header">
+          <p class="contract__subtitle">Шаг 4</p>
+          <h2 class="contract__title">Ознакомьтесь с договором-офертой</h2>
+          <p class="contract__description">
+            Перед продолжением внимательно прочитайте условия договора.
+          </p>
+        </div>
+
+        <div class="contract__content">
+          <!-- Предпросмотр -->
+          <div class="contract__document">
+            <div class="contract__document-head">
+              <span class="contract__document-label">
+                Договор-оферта
+              </span>
+
+              <span class="contract__document-number">
+                № КП-2024-05-21-001
+              </span>
+            </div>
+
+            <div class="contract__preview">
+              <h3>Договор-оферта № КП-2024-05-21-001</h3>
+
+              <div class="contract__date">
+                <span>г. Москва</span>
+                <time datetime="2024-05-21">21 мая 2024 г.</time>
+              </div>
+
+              <h4>1. Общие положения</h4>
+
+              <p>
+                1.1. Настоящий договор-оферта является официальным
+                предложением заключить договор на условиях, изложенных
+                в настоящем документе.
+              </p>
+
+              <p>
+                1.2. Акцептом настоящей оферты считается осуществление
+                оплаты выбранного тарифа.
+              </p>
+
+              <h4>2. Предмет договора</h4>
+
+              <p>
+                Исполнитель предоставляет Заказчику доступ к цифровой
+                платформе в соответствии с выбранным тарифным планом.
+              </p>
+
+              <div class="contract__fade" aria-hidden="true"></div>
+            </div>
+
+            <button class="contract__open" type="button" data-contract-open>
+              <span>Открыть договор полностью</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <!-- Работа с документом -->
+          <aside class="contract-actions">
+            <h3 class="contract-actions__title">
+              Работа с документом
+            </h3>
+
+            <a class="contract-actions__button" href="documents/contract.docx" download>
+              <svg width="28" height="28" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-doc"></use>
+              </svg>
+
+              <span>
+                <strong>Скачать Word</strong>
+                <small>Формат DOCX</small>
+              </span>
+            </a>
+
+            <a class="contract-actions__button" href="documents/contract.pdf" target="_blank" rel="noopener">
+              <svg width="28" height="28" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-pdf"></use>
+              </svg>
+
+              <span>
+                <strong>Скачать PDF</strong>
+                <small>Формат PDF</small>
+              </span>
+            </a>
+
+            <button class="contract-actions__button" type="button" data-contract-print>
+              <svg width="28" height="28" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-print"></use>
+              </svg>
+
+              <span>
+                <strong>Распечатать</strong>
+                <small>Версия для печати</small>
+              </span>
+            </button>
+          </aside>
+        </div>
+
+        <div class="contract__confirmation">
+          <p class="contract__notice">
+            Нажимая «Продолжить», вы подтверждаете, что ознакомились
+            с условиями договора-оферты и принимаете их без исключений.
+          </p>
+
+          <div class="checkbox checkbox--agreement">
+            <label class="checkbox__label" for="contract-agreement">
+              <input class="checkbox__input visually-hidden" id="contract-agreement" name="contract-agreement"
+                type="checkbox" required>
+
+              <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+              </svg>
+
+              <span class="checkbox__text">
+                Я ознакомился(-ась) с договором-офертой
+                и принимаю его условия.
+              </span>
+            </label>
+          </div>
+
+          <div class="contract__footer">
+            <div class="contract__security">
+              <svg width="32" height="32" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-lock"></use>
+              </svg>
+
+              <span>
+                <strong>Безопасная сделка</strong>
+                Мы гарантируем безопасность ваших данных
+              </span>
+            </div>
+
+            <button class="btn btn--total contract__submit" type="button" disabled data-contract-submit>
+              Продолжить
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <dialog class="contract-modal" data-contract-modal>
+      <div class="contract-modal__header">
+        <div>
+          <span class="contract-modal__subtitle">
+            Договор-оферта
+          </span>
+
+          <h2 class="contract-modal__title">
+            Договор-оферта № КП-2024-05-21-001
+          </h2>
+        </div>
+
+        <button class="contract-modal__close" type="button" aria-label="Закрыть договор" data-contract-close>
+          ×
+        </button>
+      </div>
+      <div class="contract-modal__content">
+        <div class="contract-modal__document-header">
+          <h3>Договор-оферта</h3>
+
+          <p>
+            на предоставление доступа к цифровой платформе
+          </p>
+        </div>
+
+        <section class="contract-modal__section">
+          <h3>1. Общие положения</h3>
+
+          <p>
+            <strong>1.1.</strong>
+            Настоящий договор-оферта (далее — «Договор») является
+            официальным предложением ООО «НАФИ» (далее —
+            «Исполнитель») заключить договор на условиях,
+            изложенных в настоящем документе.
+          </p>
+
+          <p>
+            <strong>1.2.</strong>
+            Акцептом настоящей оферты считается осуществление
+            оплаты выбранного тарифа в порядке и на условиях,
+            предусмотренных настоящим Договором.
+          </p>
+        </section>
+
+        <section class="contract-modal__section">
+          <h3>2. Предмет договора</h3>
+
+          <p>
+            <strong>2.1.</strong>
+            Исполнитель предоставляет Заказчику доступ к цифровой
+            платформе и сопутствующим сервисам в соответствии
+            с выбранным тарифным планом.
+          </p>
+
+          <p>
+            <strong>2.2.</strong>
+            Перечень предоставляемых услуг, стоимость, сроки
+            действия доступа и функциональность определяются
+            выбранным тарифом и коммерческим предложением.
+          </p>
+        </section>
+
+        <section class="contract-modal__section">
+          <h3>3. Права и обязанности сторон</h3>
+
+          <div class="contract-modal__subsection">
+            <h4>3.1. Исполнитель обязуется:</h4>
+
+            <ul>
+              <li>
+                предоставлять доступ к платформе в соответствии
+                с выбранным тарифом;
+              </li>
+
+              <li>
+                обеспечивать работоспособность сервиса;
+              </li>
+
+              <li>
+                предоставлять техническую поддержку в рамках
+                выбранного тарифа;
+              </li>
+
+              <li>
+                обеспечивать сохранность данных Заказчика
+                в соответствии с законодательством Российской
+                Федерации.
+              </li>
+            </ul>
+          </div>
+
+          <div class="contract-modal__subsection">
+            <h4>3.2. Заказчик обязуется:</h4>
+
+            <ul>
+              <li>
+                использовать сервис в соответствии с его
+                назначением;
+              </li>
+
+              <li>
+                своевременно оплачивать выбранный тариф;
+              </li>
+
+              <li>
+                не передавать доступ третьим лицам без письменного
+                согласия Исполнителя.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="contract-modal__section">
+          <h3>4. Стоимость услуг и порядок оплаты</h3>
+
+          <p>
+            <strong>4.1.</strong>
+            Стоимость услуг определяется выбранным тарифным планом
+            и количеством подключаемых пользователей.
+          </p>
+
+          <p>
+            <strong>4.2.</strong>
+            Оплата производится одним из доступных способов,
+            представленных на странице оплаты.
+          </p>
+
+          <p>
+            <strong>4.3.</strong>
+            После поступления оплаты Заказчику предоставляется
+            доступ к выбранному тарифу.
+          </p>
+        </section>
+
+        <section class="contract-modal__section">
+          <h3>5. Ответственность сторон</h3>
+
+          <p>
+            <strong>5.1.</strong>
+            Стороны несут ответственность за неисполнение или
+            ненадлежащее исполнение обязательств в соответствии
+            с действующим законодательством Российской Федерации.
+          </p>
+
+          <p>
+            <strong>5.2.</strong>
+            Исполнитель не несёт ответственности за невозможность
+            использования сервиса по причинам, не зависящим
+            от него.
+          </p>
+        </section>
+
+        <section class="contract-modal__section">
+          <h3>6. Заключительные положения</h3>
+
+          <p>
+            <strong>6.1.</strong>
+            Настоящий Договор вступает в силу с момента акцепта
+            оферты и действует в течение оплаченного периода
+            использования сервиса.
+          </p>
+
+          <p>
+            <strong>6.2.</strong>
+            Все споры решаются путём переговоров, а при
+            недостижении соглашения — в судебном порядке
+            в соответствии с законодательством Российской
+            Федерации.
+          </p>
+
+          <p>
+            <strong>6.3.</strong>
+            Совершая оплату, Заказчик подтверждает, что ознакомился
+            с условиями настоящего Договора и принимает их
+            в полном объёме.
+          </p>
+        </section>
+      </div>
+
+      <div class="contract-modal__footer">
+        <button class="btn btn--total" type="button" data-contract-close>
+          Я ознакомился(-ась)
+        </button>
+      </div>
+    </dialog>
   </main>
 </body>
 

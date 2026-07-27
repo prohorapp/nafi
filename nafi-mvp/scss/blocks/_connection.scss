@@ -13,9 +13,12 @@
     }
 
     &__subtitle {
-        margin: 0 0 5px;
-        color: $color-primary;
-        font-size: 16px;
+        margin: 0 0 8px;
+        color: #F2A900;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
     }
 
     &__title {

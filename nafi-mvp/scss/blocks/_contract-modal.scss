@@ -1,0 +1,80 @@
+.contract-modal {
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+
+    &__document-header {
+        margin-bottom: 35px;
+        text-align: center;
+
+        h3 {
+            margin: 0 0 6px;
+            font-size: 22px;
+        }
+
+        p {
+            margin: 0;
+            color: $color-dim-gray;
+            font-size: 14px;
+        }
+    }
+
+    &__section {
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            margin: 0 0 16px;
+            padding-bottom: 10px;
+
+            color: #202020;
+            font-size: 18px;
+
+            border-bottom: 1px solid rgba($color-primary,
+                    0.25);
+        }
+
+        p {
+            margin: 0 0 12px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        strong {
+            margin-right: 5px;
+            color: $color-primary;
+        }
+    }
+
+    &__subsection {
+        margin-bottom: 22px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            margin: 0 0 12px;
+            font-size: 15px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.65;
+
+            &::marker {
+                color: $color-primary;
+            }
+        }
+    }
+}
