@@ -42,8 +42,8 @@
             Внедрение за&nbsp;1 &minus;2
             дня без сложной интеграции.</p>
           <div class="hero__actions">
-            <button class="btn btn--primary" href="#calculator">Подключить платформу</button>
-            <button class="btn btn--ghost" href="#order">Получить консультацию</button>
+            <button class="btn btn--primary" type="button">Подключить платформу</button>
+            <button class="btn btn--ghost" type="button">Получить консультацию</button>
           </div>
 
           <ul class="hero__list">
@@ -240,14 +240,112 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn btn--fast platform__btn" href="#calculator">Подключить платформу</button>
+              <button class="btn btn--fast platform__btn" type="button">Подключить платформу</button>
             </div>
           </div>
 
         </div>
       </div>
     </section>
+    <section class="steps">
+      <div class="container">
+        <div class="steps__header">
+          <p class="steps__subtitle">
+            Подключение платформы
+          </p>
+          <h2 class="steps__title">
+            Подключитесь к платформе за <span class="steps__gold">5</span> простых шагов
+          </h2>
+          <p class="steps__header-text">От&nbsp;регистрации до&nbsp;запуска тестирования&nbsp;&mdash; всего нескольго
+            минут</p>
+        </div>
 
+        <div class="steps__wrapper">
+
+          <ol class="steps__list">
+            <li class="steps-card">
+              <div class="steps-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 7h10M18 7h2M4 17h2M10 17h10M14 5v4M6 15v4" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="steps-card__title">
+                Выберите параметры
+              </h3>
+              <p class="steps-card__text">
+                Укажите количество сотрудников и дополнительные опции.
+              </p>
+            </li>
+            <li class="steps-card">
+              <div class="steps-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="4" y="3" width="16" height="18" rx="3" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M8 7h8M8 11h2M14 11h2M8 15h2M14 15h2" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="steps-card__title">
+                Получите стоимость
+              </h3>
+              <p class="steps-card__text">
+                Система автоматически рассчитает стоимость подключения.
+              </p>
+            </li>
+
+            <li class="steps-card">
+              <div class="steps-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M14 4h3a2 2 0 0 1 2 2v14H5V6a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <rect x="9" y="2" width="6" height="4" rx="1" stroke="currentColor" stroke-width="1.8" />
+                  <path d="m8 13 2 2 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="steps-card__title">
+                Заполните данные
+              </h3>
+              <p class="steps-card__text">
+                Заполните регистрационную форму организации.
+              </p>
+            </li>
+            <li class="steps-card">
+              <div class="steps-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M6 3h8l4 4v14H6V3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                  <path d="M14 3v5h4M9 12h6M9 16h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="steps-card__title">
+                Ознакомьтесь с договором
+              </h3>
+              <p class="steps-card__text">
+                Проверьте условия и подтвердите согласие.
+              </p>
+            </li>
+            <li class="steps-card">
+              <div class="steps-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M3 10h18M7 15h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="steps-card__title">
+                Оплатите доступ
+              </h3>
+              <p class="steps-card__text">
+                После оплаты доступ к платформе откроется автоматически.
+              </p>
+            </li>
+          </ol>
+          <div class="steps__preview">
+            <img class="steps__image" src="images/laptop-platform.png" alt="Интерфейс платформы на ноутбуке">
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="calculator">
       <div class="container">
         <div class="calculator__wrapper">
@@ -288,7 +386,6 @@
                   <input class="calculator-range__input" type="range" min="1" max="5000" step="1" value="0">
                   <div class="calculator-range__tooltip">
                     <span class="calculator-range__value"></span>
-                    <!-- <span>сотрудников</span> -->
                   </div>
 
                 </div>
@@ -315,7 +412,7 @@
               </h3>
               <ul class="calculator__options">
                 <li class="calculator__option">
-                  
+
                   <div class="checkbox">
                     <label class="checkbox__label" for="report">
                       <input class="checkbox__input visually-hidden" type="checkbox" id="report" data-price="20000">
@@ -477,9 +574,6 @@
                     <span class="checkbox__price">+1500 ₽</span>
                   </div>
                 </li>
-
-                <!-- остальные элементы -->
-
               </ul>
             </div>
             <div class="calculator__note">
@@ -490,10 +584,10 @@
                 Также оценке подлежат услуги менеджмента проекта,
                 обработки данных и подготовки аналитического отчета.
               </p>
-              <button class="btn btn--black" href="#order">Получить консультацию</button>
+              <button class="btn btn--black" type="button">Получить консультацию</button>
             </div>
           </div>
-          <!-- Правая колонка -->
+
           <aside class="summary">
             <h3 class="summary__title">
               Наше предложение
@@ -580,7 +674,7 @@
                 </div>
               </dl>
             </div>
-            <button class="btn btn--total" href="#calculator">Продолжить</button>
+            <button class="btn btn--total" type="button">Продолжить</button>
             <span class="summary__secure">
               <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
                 <use xlink:href="images/sprite.svg#icon-lock"></use>
@@ -588,213 +682,327 @@
               Ваши данные защищены
             </span>
           </aside>
-          <!-- <img class="calculator__image" src="images/summari-img.png" height="400" width="400" alt="Команда специалистов"> -->
         </div>
       </div>
     </section>
+    <section class="connection">
+      <div class="container">
 
-    <!-- <section class="calculator" id="calculator">
-      <div class="container calculator__inner">
-        <div class="calculator__panel">
-          <span class="eyebrow">Конфигуратор</span>
-          <h2>Рассчитайте стоимость подключения</h2>
-          <div class="calculator__group">
-            <label for="users">Количество участников</label>
-            <input id="users" type="range" min="20" max="500" step="10" value="120" />
-            <div class="range-values"><span id="usersValue">120</span> участников</div>
+        <header class="connection__header">
+          <p class="connection__subtitle">Подключение платформы</p>
+          <h2 class="connection__title">Подключение</h2>
+          <div class="connection__decor" aria-hidden="true">
+            <span></span>
+            <span class="connection__decor-diamond"></span>
+            <span></span>
           </div>
-          <div class="calculator__group calculator__group--half">
-            <label for="duration">Срок доступа</label>
-            <select id="duration">
-              <option value="1">1 месяц</option>
-              <option value="3" selected>3 месяца</option>
-              <option value="6">6 месяцев</option>
-              <option value="12">12 месяцев</option>
-            </select>
-          </div>
-          <div class="calculator__group calculator__group--half">
-            <label>Поддержка</label>
-            <div class="option-list">
-              <label><input type="radio" name="support" value="0" checked /> Базовая</label>
-              <label><input type="radio" name="support" value="12000" /> Расширенная git push -u origin
-                feature/login-page</label>
-            </div>
-          </div>
-          <div class="calculator__summary">
-            <div>
-              <span>Тариф</span>
-              <strong id="selectedPlan">Профи</strong>
-            </div>
-            <div>
-              <span>Итоговая стоимость</span>
-              <strong id="totalPrice">174 000 ₽</strong>
-            </div>
+        </header>
+
+        <!-- Переключатель форм -->
+        <div class="connection__switcher" role="tablist">
+          <button class="connection__switch connection__switch--active" type="button" role="tab" aria-selected="true"
+            aria-controls="person-form" data-form="person">
+            <span class="connection__switch-icon" aria-hidden="true">
+              <!-- SVG физического лица -->
+            </span>
+
+            Физическое лицо
+          </button>
+
+          <button class="connection__switch" type="button" role="tab" aria-selected="false" aria-controls="company-form"
+            data-form="company">
+            <span class="connection__switch-icon" aria-hidden="true">
+              <!-- SVG компании -->
+            </span>
+
+            ИП / Юр. лицо
+          </button>
+        </div>
+
+        <div class="connection__content">
+
+          <div class="connection__forms">
+
+            <!-- Физическое лицо -->
+            <form class="connection-form connection-form--person connection-form--active" id="person-form" action="#"
+              method="post">
+              <div class="connection-form__body">
+                <h2 class="connection-form__title">
+                  Заполните ваши данные
+                </h2>
+
+                <fieldset class="connection-form__fieldset">
+                  <legend class="connection-form__legend">
+                    Основные данные
+                  </legend>
+
+                  <div class="connection-form__grid">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Фамилия</span>
+
+                      <input class="custom-input__input" type="text" name="person-surname"
+                        placeholder="Введите значение" autocomplete="family-name" required>
+                    </label>
+
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Имя</span>
+
+                      <input class="custom-input__input" type="text" name="person-name" placeholder="Введите значение"
+                        autocomplete="given-name" required>
+                    </label>
+
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">E-mail</span>
+
+                      <input class="custom-input__input" type="email" name="person-email" placeholder="Введите значение"
+                        autocomplete="email" required>
+                    </label>
+
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Телефон</span>
+
+                      <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
+                        autocomplete="tel" required>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="connection-form__fieldset">
+                  <legend class="connection-form__legend connection-form__legend--lines">
+                    Дополнительные данные
+                  </legend>
+
+                  <label class="custom-input__label">
+                    <span class="custom-input__text">Комментарий</span>
+
+                    <textarea class="custom-input__input custom-input__input--textarea" name="person-comment"
+                      placeholder="Введите значение" rows="4"></textarea>
+                  </label>
+                </fieldset>
+
+                <div class="checkbox checkbox--agreement connection-form__agreement">
+                  <label class="checkbox__label" for="person-agreement">
+                    <input class="checkbox__input visually-hidden" id="person-agreement" name="person-agreement"
+                      type="checkbox" required>
+
+                    <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                    </svg>
+
+                    <span class="checkbox__text">
+                      Я прочитал(а)
+                      <a class="checkbox__link" href="#">Пользовательское соглашение</a>
+                      и
+                      <a class="checkbox__link" href="#">
+                        Политику в отношении обработки персональных данных
+                      </a>.
+                      Выражаю согласие на обработку моих персональных данных.
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="connection-form__footer">
+                <div class="connection-form__security">
+                  <span class="connection-form__security-icon" aria-hidden="true">
+                    <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-lock"></use>
+                    </svg>
+                  </span>
+
+                  <span>
+                    Мы гарантируем безопасность
+                    и сохранность ваших данных
+                  </span>
+                </div>
+
+                <button class="btn btn--total" type="submit">Продолжить <span
+                    aria-hidden="true">→</span></button>
+              </div>
+            </form>
+
+            <!-- ИП / юридическое лицо -->
+            <form class="connection-form connection-form--company" id="company-form" action="#" method="post" hidden>
+              <div class="connection-form__body connection-form__body--company">
+
+                <fieldset class="connection-form__fieldset connection-form__company-details">
+                  <legend class="connection-form__section-title">
+                    Реквизиты компании
+                  </legend>
+                  <div class="custom-input">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">
+                        Название компании / ФИО ИП
+                      </span>
+
+                      <input class="custom-input__input" type="text" name="company-name" placeholder="Введите значение"
+                        autocomplete="organization" required>
+                    </label>
+                  </div>
+                  <div class="connection-form__grid">
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">ИНН</span>
+
+                        <input class="custom-input__input" type="text" name="company-inn" placeholder="Введите значение"
+                          inputmode="numeric" required>
+                      </label>
+                    </div>
+
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">КПП</span>
+
+                        <input class="custom-input__input" type="text" name="company-kpp" placeholder="Введите значение"
+                          inputmode="numeric">
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="custom-input">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">ОГРНИП / ОГРН</span>
+
+                      <input class="custom-input__input" type="text" name="company-registration-number"
+                        placeholder="Введите значение" inputmode="numeric" required>
+                    </label>
+                  </div>
+
+
+                  <div class="connection-form__grid">
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">E-mail</span>
+
+                        <input class="custom-input__input" type="email" name="company-email"
+                          placeholder="Введите значение" autocomplete="email" required>
+                      </label>
+                    </div>
+
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">Телефон</span>
+
+                        <input class="custom-input__input" type="tel" name="company-phone"
+                          placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="custom-input">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Юридический адрес</span>
+
+                      <input class="custom-input__input" type="text" name="company-address"
+                        placeholder="Введите значение" autocomplete="street-address" required>
+                    </label>
+                  </div>
+                </fieldset>
+                <fieldset class="connection-form__fieldset connection-form__contact">
+                  <legend class="connection-form__section-title">
+                    Контактное лицо
+                  </legend>
+
+                  <div class="connection-form__grid">
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">Фамилия</span>
+
+                        <input class="custom-input__input" type="text" name="contact-surname"
+                          placeholder="Введите значение" autocomplete="family-name" required>
+                      </label>
+                    </div>
+
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">Имя</span>
+
+                        <input class="custom-input__input" type="text" name="contact-name"
+                          placeholder="Введите значение" autocomplete="given-name" required>
+                      </label>
+                    </div>
+
+                  </div>
+                  <div class="custom-input">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Должность</span>
+
+                      <input class="custom-input__input" type="text" name="contact-position"
+                        placeholder="Введите значение" autocomplete="organization-title">
+                    </label>
+                  </div>
+
+
+                  <div class="connection-form__grid">
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">Телефон</span>
+
+                        <input class="custom-input__input" type="tel" name="contact-phone"
+                          placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+                      </label>
+                    </div>
+
+                    <div class="custom-input">
+                      <label class="custom-input__label">
+                        <span class="custom-input__text">E-mail</span>
+
+                        <input class="custom-input__input" type="email" name="contact-email"
+                          placeholder="Введите значение" autocomplete="email" required>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="custom-input">
+                    <label class="custom-input__label">
+                      <span class="custom-input__text">Комментарий</span>
+
+                      <textarea class="custom-input__input custom-input__input--textarea" name="company-comment"
+                        placeholder="Введите значение" rows="4"></textarea>
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="checkbox checkbox--agreement connection-form__agreement">
+                  <label class="checkbox__label" for="company-agreement">
+                    <input class="checkbox__input visually-hidden" id="company-agreement" name="persons-agreement"
+                      type="checkbox" required>
+
+                    <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                    </svg>
+
+                    <span class="checkbox__text">
+                      Я прочитал(а)
+                      <a class="checkbox__link" href="#">Пользовательское соглашение</a>
+                      и
+                      <a class="checkbox__link" href="#">
+                        Политику в отношении обработки персональных данных
+                      </a>.
+                      Выражаю согласие на обработку моих персональных данных.
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="connection-form__footer">
+                <div class="connection-form__security">
+                  <span class="connection-form__security-icon" aria-hidden="true">
+                    <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
+                      <use xlink:href="images/sprite.svg#icon-lock"></use>
+                    </svg>
+                  </span>
+                  <span>
+                    Мы гарантируем безопасность и сохранность ваших данных
+                  </span>
+                </div>
+
+                <button class="btn btn--total" type="submit">Продолжить <span
+                    aria-hidden="true">→</span></button>
+              </div>
+            </form>
           </div>
         </div>
-        <aside class="calculator__aside">
-          <div class="summary-card">
-            <p class="summary-card__title">Ваши параметры</p>
-            <ul class="summary-card__list">
-              <li><strong id="summaryUsers">120</strong> участников</li>
-              <li><strong id="summaryDuration">3</strong> месяца доступа</li>
-              <li><strong id="summarySupport">Базовая</strong> поддержка</li>
-            </ul>
-            <a class="btn btn--secondary" href="#pricing">Выбрать тариф</a>
-          </div>
-        </aside>
       </div>
     </section>
-
-    <section class="pricing container" id="pricing">
-      <h2 class="section-title">Тарифы</h2>
-      <div class="pricing__cards">
-        <article class="pricing-card" data-plan="Старт" data-price="49000">
-          <div class="pricing-card__head">
-            <span class="label">Старт</span>
-            <strong>49 000 ₽</strong>
-          </div>
-          <p>Базовый пакет подключения для малого отдела и пилотных проектов.</p>
-          <ul>
-            <li>До 50 участников</li>
-            <li>Диагностика цифровой грамотности</li>
-            <li>Отчет и рекомендации</li>
-          </ul>
-          <button class="btn btn--ghost pricing-card__btn" type="button">Выбрать</button>
-        </article>
-        <article class="pricing-card pricing-card--featured" data-plan="Профи" data-price="79000">
-          <div class="pricing-card__head">
-            <span class="label label--primary">Рекомендуем</span>
-            <strong>79 000 ₽</strong>
-          </div>
-          <p>Оптимальный пакет для компаний, готовых масштабировать обучение.</p>
-          <ul>
-            <li>До 150 участников</li>
-            <li>Отдельный кабинет для HR</li>
-            <li>Персонализированный путь</li>
-          </ul>
-          <button class="btn btn--primary pricing-card__btn" type="button">Выбрать</button>
-        </article>
-        <article class="pricing-card" data-plan="Премиум" data-price="119000">
-          <div class="pricing-card__head">
-            <span class="label">Премиум</span>
-            <strong>119 000 ₽</strong>
-          </div>
-          <p>Полный корпоративный пакет с расширенными возможностями и консультациями.</p>
-          <ul>
-            <li>До 300 участников</li>
-            <li>Глубокий анализ компетенций</li>
-            <li>Поддержка и сопровождение</li>
-          </ul>
-          <button class="btn btn--ghost pricing-card__btn" type="button">Выбрать</button>
-        </article>
-      </div>
-    </section>
-
-    <section class="order container" id="order">
-      <div class="order__inner">
-        <div class="order__form">
-          <span class="eyebrow">Оформление</span>
-          <h2>Заполните форму и подпишите договор</h2>
-          <p>Мы подготовили все условия подключения. Оставьте данные, чтобы продолжить оформление.</p>
-          <form id="registrationForm" class="form-grid" novalidate>
-            <label>
-              ФИО контактного лица
-              <input type="text" id="clientName" name="clientName" placeholder="Иван Иванов" required />
-            </label>
-            <label>
-              Компания
-              <input type="text" id="company" name="company" placeholder="ООО «Решения»" required />
-            </label>
-            <label>
-              Электронная почта
-              <input type="email" id="email" name="email" placeholder="company@example.ru" required />
-            </label>
-            <label>
-              Телефон
-              <input type="tel" id="phone" name="phone" placeholder="+7 900 000 00 00" required />
-            </label>
-            <label class="form-checkbox">
-              <input type="checkbox" id="agreement" required />
-              Я соглашаюсь с условиями на обработку персональных данных
-            </label>
-            <button class="btn btn--primary btn--full" type="submit">Продолжить к договору</button>
-          </form>
-        </div>
-        <aside class="order__summary">
-          <div class="summary-card summary-card--order">
-            <p class="summary-card__title">Итог</p>
-            <ul class="summary-card__list">
-              <li>Тариф: <strong id="orderPlan">Профи</strong></li>
-              <li>Участников: <strong id="orderUsers">120</strong></li>
-              <li>Срок: <strong id="orderDuration">3</strong> месяца</li>
-              <li>Поддержка: <strong id="orderSupport">Базовая</strong></li>
-            </ul>
-            <div class="summary-card__total">
-              <span>К оплате</span>
-              <strong id="orderTotal">174 000 ₽</strong>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="contract container" id="contract">
-      <div class="contract__inner">
-        <div class="contract__preview">
-          <span class="eyebrow">Договор</span>
-          <h2>Просмотрите условия договора</h2>
-          <p>Договор оформляется автоматически на основе выбранного тарифа и параметров подключения.</p>
-          <div class="contract__box">
-            <div class="contract__row">
-              <span>Номер договора</span>
-              <strong>№ 2026-НАФИ-01</strong>
-            </div>
-            <div class="contract__row">
-              <span>Дата</span>
-              <strong id="contractDate">01.09.2026</strong>
-            </div>
-            <p>Платформа «Цифровой гражданин» предоставляет услуги по диагностике и развитию цифровой грамотности
-              сотрудников. Оплата производится по выбранному тарифу, срок доступа действует с момента регистрации.</p>
-          </div>
-        </div>
-        <div class="payment-card">
-          <span class="eyebrow">Оплата</span>
-          <h2>Выберите способ оплаты</h2>
-          <div class="payment-methods">
-            <label><input type="radio" name="paymentMethod" value="card" checked /> Банковская карта</label>
-            <label><input type="radio" name="paymentMethod" value="invoice" /> Выставить счёт</label>
-            <label><input type="radio" name="paymentMethod" value="transfer" /> Банк/трансфер</label>
-          </div>
-          <div class="payment__note">После подтверждения оплаты вы увидите экран успешного подключения.</div>
-          <button class="btn btn--primary btn--full" id="payButton" type="button">Оплатить 174 000 ₽</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="success container" id="success" hidden>
-      <div class="success__content">
-        <img class="success__icon" src="assets/img/success.svg" alt="Успешно" />
-        <h2>Подключение успешно</h2>
-        <p>Платформа «Цифровой гражданин» готова к использованию. Договор оформлен, и вы получите доступ в течение
-          рабочего дня.</p>
-        <a class="btn btn--primary" href="#home">Вернуться на старт</a>
-      </div>
-    </section>-->
   </main>
-
-  <!-- <footer class="footer" id="footer">
-    <div class="container footer__inner">
-      <div>
-        <p class="footer__brand">НАФИ</p>
-        <p>Аналитический центр НАФИ, цифровая платформа для оценки и развития компетенций.</p>
-      </div>
-      <div class="footer__links">
-        <a href="#advantages">Преимущества</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#order">Оформление</a>
-      </div>
-    </div>
-  </footer> -->
 </body>
 
 </html>

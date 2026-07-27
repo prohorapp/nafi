@@ -1,0 +1,130 @@
+.steps-card {
+    position: relative;
+    counter-increment: step;
+
+    grid-column: span 2;
+
+    min-height: 270px;
+    padding: 128px 24px 32px;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.86);
+    border-bottom: 3px solid $color-primary;
+    border-radius: 14px;
+    box-shadow: 0 16px 35px rgba(80, 67, 47, 0.12);
+
+    @include vp-1023 {
+        min-height: 250px;
+        padding: 120px 20px 28px;
+    }
+
+    @include vp-767 {
+        grid-column: auto;
+        min-height: 230px;
+    }
+
+    // Большие номера 01–05
+    &::before {
+        content: counter(step, decimal-leading-zero);
+
+        position: absolute;
+        top: -15px;
+        left: 3px;
+
+        color: rgba(200, 169, 106, 0.18);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 72px;
+        font-weight: 700;
+        line-height: 1;
+
+        @include vp-1023 {
+            font-size: 64px;
+        }
+
+        @include vp-767 {
+            font-size: 58px;
+        }
+    }
+
+    &:nth-child(4) {
+        grid-column: 1 / span 2;
+
+        @include vp-767 {
+            grid-column: auto;
+        }
+    }
+
+    &:nth-child(5) {
+        grid-column: 3 / span 2;
+
+        @include vp-767 {
+            grid-column: auto;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 44px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 60px;
+        height: 60px;
+
+        color: $color-primary;
+        background-color: #fff;
+        border: 2px solid rgba(200, 169, 106, 0.22);
+        border-radius: 50%;
+        box-shadow:
+            0 8px 18px rgba(99, 76, 35, 0.12),
+            0 0 16px rgba(200, 169, 106, 0.12);
+
+        svg {
+            width: 30px;
+            height: 30px;
+
+            @include vp-1023 {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        @include vp-1023 {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+
+        margin: 0 0 12px;
+
+        color: #111;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.25;
+
+        @include vp-767 {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+
+        max-width: 260px;
+        margin: 0 auto;
+
+        color: $color-suva-grey;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}

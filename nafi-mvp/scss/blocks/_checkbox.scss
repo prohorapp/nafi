@@ -4,6 +4,7 @@
     gap: 18px;
     align-items: center;
     justify-content: space-between;
+    border-radius: 20px;
     box-shadow:
         0 16px 40px rgba(0, 0, 0, 0.04),
         0 10px 28px rgba(200, 169, 106, 0.28);
@@ -21,6 +22,87 @@
 
     .checkbox__label:has(.checkbox__input:checked) .checkbox__icon-check {
         opacity: 1;
+    }
+
+    &--agreement {
+        display: block;
+        padding: 0;
+
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        cursor: default;
+        transform: none;
+
+        &:hover {
+            box-shadow: none;
+            transform: none;
+        }
+
+        .checkbox__label {
+            align-items: flex-start;
+            min-height: 20px;
+            padding: 0 0 0 34px;
+
+            background-color: transparent;
+            border-radius: 0;
+            cursor: pointer;
+
+            &::after {
+                top: 2px;
+                left: 0;
+
+                width: 18px;
+                height: 18px;
+
+                background-color: $color-white;
+                border-color: $color-primary;
+                border-radius: 4px;
+                transform: none;
+            }
+
+            &:has(.checkbox__input:checked)::after {
+                background-color: $color-primary;
+                border-color: $color-primary;
+            }
+        }
+
+        .checkbox__icon-check {
+            top: 4px;
+            left: 2px;
+
+            width: 14px;
+            height: 14px;
+
+            color: $color-white;
+            transform: none;
+        }
+
+        .checkbox__text {
+            color: $color-black;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .checkbox__link {
+            color: $color-dim-gray;
+            transform: translateY(0);
+            transition: transform $transition-300, color $transition-300;
+
+            &:hover {
+                color: $color-primary;
+                transform: translateY(-20px);
+            }
+        }
+
+        .checkbox__input:focus-visible {
+            &~.checkbox__icon-check {
+                outline: 2px solid $color-primary;
+                outline-offset: 5px;
+                border-radius: 2px;
+            }
+        }
     }
 
     &:hover+.checkbox__label {
@@ -104,5 +186,6 @@
         justify-content: end;
         min-width: 80px;
     }
+
 
 }
