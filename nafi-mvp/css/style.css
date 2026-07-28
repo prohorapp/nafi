@@ -684,8 +684,8 @@ textarea {
   padding: 2px 24px;
   border-radius: 14px;
   border: 1px solid transparent;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
   background-color: #F2A900;
   color: #000000;
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -748,8 +748,8 @@ textarea {
   gap: 10px;
   width: 250px;
   padding: 10px 60px;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .platform {
@@ -764,7 +764,7 @@ textarea {
   margin: 0 0 10px;
   color: #aa7700;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -851,8 +851,8 @@ textarea {
   display: flex;
   align-items: center;
   color: #24211d;
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.3;
 }
 .platform__text-top--left, .platform__text-top--fast {
@@ -864,7 +864,8 @@ textarea {
   margin: 0;
   padding: 0;
   color: #625d55;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.55;
 }
 .platform__logo-icon {
@@ -921,8 +922,8 @@ textarea {
 .platform__subtitle {
   margin: 0;
   color: #24211d;
-  font-size: 23px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 400;
   line-height: 1.25;
 }
 .platform__scenario {
@@ -994,9 +995,6 @@ textarea {
   .platform__text-header, .platform__title, .platform__description {
     text-align: left;
   }
-  .platform__title {
-    font-size: 31px;
-  }
   .platform__description {
     margin-bottom: 30px;
     font-size: 14px;
@@ -1011,9 +1009,6 @@ textarea {
   .platform__key, .platform__fast {
     padding: 20px;
     border-radius: 18px;
-  }
-  .platform__subtitle {
-    font-size: 20px;
   }
   .platform__wrap--col {
     min-height: 0;
@@ -1042,7 +1037,7 @@ textarea {
 .calculator__title {
   margin: 0;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
 }
 .calculator__step {
@@ -1052,8 +1047,8 @@ textarea {
 }
 .calculator__subtitle {
   margin: 0;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 26px;
+  font-weight: 400;
 }
 .calculator__options {
   display: flex;
@@ -1106,8 +1101,8 @@ textarea {
 }
 .calculator__note-btn {
   padding: 0;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 500;
+  font-size: 18px;
   border: none;
   background-color: transparent;
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
@@ -1141,12 +1136,6 @@ textarea {
   }
   .calculator__content {
     gap: 30px;
-  }
-  .calculator__title {
-    font-size: 29px;
-  }
-  .calculator__subtitle {
-    font-size: 19px;
   }
   .calculator__note {
     align-items: flex-start;
@@ -1464,6 +1453,10 @@ textarea {
   font-size: 14px;
   font-weight: 400;
 }
+.checkbox__title {
+  font-size: 20px;
+  font-weight: 500;
+}
 .checkbox__description {
   font-weight: 400;
   font-size: 14px;
@@ -1492,8 +1485,8 @@ textarea {
 }
 .summary__title {
   margin: 0;
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 400;
 }
 .summary__secure {
   display: flex;
@@ -1622,19 +1615,9 @@ textarea {
   margin: 0 auto 14px;
   color: #111;
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
   text-align: center;
-}
-@media (max-width: 1023px) {
-  .steps__title {
-    font-size: 32px;
-  }
-}
-@media (max-width: 767px) {
-  .steps__title {
-    font-size: 26px;
-  }
 }
 .steps__gold {
   color: #F2A900;
@@ -1648,14 +1631,9 @@ textarea {
 .steps__header-text {
   margin: 0;
   color: #8B8B8B;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   text-align: center;
-}
-@media (max-width: 767px) {
-  .steps__header-text {
-    font-size: 15px;
-  }
 }
 .steps__wrapper {
   display: grid;
@@ -1814,14 +1792,9 @@ textarea {
   z-index: 1;
   margin: 0 0 12px;
   color: #111;
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 26px;
+  font-weight: 400;
   line-height: 1.25;
-}
-@media (max-width: 767px) {
-  .steps-card__title {
-    font-size: 18px;
-  }
 }
 .steps-card__text {
   position: relative;
@@ -1829,7 +1802,8 @@ textarea {
   max-width: 260px;
   margin: 0 auto;
   color: #8B8B8B;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
 }
 
@@ -1853,7 +1827,8 @@ textarea {
 .connection__title {
   margin: 0 0 18px;
   color: #171717;
-  font-size: 32px;
+  font-size: 36px;
+  font-weight: 400;
   font-weight: 600;
   line-height: 1.2;
 }
@@ -1896,6 +1871,8 @@ textarea {
   padding: 10px 25px;
   color: #272727;
   font: inherit;
+  font-size: 18px;
+  font-weight: 500;
   background-color: transparent;
   border: 0;
   border-radius: 30px;
@@ -1935,13 +1912,10 @@ textarea {
     min-height: auto;
     padding: 40px 0;
   }
-  .connection__title {
-    font-size: 28px;
-  }
   .connection__switch {
     min-width: 0;
     padding: 10px 8px;
-    font-size: 12px;
+    font-size: 18px;
   }
 }
 
@@ -1969,8 +1943,8 @@ textarea {
 .connection-form__title {
   margin: 0 0 25px;
   color: #202020;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 36px;
+  font-weight: 400;
 }
 .connection-form__fieldset {
   min-width: 0;
@@ -1989,7 +1963,8 @@ textarea {
 }
 .connection-form__section-title {
   color: #202020;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .connection-form__legend--lines {
   display: flex;
@@ -2054,7 +2029,8 @@ textarea {
   padding: 12px 28px;
   color: #fff;
   font: inherit;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   background: linear-gradient(90deg, #d6a514, #edce78);
   border: 0;
   border-radius: 8px;
@@ -2164,13 +2140,15 @@ textarea {
 .contract__title {
   margin: 0 0 12px;
   color: #181818;
-  font-size: 34px;
+  font-size: 36px;
+  font-weight: 400;
   line-height: 1.25;
 }
 .contract__description {
   margin: 0;
   color: #737373;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .contract__content {
   display: grid;
@@ -2195,7 +2173,8 @@ textarea {
   border-bottom: 1px solid rgba(242, 169, 0, 0.18);
 }
 .contract__document-label {
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 500;
 }
 .contract__document-number {
   color: #737373;
@@ -2237,6 +2216,8 @@ textarea {
   pointer-events: none;
 }
 .contract__open {
+  font-size: 18px;
+  font-weight: 500;
   position: relative;
   z-index: 1;
   display: flex;
@@ -2248,7 +2229,8 @@ textarea {
   padding: 12px 20px;
   color: #202020;
   font: inherit;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   background-color: #ffffff;
   border: 0;
   border-top: 1px solid rgba(242, 169, 0, 0.2);
@@ -2298,6 +2280,8 @@ textarea {
   font-size: 14px;
 }
 .contract__submit {
+  font-size: 18px;
+  font-weight: 500;
   min-width: 210px;
 }
 .contract__submit:disabled {
@@ -2321,9 +2305,6 @@ textarea {
     margin-bottom: 28px;
     text-align: left;
   }
-  .contract__title {
-    font-size: 28px;
-  }
   .contract__document-head, .contract__date, .contract__footer {
     align-items: flex-start;
     flex-direction: column;
@@ -2346,7 +2327,8 @@ textarea {
 }
 .contract-actions__title {
   margin: 0 0 20px;
-  font-size: 19px;
+  font-size: 26px;
+  font-weight: 400;
 }
 .contract-actions__button {
   display: flex;
@@ -2358,6 +2340,8 @@ textarea {
   padding: 10px 15px;
   color: #202020;
   font: inherit;
+  font-size: 18px;
+  font-weight: 500;
   text-align: left;
   text-decoration: none;
   background-color: #f3f3f3;
@@ -2401,7 +2385,8 @@ textarea {
 }
 .contract-modal__document-header h3 {
   margin: 0 0 6px;
-  font-size: 22px;
+  font-size: 26px;
+  font-weight: 400;
 }
 .contract-modal__document-header p {
   margin: 0;
@@ -2418,7 +2403,8 @@ textarea {
   margin: 0 0 16px;
   padding-bottom: 10px;
   color: #202020;
-  font-size: 18px;
+  font-size: 26px;
+  font-weight: 400;
   border-bottom: 1px solid rgba(242, 169, 0, 0.25);
 }
 .contract-modal__section p {
@@ -2439,7 +2425,8 @@ textarea {
 }
 .contract-modal__subsection h4 {
   margin: 0 0 12px;
-  font-size: 15px;
+  font-size: 20px;
+  font-weight: 500;
 }
 .contract-modal__subsection ul {
   margin: 0;
@@ -2484,7 +2471,8 @@ textarea {
 
 .payment__title {
   margin: 0 0 14px;
-  font-size: clamp(34px, 4vw, 52px);
+  font-size: 36px;
+  font-weight: 400;
   line-height: 1.08;
 }
 
@@ -2492,7 +2480,8 @@ textarea {
   max-width: 650px;
   margin: 0 auto;
   color: #6f6b63;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -2789,6 +2778,8 @@ textarea {
   padding: 10px 15px;
   color: #fff;
   font: inherit;
+  font-size: 18px;
+  font-weight: 500;
   font-size: 12px;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -2853,7 +2844,8 @@ textarea {
 
 .summary--payment .summary__title {
   margin: 0;
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 .summary--payment .summary__status {
@@ -2929,8 +2921,8 @@ textarea {
   padding: 14px 20px;
   color: #191713;
   font: inherit;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
   background: linear-gradient(95deg, #e0a000, #f3c44e);
   border: 0;
   border-radius: 10px;
@@ -3102,13 +3094,15 @@ textarea {
 
 .payment-success__title {
   margin: 0 0 6px;
-  font-size: clamp(27px, 4vw, 38px);
+  font-size: 36px;
+  font-weight: 400;
 }
 
 .payment-success__description {
   margin: 0;
   color: rgba(255, 255, 255, 0.82);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .payment-success__access {
@@ -3146,7 +3140,8 @@ textarea {
 
 .payment-success__access strong {
   margin-bottom: 3px;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .payment-success__access small {
@@ -3194,7 +3189,8 @@ textarea {
 
 .payment-success__section h3 {
   margin: 0 0 25px;
-  font-size: 20px;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 .payment-success__steps,
@@ -3294,7 +3290,8 @@ textarea {
   padding: 8px 12px;
   color: #24211d;
   font: inherit;
-  font-size: 10px;
+  font-size: 18px;
+  font-weight: 500;
   text-decoration: none;
   background: #fff;
   border: 1px solid #bbb5ac;
@@ -3354,7 +3351,8 @@ textarea {
   padding: 10px 15px;
   color: #fff;
   font: inherit;
-  font-size: 10px;
+  font-size: 18px;
+  font-weight: 500;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 7px;
@@ -3441,14 +3439,16 @@ textarea {
 .payment-failure__title {
   margin: 0 0 12px;
   color: #26221e;
-  font-size: clamp(27px, 4vw, 36px);
+  font-size: 36px;
+  font-weight: 400;
   line-height: 1.15;
 }
 .payment-failure__description {
   max-width: 480px;
   margin: 0 auto 28px;
   color: #777169;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.6;
 }
 .payment-failure__details {
@@ -3482,8 +3482,8 @@ textarea {
   min-height: 50px;
   padding: 12px 16px;
   font: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   border-radius: 9px;
   cursor: pointer;
 }
@@ -3554,12 +3554,14 @@ textarea {
 }
 .services-modal__title {
   margin: 0 0 7px;
-  font-size: 30px;
+  font-size: 36px;
+  font-weight: 400;
 }
 .services-modal__description {
   margin: 0;
   color: #737373;
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .services-modal__close {
   display: grid;
@@ -3633,9 +3635,6 @@ textarea {
   }
   .services-modal__header {
     padding: 20px 16px 16px;
-  }
-  .services-modal__title {
-    font-size: 25px;
   }
   .services-modal__description {
     padding-right: 10px;
@@ -3762,6 +3761,7 @@ textarea {
 .consultation-form__title {
   margin: 0 0 10px;
   font-size: 36px;
+  font-weight: 400;
   line-height: 1.15;
 }
 .consultation-form__description {
@@ -3769,6 +3769,7 @@ textarea {
   margin: 0;
   color: #737373;
   font-size: 14px;
+  font-weight: 400;
   line-height: 1.55;
 }
 .consultation-form__grid {
@@ -3824,7 +3825,8 @@ textarea {
 }
 .consultation-form__success h2 {
   margin: 18px 0 8px;
-  font-size: 34px;
+  font-size: 36px;
+  font-weight: 400;
 }
 .consultation-form__success p {
   max-width: 390px;
@@ -3848,9 +3850,6 @@ textarea {
   }
   .consultation-form__header {
     padding-right: 45px;
-  }
-  .consultation-form__title {
-    font-size: 29px;
   }
   .consultation-form__grid {
     grid-template-columns: 1fr;
@@ -3888,7 +3887,8 @@ textarea {
 }
 .footer__operator {
   margin: 0 0 20px;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.45;
 }
 .footer__operator strong {
@@ -3898,7 +3898,8 @@ textarea {
   max-width: 560px;
   margin: 0;
   color: rgba(255, 255, 255, 0.65);
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.65;
 }
 .footer__label {
@@ -3973,9 +3974,6 @@ textarea {
   }
   .footer__logo-link {
     margin-bottom: 22px;
-  }
-  .footer__operator {
-    font-size: 19px;
   }
   .footer__contact {
     grid-template-columns: 1fr;

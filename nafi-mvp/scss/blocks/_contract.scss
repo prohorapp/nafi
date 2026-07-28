@@ -26,14 +26,16 @@
     &__title {
         margin: 0 0 12px;
         color: #181818;
-        font-size: 34px;
+        font-size: 36px;
+        font-weight: 400;
         line-height: 1.25;
     }
 
     &__description {
         margin: 0;
         color: $color-dim-gray;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 400;
     }
 
     &__content {
@@ -64,7 +66,8 @@
     }
 
     &__document-label {
-        font-weight: 600;
+        font-size: 20px;
+        font-weight: 500;
     }
 
     &__document-number {
@@ -118,6 +121,8 @@
     }
 
     &__open {
+        font-size: 18px;
+        font-weight: 500;
         position: relative;
         z-index: 1;
 
@@ -132,7 +137,8 @@
 
         color: #202020;
         font: inherit;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 500;
 
         background-color: $color-white;
         border: 0;
@@ -197,6 +203,8 @@
     }
 
     &__submit {
+        font-size: 18px;
+        font-weight: 500;
         min-width: 210px;
 
         &:disabled {
@@ -222,10 +230,6 @@
         &__header {
             margin-bottom: 28px;
             text-align: left;
-        }
-
-        &__title {
-            font-size: 28px;
         }
 
         &__document-head,

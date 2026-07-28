@@ -87,6 +87,7 @@
   &__title {
     margin: 0 0 10px;
     font-size: 36px;
+    font-weight: 400;
     line-height: 1.15;
   }
 
@@ -95,6 +96,7 @@
     margin: 0;
     color: $color-dim-gray;
     font-size: 14px;
+    font-weight: 400;
     line-height: 1.55;
   }
 
@@ -160,7 +162,8 @@
 
     h2 {
       margin: 18px 0 8px;
-      font-size: 34px;
+      font-size: 36px;
+      font-weight: 400;
     }
 
     p {
@@ -189,10 +192,6 @@
 
     &__header {
       padding-right: 45px;
-    }
-
-    &__title {
-      font-size: 29px;
     }
 
     &__grid {

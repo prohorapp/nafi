@@ -29,7 +29,8 @@
 
 .payment__title {
   margin: 0 0 14px;
-  font-size: clamp(34px, 4vw, 52px);
+  font-size: 36px;
+  font-weight: 400;
   line-height: 1.08;
 }
 
@@ -37,7 +38,8 @@
   max-width: 650px;
   margin: 0 auto;
   color: #6f6b63;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.6;
 }
 

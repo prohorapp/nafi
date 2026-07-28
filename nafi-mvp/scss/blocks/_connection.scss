@@ -24,7 +24,8 @@
     &__title {
         margin: 0 0 18px;
         color: #171717;
-        font-size: 32px;
+        font-size: 36px;
+        font-weight: 400;
         font-weight: 600;
         line-height: 1.2;
     }
@@ -81,6 +82,8 @@
 
         color: #272727;
         font: inherit;
+        font-size: 18px;
+        font-weight: 500;
         background-color: transparent;
         border: 0;
         border-radius: 30px;
@@ -132,14 +135,10 @@
         min-height: auto;
         padding: 40px 0;
 
-        &__title {
-            font-size: 28px;
-        }
-
         &__switch {
             min-width: 0;
             padding: 10px 8px;
-            font-size: 12px;
+            font-size: 18px;
         }
     }
 }

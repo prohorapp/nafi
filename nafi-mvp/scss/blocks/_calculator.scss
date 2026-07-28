@@ -36,7 +36,7 @@
         margin: 0;
 
         font-size: 36px;
-        font-weight: 700;
+        font-weight: 400;
         line-height: 1.15;
     }
 
@@ -48,8 +48,8 @@
 
     &__subtitle {
         margin: 0;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 26px;
+        font-weight: 400;
     }
 
     &__options {
@@ -112,8 +112,8 @@
 
     &__note-btn {
         padding: 0;
-        font-weight: 400;
-        font-size: 16px;
+        font-weight: 500;
+        font-size: 18px;
         border: none;
         background-color: transparent;
         transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
@@ -151,14 +151,6 @@
 
         &__content {
             gap: 30px;
-        }
-
-        &__title {
-            font-size: 29px;
-        }
-
-        &__subtitle {
-            font-size: 19px;
         }
 
         &__note {

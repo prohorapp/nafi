@@ -27,8 +27,8 @@
     &__title {
         margin: 0 0 25px;
         color: #202020;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 36px;
+        font-weight: 400;
     }
 
     &__fieldset {
@@ -52,7 +52,8 @@
 
     &__section-title {
         color: #202020;
-        font-size: 18px;
+        font-size: 20px;
+        font-weight: 500;
     }
 
     &__legend--lines {
@@ -134,7 +135,8 @@
 
         color: #fff;
         font: inherit;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 500;
 
         background: linear-gradient(90deg,
                 #d6a514,

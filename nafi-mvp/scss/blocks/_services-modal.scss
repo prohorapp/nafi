@@ -37,13 +37,15 @@
 
   &__title {
     margin: 0 0 7px;
-    font-size: 30px;
+    font-size: 36px;
+    font-weight: 400;
   }
 
   &__description {
     margin: 0;
     color: $color-dim-gray;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 400;
   }
 
   &__close {
@@ -128,10 +130,6 @@
 
     &__header {
       padding: 20px 16px 16px;
-    }
-
-    &__title {
-      font-size: 25px;
     }
 
     &__description {
