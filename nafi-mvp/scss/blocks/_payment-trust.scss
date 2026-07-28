@@ -1,0 +1,54 @@
+.payment-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.payment-trust__item {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 18px;
+  color: #fff;
+  background: linear-gradient(145deg, #26231f, #171614);
+  border-radius: 14px;
+}
+
+.payment-trust__item > span {
+  color: #e5a81d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.payment-trust__item div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.payment-trust__item strong {
+  margin-bottom: 7px;
+  font-size: 13px;
+}
+
+.payment-trust__item small {
+  color: #aaa69f;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1023px) {
+  .payment-trust {
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
+
+@media (max-width: 767px) {
+  .payment-trust {
+        grid-template-columns: 1fr;
+      }
+}

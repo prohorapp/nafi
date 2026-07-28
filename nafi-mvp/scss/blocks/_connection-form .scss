@@ -161,4 +161,38 @@
             outline-offset: 3px;
         }
     }
+
+    @media (max-width: 1023px) {
+        &__body--company {
+            grid-template-columns: 1fr;
+        }
+
+        &__company-details {
+            padding-right: 0;
+            border-right: 0;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__body {
+            padding: 20px 16px;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        &__footer {
+            align-items: stretch;
+            flex-direction: column;
+            padding: 18px 16px;
+        }
+
+        &__footer .btn,
+        &__submit {
+            width: 100%;
+            min-width: 0;
+        }
+    }
 }

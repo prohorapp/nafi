@@ -127,4 +127,19 @@
     &__forms {
         min-width: 0;
     }
+
+    @media (max-width: 767px) {
+        min-height: auto;
+        padding: 40px 0;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__switch {
+            min-width: 0;
+            padding: 10px 8px;
+            font-size: 12px;
+        }
+    }
 }

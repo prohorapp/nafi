@@ -1,3 +1,15 @@
+const getPricePerEmployee = (employees) => {
+  if (employees <= 500) {
+    return 390;
+  }
+
+  if (employees <= 4000) {
+    return 370;
+  }
+
+  return 340;
+};
+
 const initCalculator = () => {
   const calculator = document.querySelector('.calculator');
 
@@ -22,7 +34,7 @@ const initCalculator = () => {
   );
 
   const resultPrice = calculator.querySelector(
-    '[data-price]'
+    '.result__value[data-price]'
   );
 
   const resultOptions = calculator.querySelector(
@@ -31,6 +43,10 @@ const initCalculator = () => {
 
   const resultTotal = calculator.querySelector(
     '[data-total]'
+  );
+
+  const currentPrice = calculator.querySelector(
+    '[data-current-price]'
   );
 
   // Только платные опции калькулятора
@@ -52,7 +68,7 @@ const initCalculator = () => {
 
   const updateCalculator = () => {
     const employees = Number(valueEmployees.value) || 0;
-    const price = 490;
+    const price = getPricePerEmployee(employees);
 
     range.value = employees;
     valueEmployees.value = employees;
@@ -65,6 +81,20 @@ const initCalculator = () => {
 
     resultPrice.textContent =
       `${price.toLocaleString('ru-RU')} ₽`;
+
+    if (currentPrice) {
+      currentPrice.textContent =
+        `${price.toLocaleString('ru-RU')} ₽`;
+    }
+
+    const progress =
+      ((employees - Number(range.min)) /
+        (Number(range.max) - Number(range.min))) * 100;
+
+    range.style.setProperty(
+      '--range-progress',
+      `${Math.max(0, Math.min(100, progress))}%`
+    );
 
     let optionsPrice = 0;
 
@@ -286,9 +316,249 @@ const initConnectionAgreements = () => {
   });
 };
 
+const initCheckoutFlow = () => {
+  const calculator = document.querySelector('#calculator');
+  const connection = document.querySelector('#connection');
+  const contract = document.querySelector('#contract');
+  const payment = document.querySelector('#payment');
+
+  const scrollToSection = (section) => {
+    if (!section) {
+      return;
+    }
+
+    const headerHeight =
+      document.querySelector('.header')?.offsetHeight || 0;
+    const top =
+      section.getBoundingClientRect().top +
+      window.scrollY -
+      headerHeight -
+      16;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: 'smooth'
+    });
+  };
+
+  document.querySelectorAll('[data-go-calculator]').forEach((button) => {
+    button.addEventListener('click', () => {
+      scrollToSection(calculator);
+    });
+  });
+
+  calculator
+    ?.querySelector('[data-calculator-continue]')
+    ?.addEventListener('click', () => {
+      scrollToSection(connection);
+    });
+
+  connection?.querySelectorAll('.connection-form').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      scrollToSection(contract);
+    });
+  });
+
+  contract
+    ?.querySelector('[data-contract-submit]')
+    ?.addEventListener('click', (event) => {
+      if (event.currentTarget.disabled) {
+        return;
+      }
+
+      scrollToSection(payment);
+    });
+};
+
+const initPayment = () => {
+  const payment = document.querySelector('.payment');
+
+  if (!payment) {
+    return;
+  }
+
+  const methods = payment.querySelectorAll('.payment-method');
+  const methodInputs = payment.querySelectorAll('.payment-method__input');
+  const buttonText = payment.querySelector('[data-payment-button-text]');
+  const employeesOutput = payment.querySelector('[data-payment-employees]');
+  const optionsOutput = payment.querySelector('[data-payment-options]');
+  const totalOutput = payment.querySelector('[data-payment-total]');
+  const priceOutput = payment.querySelector('[data-payment-price]');
+  const calculator = document.querySelector('.calculator');
+  const customerTypeButtons = document.querySelectorAll('.connection__switch[data-form]');
+  const paymentForm = payment.querySelector('[data-payment-form]');
+  const paymentHeader = payment.querySelector('.payment__header');
+  const paymentTrust = payment.querySelector('.payment-trust');
+  const paymentSuccess = payment.querySelector('[data-payment-success]');
+  const paymentFailure = payment.querySelector('[data-payment-failure]');
+  const retryButton = payment.querySelector('[data-payment-retry]');
+
+  const updateMethod = () => {
+    methodInputs.forEach((input) => {
+      input.closest('.payment-method')?.classList.toggle('payment-method--active', input.checked);
+    });
+
+    const selected = payment.querySelector('.payment-method__input:checked');
+    const labels = {
+      card: 'Перейти к оплате',
+      invoice: 'Получить счёт',
+      sbp: 'Показать QR-код'
+    };
+
+    if (buttonText && selected) {
+      buttonText.textContent = labels[selected.value] || 'Продолжить';
+    }
+  };
+
+  const updateOrder = () => {
+    if (!calculator) {
+      return;
+    }
+
+    const employees = Number(calculator.querySelector('.calculator-employees__input')?.value) || 0;
+    const price = getPricePerEmployee(employees);
+    const optionInputs = calculator.querySelectorAll('.checkbox__input[data-price]');
+    let optionsPrice = 0;
+
+    optionInputs.forEach((input) => {
+      if (input.checked) {
+        optionsPrice += Number(input.dataset.price) || 0;
+      }
+    });
+
+    const total = employees * price + optionsPrice;
+
+    if (employeesOutput) employeesOutput.textContent = employees.toLocaleString('ru-RU');
+    if (priceOutput) priceOutput.textContent = `${price.toLocaleString('ru-RU')} ₽`;
+    if (optionsOutput) optionsOutput.textContent = `${optionsPrice.toLocaleString('ru-RU')} ₽`;
+    if (totalOutput) totalOutput.textContent = `${total.toLocaleString('ru-RU')} ₽`;
+  };
+
+  const updateCustomerType = (customerType) => {
+    const isCompany = customerType === 'company';
+    const cardInput = payment.querySelector('input[value="card"]');
+    const invoiceInput = payment.querySelector('input[value="invoice"]');
+    const sbpInput = payment.querySelector('input[value="sbp"]');
+
+    payment.classList.toggle('payment--company', isCompany);
+
+    if (sbpInput) {
+      sbpInput.disabled = isCompany;
+    }
+
+    const preferredInput = isCompany ? invoiceInput : cardInput;
+
+    if (preferredInput) {
+      preferredInput.checked = true;
+    }
+
+    updateMethod();
+  };
+
+  const hidePaymentForm = () => {
+    paymentForm.hidden = true;
+    if (paymentHeader) paymentHeader.hidden = true;
+    if (paymentTrust) paymentTrust.hidden = true;
+  };
+
+  const restorePaymentForm = () => {
+    paymentForm.hidden = false;
+    if (paymentHeader) paymentHeader.hidden = false;
+    if (paymentTrust) paymentTrust.hidden = false;
+    if (paymentSuccess) paymentSuccess.hidden = true;
+    if (paymentFailure) paymentFailure.hidden = true;
+    payment.querySelector('.payment-method__input:checked')?.focus();
+    payment.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const showPaymentFailure = () => {
+    if (!paymentFailure) {
+      return;
+    }
+
+    const selectedMethod = payment.querySelector('.payment-method__input:checked');
+    const selectedLabel = selectedMethod
+      ?.closest('.payment-method')
+      ?.querySelector('.payment-method__content strong')
+      ?.textContent;
+    const failureTotal = paymentFailure.querySelector('[data-payment-failure-total]');
+    const failureMethod = paymentFailure.querySelector('[data-payment-failure-method]');
+
+    hidePaymentForm();
+    if (paymentSuccess) paymentSuccess.hidden = true;
+    paymentFailure.hidden = false;
+
+    if (failureTotal && totalOutput) {
+      failureTotal.textContent = totalOutput.textContent;
+    }
+
+    if (failureMethod && selectedLabel) {
+      failureMethod.textContent = selectedLabel;
+    }
+
+    paymentFailure.querySelector('.payment-failure__title')?.focus();
+    payment.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const showPaymentSuccess = () => {
+    if (!paymentSuccess) {
+      return;
+    }
+
+    hidePaymentForm();
+    if (paymentFailure) paymentFailure.hidden = true;
+    paymentSuccess.hidden = false;
+    paymentSuccess.querySelector('.payment-success__title')?.focus();
+    payment.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  methodInputs.forEach((input) => input.addEventListener('change', updateMethod));
+  customerTypeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      updateCustomerType(button.dataset.form);
+    });
+  });
+  calculator?.addEventListener('input', updateOrder);
+  calculator?.addEventListener('change', updateOrder);
+
+  paymentForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    showPaymentSuccess();
+  });
+
+  retryButton?.addEventListener('click', restorePaymentForm);
+  payment.addEventListener('payment:succeeded', showPaymentSuccess);
+  payment.addEventListener('payment:failed', showPaymentFailure);
+
+  methods.forEach((method) => {
+    method.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        method.querySelector('input')?.click();
+      }
+    });
+  });
+
+  const activeCustomerType = document.querySelector('.connection__switch--active[data-form]')?.dataset.form;
+  updateCustomerType(activeCustomerType || 'person');
+  updateOrder();
+
+  if (new URLSearchParams(window.location.search).get('payment') === 'failed') {
+    showPaymentFailure();
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
   initFormSwitcher();
   initContract();
   initConnectionAgreements();
+  initCheckoutFlow();
+  initPayment();
 });

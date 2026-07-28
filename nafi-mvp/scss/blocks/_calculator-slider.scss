@@ -7,9 +7,9 @@
         0 4px 16px rgba(200, 169, 106, 0.12);
 
     &__points {
-        display: flex;
-        justify-content: space-evenly;
-
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
         margin-bottom: 32px;
     }
 
@@ -18,16 +18,22 @@
         flex-direction: column;
         align-items: center;
         gap: 4px;
+        padding: 12px 8px;
+        text-align: center;
+        border-radius: 12px;
+        background: #fffaf0;
     }
 
     &__point-value {
         color: $color-primary;
-        font-size: 28px;
+        font-size: 22px;
         font-weight: 700;
     }
 
     &__point-text {
-        font-size: 14px;
+        color: $color-dim-gray;
+        font-size: 12px;
+        font-weight: 600;
     }
 
     &__price {
@@ -53,6 +59,26 @@
     &__price-value {
         font-size: 30px;
         font-weight: 700;
+        color: $color-primary;
     }
 
+    @media (max-width: 767px) {
+        padding: 20px;
+
+        &__points {
+            grid-template-columns: 1fr;
+            margin-bottom: 24px;
+        }
+
+        &__point {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        &__price {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
 }

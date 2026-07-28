@@ -21,11 +21,11 @@
         <div class="header__right">
           <nav class="nav nav--main" aria-label="Главная навигация">
             <a class="nav__link" href="#advantages">Преимущества</a>
-            <a class="nav__link" href="#pricing">Тарифы</a>
-            <a class="nav__link" href="#order">Оформление</a>
+            <a class="nav__link" href="#calculator">Тарифы</a>
+            <a class="nav__link" href="#connection">Оформление</a>
             <a class="nav__link" href="#footer">Контакты</a>
           </nav>
-          <button class="btn" type="button" aria-label="Подключить платформу">Подключить
+          <button class="btn" type="button" aria-label="Подключить платформу" data-go-calculator>Подключить
             платформу</button>
         </div>
       </div>
@@ -41,7 +41,7 @@
             Внедрение за&nbsp;1 &minus;2
             дня без сложной интеграции.</p>
           <div class="hero__actions">
-            <button class="btn btn--primary" type="button">Подключить платформу</button>
+            <button class="btn btn--primary" type="button" data-go-calculator>Подключить платформу</button>
             <button class="btn btn--ghost" type="button">Получить консультацию</button>
           </div>
 
@@ -199,7 +199,7 @@
                       aria-hidden="true">
                       <use xlink:href="images/sprite.svg#icon-platporm-fast"></use>
                     </svg>
-                    <span class="platform__text-top platform__text-top--fast">Настройка параметровы</span>
+                    <span class="platform__text-top platform__text-top--fast">Настройка параметров</span>
                     <p class="platform__text">Определите параметры подключения и
                       дополнительные опции.</p>
                   </div>
@@ -239,7 +239,7 @@
                   </div>
                 </li>
               </ul>
-              <button class="btn btn--fast platform__btn" type="button">Подключить платформу</button>
+              <button class="btn btn--fast platform__btn" type="button" data-go-calculator>Подключить платформу</button>
             </div>
           </div>
 
@@ -345,7 +345,7 @@
         </div>
       </div>
     </section>
-    <section class="calculator">
+    <section class="calculator" id="calculator">
       <div class="container">
         <div class="calculator__wrapper">
           <div class="calculator__content">
@@ -361,28 +361,27 @@
 
                 <div class="calculator-slider__points">
                   <div class="calculator-slider__point">
-                    <span class="calculator-slider__point-value">500</span>
-                    <span class="calculator-slider__point-text">сотрудников</span>
+                    <span class="calculator-slider__point-value">До 500</span>
+                    <span class="calculator-slider__point-text">390 ₽ / сотрудник</span>
                   </div>
 
                   <div class="calculator-slider__point">
-                    <span class="calculator-slider__point-value">1000</span>
-                    <span class="calculator-slider__point-text">сотрудников</span>
+                    <span class="calculator-slider__point-value">501–4 000</span>
+                    <span class="calculator-slider__point-text">370 ₽ / сотрудник</span>
                   </div>
 
                   <div class="calculator-slider__point">
-                    <span class="calculator-slider__point-value">4000</span>
-                    <span class="calculator-slider__point-text">сотрудников</span>
-                  </div>
-
-                  <div class="calculator-slider__point">
-                    <span class="calculator-slider__point-value">4000+</span>
-                    <span class="calculator-slider__point-text">сотрудников</span>
+                    <span class="calculator-slider__point-value">Более 4 000</span>
+                    <span class="calculator-slider__point-text">340 ₽ / сотрудник</span>
                   </div>
                 </div>
 
                 <div class="calculator-range">
-                  <input class="calculator-range__input" type="range" min="1" max="5000" step="1" value="0">
+                  <input class="calculator-range__input" type="range" min="1" max="5000" step="1" value="1250">
+                  <div class="calculator-range__marks" aria-hidden="true">
+                    <span class="calculator-range__mark" style="--mark-position: 10%"></span>
+                    <span class="calculator-range__mark" style="--mark-position: 80%"></span>
+                  </div>
                   <div class="calculator-range__tooltip">
                     <span class="calculator-range__value"></span>
                   </div>
@@ -393,8 +392,8 @@
                   <span class="calculator-slider__price-text">
                     Стоимость за пользователя <span class="calculator-slider__price-nds">(без учета НДС)</span>
                   </span>
-                  <span class="calculator-slider__price-value">
-                    490 ₽
+                  <span class="calculator-slider__price-value" data-current-price>
+                    370 ₽
                   </span>
                 </div>
               </div>
@@ -402,7 +401,7 @@
                 <label class="calculator-employees__label" for="employees">
                   Количество сотрудников :
                 </label>
-                <input class="calculator-employees__input" type="number" placeholder="1250" id="employees">
+                <input class="calculator-employees__input" type="number" min="1" max="5000" value="1250" id="employees">
               </div>
             </div>
             <div class="calculator__step">
@@ -657,7 +656,7 @@
               </div>
               <div class="result__row">
                 <dt class="result__term">Цена за пользователя</dt>
-                <dd class="result__value " data-price>490 ₽</dd>
+                <dd class="result__value " data-price>370 ₽</dd>
               </div>
               <div class="result__row">
                 <dt class="result__row ">Дополнительные опции</dt>
@@ -673,7 +672,7 @@
                 </div>
               </dl>
             </div>
-            <button class="btn btn--total" type="button">Продолжить</button>
+            <button class="btn btn--total" type="button" data-calculator-continue>Продолжить</button>
             <span class="summary__secure">
               <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
                 <use xlink:href="images/sprite.svg#icon-lock"></use>
@@ -684,7 +683,7 @@
         </div>
       </div>
     </section>
-    <section class="connection">
+    <section class="connection" id="connection">
       <div class="container">
 
         <header class="connection__header">
@@ -1180,6 +1179,244 @@
         </div>
       </div>
     </section>
+    <section class="payment" id="payment">
+      <div class="container">
+        <div class="payment__header">
+          <p class="payment__eyebrow">Шаг 5 · Завершение оформления</p>
+          <h2 class="payment__title">Выберите способ оплаты</h2>
+          <p class="payment__description">Последний шаг — после оплаты мы сразу отправим подтверждение и данные для запуска на вашу почту.</p>
+        </div>
+
+        <form class="payment__layout" action="#" method="post" data-payment-form>
+          <div class="payment__main">
+            <fieldset class="payment-methods">
+              <legend class="payment-methods__legend">Как вам удобно оплатить?</legend>
+
+              <label class="payment-method payment-method--card payment-method--active">
+                <input class="payment-method__input visually-hidden" type="radio" name="payment-method" value="card" checked>
+                <span class="payment-method__radio" aria-hidden="true"></span>
+                <span class="payment-method__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="2.75" y="5" width="18.5" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M3 9.5h18M6.5 15.25h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="payment-method__content">
+                  <strong>Банковской картой онлайн</strong>
+                  <small>Мгновенное подтверждение платежа</small>
+                </span>
+                <span class="payment-method__badges" aria-label="Поддерживаются карты МИР, Visa и Mastercard">
+                  <span class="payment-method__badge payment-method__badge--mir">МИР</span>
+                  <span class="payment-method__badge">VISA</span>
+                  <span class="payment-method__mastercard" aria-hidden="true"></span>
+                </span>
+              </label>
+
+              <label class="payment-method payment-method--invoice">
+                <input class="payment-method__input visually-hidden" type="radio" name="payment-method" value="invoice">
+                <span class="payment-method__radio" aria-hidden="true"></span>
+                <span class="payment-method__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M6 3.5h9l3 3V20.5H6v-17Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                    <path d="M15 3.8V7h3M9 11h6M9 14.5h6M9 18h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="payment-method__content">
+                  <strong>Оплата на расчётный счёт</strong>
+                  <small>Вы получите счёт на оплату по реквизитам</small>
+                </span>
+                <span class="payment-method__tag">Для юрлиц</span>
+              </label>
+
+              <label class="payment-method payment-method--sbp">
+                <input class="payment-method__input visually-hidden" type="radio" name="payment-method" value="sbp">
+                <span class="payment-method__radio" aria-hidden="true"></span>
+                <span class="payment-method__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8.2 4.5 12 8.3l3.8-3.8M8.2 19.5l3.8-3.8 3.8 3.8M4.5 8.2 8.3 12l-3.8 3.8M19.5 8.2 15.7 12l3.8 3.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="m9.6 9.6 2.4 2.4 2.4-2.4M9.6 14.4 12 12l2.4 2.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="payment-method__content">
+                  <strong>Через СБП</strong>
+                  <small>Оплата по QR-коду в приложении вашего банка</small>
+                </span>
+                <span class="payment-method__tag payment-method__tag--fast">Без комиссии</span>
+              </label>
+            </fieldset>
+
+            <div class="payment-help">
+              <span class="payment-help__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M20 11.5a7.5 7.5 0 0 1-8 7.48L7 21v-3.4a7.5 7.5 0 1 1 13-6.1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M8.5 10h7M8.5 13.5h4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span class="payment-help__text"><strong>Нужна помощь с оформлением?</strong><small>Менеджер ответит на вопросы и поможет подобрать способ оплаты.</small></span>
+              <button class="payment-help__button" type="button">Получить консультацию</button>
+            </div>
+          </div>
+
+          <aside class="summary summary--payment">
+            <div class="summary__head">
+              <div>
+                <span class="summary__label">Ваш заказ</span>
+                <h3 class="summary__title">Доступ к платформе</h3>
+              </div>
+              <span class="summary__status">Готов к оплате</span>
+            </div>
+
+            <dl class="summary__list">
+              <div class="summary__row">
+                <dt>Количество сотрудников</dt>
+                <dd data-payment-employees>1 250</dd>
+              </div>
+              <div class="summary__row">
+                <dt>Цена за пользователя</dt>
+                <dd data-payment-price>370 ₽</dd>
+              </div>
+              <div class="summary__row">
+                <dt>Дополнительные опции</dt>
+                <dd data-payment-options>0 ₽</dd>
+              </div>
+            </dl>
+
+            <div class="summary__total">
+              <span>Итого <small>без учёта НДС</small></span>
+              <strong data-payment-total>612 500 ₽</strong>
+            </div>
+
+            <button class="summary__submit" type="submit">
+              <span data-payment-button-text>Перейти к оплате</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="summary__legal">Нажимая кнопку, вы принимаете условия <a href="agreement.html" target="_blank" rel="noopener">договора-оферты</a>.</p>
+            <div class="summary__secure summary__secure--payment">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="5" y="10" width="14" height="11" rx="2.5" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M8.5 10V7.5a3.5 3.5 0 1 1 7 0V10M12 14v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+              <span><strong>Безопасная оплата</strong>Данные защищены по стандарту PCI DSS</span>
+            </div>
+          </aside>
+        </form>
+
+        <ul class="payment-trust">
+          <li class="payment-trust__item"><span>01</span><div><strong>Защищённый платёж</strong><small>Шифрование данных по международным стандартам</small></div></li>
+          <li class="payment-trust__item"><span>02</span><div><strong>Официальный договор</strong><small>Полный комплект закрывающих документов</small></div></li>
+          <li class="payment-trust__item"><span>03</span><div><strong>Поддержка 24/7</strong><small>Будем рядом на каждом этапе запуска</small></div></li>
+          <li class="payment-trust__item"><span>04</span><div><strong>Гарантия качества</strong><small>Экспертиза НАФИ и опыт крупных проектов</small></div></li>
+        </ul>
+
+        <div class="payment-success" hidden data-payment-success>
+          <header class="payment-success__hero">
+            <span class="payment-success__check" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m7 12.5 3.2 3.2L17.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <div>
+              <p class="payment-success__eyebrow">Платёж подтверждён</p>
+              <h2 class="payment-success__title" tabindex="-1">Оплата прошла успешно!</h2>
+              <p class="payment-success__description">Спасибо за доверие. Доступ к платформе уже активирован.</p>
+            </div>
+          </header>
+
+          <div class="payment-success__access">
+            <span class="payment-success__access-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="7.5" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M5 20c.4-4 2.7-6 7-6s6.6 2 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span><strong>Доступ к платформе активен</strong><small>Можно начинать работу прямо сейчас</small></span>
+            <a class="payment-success__cabinet" href="#home">Перейти в личный кабинет <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="payment-success__grid">
+            <section class="payment-success__section">
+              <p class="payment-success__section-label">Что дальше</p>
+              <h3>Первые шаги на платформе</h3>
+              <ol class="payment-success__steps">
+                <li><span>1</span><div><strong>Настройте проект</strong><small>Заполните основные параметры и пригласите коллег.</small></div></li>
+                <li><span>2</span><div><strong>Импортируйте данные</strong><small>Загрузите список сотрудников для запуска диагностики.</small></div></li>
+                <li><span>3</span><div><strong>Получите первый отчёт</strong><small>Результаты и рекомендации появятся после тестирования.</small></div></li>
+                <li><span>4</span><div><strong>Познакомьте команду с платформой</strong><small>Короткое микрообучение поможет быстро начать работу.</small></div></li>
+              </ol>
+            </section>
+
+            <section class="payment-success__section">
+              <p class="payment-success__section-label">Всё под рукой</p>
+              <h3>Документы и уведомления</h3>
+              <ul class="payment-success__documents">
+                <li>
+                  <span class="payment-success__document-icon" aria-hidden="true">PDF</span>
+                  <span><strong>Договор-оферта</strong><small>Отправлен на указанный email</small></span>
+                  <a href="agreement.html" target="_blank" rel="noopener">Открыть</a>
+                </li>
+                <li>
+                  <span class="payment-success__document-icon" aria-hidden="true">PDF</span>
+                  <span><strong>Счёт и чек об оплате</strong><small>Отправлены на указанный email</small></span>
+                  <button type="button">Скачать</button>
+                </li>
+                <li class="payment-success__document--pending">
+                  <span class="payment-success__document-icon" aria-hidden="true">···</span>
+                  <span><strong>Закрывающие документы</strong><small>Станут доступны после оказания услуг</small></span>
+                  <em>Ожидаются</em>
+                </li>
+              </ul>
+            </section>
+          </div>
+
+          <footer class="payment-success__footer">
+            <span class="payment-success__footer-icon" aria-hidden="true">?</span>
+            <span><strong>Остались вопросы?</strong><small>Персональный менеджер поможет с началом работы.</small></span>
+            <button type="button">Получить консультацию</button>
+          </footer>
+        </div>
+
+        <div class="payment-failure" hidden data-payment-failure>
+          <div class="payment-failure__card">
+            <span class="payment-failure__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 8v5M12 16.5v.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+            </span>
+
+            <p class="payment-failure__eyebrow">Платёж отклонён</p>
+            <h2 class="payment-failure__title" tabindex="-1">Не удалось провести оплату</h2>
+            <p class="payment-failure__description">
+              Деньги не списаны. Проверьте данные или попробуйте ещё раз — параметры заказа уже сохранены.
+            </p>
+
+            <dl class="payment-failure__details">
+              <div>
+                <dt>Сумма платежа</dt>
+                <dd data-payment-failure-total>0 ₽</dd>
+              </div>
+              <div>
+                <dt>Способ оплаты</dt>
+                <dd data-payment-failure-method>Банковская карта</dd>
+              </div>
+            </dl>
+
+            <div class="payment-failure__actions">
+              <button class="payment-failure__retry" type="button" data-payment-retry>
+                Попробовать ещё раз <span aria-hidden="true">→</span>
+              </button>
+              <button class="payment-failure__support" type="button">Связаться с поддержкой</button>
+            </div>
+
+            <p class="payment-failure__hint">
+              Если ошибка повторяется, выберите другой способ оплаты или обратитесь в банк.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <dialog class="contract-modal" data-contract-modal>
       <div class="contract-modal__header">
         <div>

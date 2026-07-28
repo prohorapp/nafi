@@ -28,4 +28,29 @@
         align-items: center;
         gap: 12px;
     }
+
+    @media (max-width: 1023px) {
+        .nav {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        &__inner {
+            gap: 12px;
+            min-height: 64px;
+        }
+
+        &__logo {
+            width: 90px;
+            height: auto;
+        }
+
+        &__right .btn {
+            width: auto;
+            min-height: 40px;
+            padding: 9px 12px;
+            font-size: 12px;
+        }
+    }
 }

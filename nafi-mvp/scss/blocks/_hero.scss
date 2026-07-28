@@ -70,4 +70,54 @@
         font-size: 20px;
         color: $color-white;
     }
+
+    @media (max-width: 1023px) {
+        min-height: auto;
+        padding: 70px 0;
+
+        &__title {
+            font-size: 42px;
+        }
+
+        &__actions {
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 50px 0;
+
+        &__content {
+            gap: 28px;
+        }
+
+        &__title {
+            font-size: clamp(32px, 10vw, 40px);
+            line-height: 1.08;
+        }
+
+        &__description {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        &__actions {
+            flex-direction: column;
+        }
+
+        &__actions .btn {
+            width: 100%;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        &__wrap {
+            width: 100%;
+            min-height: 100px;
+        }
+    }
 }
