@@ -23,6 +23,10 @@ body {
   color: $color-black;
 }
 
+body.scroll-lock {
+  overflow: hidden;
+}
+
 @media print {
   body * {
     visibility: hidden;

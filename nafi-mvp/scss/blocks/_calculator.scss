@@ -110,6 +110,22 @@
         font-weight: 400;
     }
 
+    &__note-btn {
+        padding: 0;
+        font-weight: 400;
+        font-size: 16px;
+        border: none;
+        background-color: transparent;
+        transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+        text-decoration-line: underline;
+        cursor: pointer;
+        color: $color-blue;
+
+        &:hover {
+            transform: translateY(-1px);
+        }
+    }
+
     @media (max-width: 1023px) {
         &__wrapper {
             grid-template-columns: 1fr;

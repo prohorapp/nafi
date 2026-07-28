@@ -51,7 +51,7 @@ const initCalculator = () => {
 
   // Только платные опции калькулятора
   const optionCheckboxes = document.querySelectorAll(
-    '.calculator .checkbox__input[data-price]'
+    '.calculator .checkbox__input[data-price], .services-modal .checkbox__input[data-price]'
   );
 
   if (
@@ -111,6 +111,10 @@ const initCalculator = () => {
 
     resultTotal.textContent =
       `${total.toLocaleString('ru-RU')} ₽`;
+
+    calculator.dispatchEvent(
+      new CustomEvent('calculator:updated')
+    );
   };
 
   range.addEventListener('input', () => {
@@ -144,6 +148,71 @@ const initCalculator = () => {
   });
 
   updateCalculator();
+};
+
+const initServicesModal = () => {
+  const modal = document.querySelector('[data-services-modal]');
+  const openButton = document.querySelector('[data-services-open]');
+
+  if (!modal || !openButton) {
+    return;
+  }
+
+  const closeButton = modal.querySelector('[data-services-close]');
+  const applyButton = modal.querySelector('[data-services-apply]');
+  const serviceInputs = modal.querySelectorAll(
+    '.checkbox__input[data-price]'
+  );
+  const countOutput = modal.querySelector('[data-services-count]');
+  const totalOutput = modal.querySelector('[data-services-total]');
+
+  const updateSummary = () => {
+    const selected = Array.from(serviceInputs).filter(
+      (input) => input.checked
+    );
+    const total = selected.reduce(
+      (sum, input) => sum + (Number(input.dataset.price) || 0),
+      0
+    );
+
+    if (countOutput) {
+      countOutput.textContent = selected.length.toLocaleString('ru-RU');
+    }
+
+    if (totalOutput) {
+      totalOutput.textContent = `${total.toLocaleString('ru-RU')} ₽`;
+    }
+  };
+
+  const closeModal = () => {
+    modal.close();
+  };
+
+  openButton.addEventListener('click', () => {
+    updateSummary();
+    modal.showModal();
+    document.body.classList.add('scroll-lock');
+  });
+
+  closeButton?.addEventListener('click', closeModal);
+  applyButton?.addEventListener('click', closeModal);
+
+  serviceInputs.forEach((input) => {
+    input.addEventListener('change', updateSummary);
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('close', () => {
+    document.body.classList.remove('scroll-lock');
+    openButton.focus();
+  });
+
+  updateSummary();
 };
 
 const initFormSwitcher = () => {
@@ -424,7 +493,9 @@ const initPayment = () => {
 
     const employees = Number(calculator.querySelector('.calculator-employees__input')?.value) || 0;
     const price = getPricePerEmployee(employees);
-    const optionInputs = calculator.querySelectorAll('.checkbox__input[data-price]');
+    const optionInputs = document.querySelectorAll(
+      '.calculator .checkbox__input[data-price], .services-modal .checkbox__input[data-price]'
+    );
     let optionsPrice = 0;
 
     optionInputs.forEach((input) => {
@@ -527,6 +598,7 @@ const initPayment = () => {
   });
   calculator?.addEventListener('input', updateOrder);
   calculator?.addEventListener('change', updateOrder);
+  calculator?.addEventListener('calculator:updated', updateOrder);
 
   paymentForm?.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -556,6 +628,7 @@ const initPayment = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   initCalculator();
+  initServicesModal();
   initFormSwitcher();
   initContract();
   initConnectionAgreements();

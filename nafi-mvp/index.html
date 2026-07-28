@@ -362,7 +362,7 @@
                 <div class="calculator-slider__points">
                   <span class="calculator-slider__point-value">До 500</span>
                   <span class="calculator-slider__point-value">501–4 000</span>
-                  <span class="calculator-slider__point-value">Более 4 000</span>
+                  <span class="calculator-slider__point-value">4 000+</span>
                 </div>
 
                 <div class="calculator-range">
@@ -410,14 +410,14 @@
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-1"></use>
                       </svg>
                       <div class="checkbox__info">
-                        <span class="checkbox__title">Подготовка полного <span class="checkbox__text-bold">
-                            аналитического отчета</span></span>
+
                         <span class="checkbox__description">
-                          Включающего оценку уровня цифровой грамотности, а также рекомендации по его повышению
+                          Автоматическое<span class="checkbox__text-bold">
+                            формирование сертификатов</span> для сотрудников с&nbsp;результатами диагностики
                         </span>
                       </div>
                     </label>
-                    <span class="checkbox__price">+20 000 ₽</span>
+                    <span class="checkbox__price">+2500 ₽</span>
                   </div>
                 </li>
 
@@ -432,10 +432,10 @@
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-2"></use>
                       </svg>
                       <div class="checkbox__info">
-                        <span class="checkbox__description">Обработка результатов</span>
+                        <span class="checkbox__description">Рекомендации по&nbsp;развитию</span>
                       </div>
                     </label>
-                    <span class="checkbox__price">+5000 ₽</span>
+                    <span class="checkbox__price">+3000 ₽</span>
                   </div>
                 </li>
 
@@ -451,12 +451,13 @@
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-3"></use>
                       </svg>
                       <div class="checkbox__info">
-                        <span class="checkbox___description"><span class="checkbox__text-bold">Микрообучение</span>
-                          через показ комментариев к&nbsp;ответам сразу после ответа или
-                          в&nbsp;конце тестирования</span>
+                        <span class="checkbox___description">
+                          Организация доступа к&nbsp;платформе по&nbsp;индивидуальным ссылкам или интеграция через API
+                          или фреймворк-интерфейсы в&nbsp;вашу LMS
+                        </span>
                       </div>
                     </label>
-                    <span class="checkbox__price">+10 000 ₽</span>
+                    <span class="checkbox__price">+8500 ₽</span>
                   </div>
                 </li>
 
@@ -471,17 +472,14 @@
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-4"></use>
                       </svg>
                       <div class="checkbox__info">
-                        <span class="checkbox__description">Автоматическое <span
-                            class="checkbox__text-bold">формирование
-                            сертификатов
-                          </span> для сотрудников с результатами диагностики</span>
+                        <span class="checkbox__description">Вывод подсказок после неверного ответа</span>
                       </div>
                     </label>
                     <span class="checkbox__price">+2500 ₽</span>
                   </div>
                 </li>
 
-                <li class="calculator__option">
+                <!-- <li class="calculator__option">
                   <div class="checkbox">
                     <label class="checkbox__label" for="recommendations">
                       <input class="checkbox__input visually-hidden" type="checkbox" id="recommendations"
@@ -560,7 +558,7 @@
                     </label>
                     <span class="checkbox__price">+1500 ₽</span>
                   </div>
-                </li>
+                </li> -->
               </ul>
             </div>
             <div class="calculator__note">
@@ -568,10 +566,22 @@
                 <use xlink:href="images/sprite.svg#icon-calculator-note"></use>
               </svg>
               <p class="calculator__note-text">
-                Также оценке подлежат услуги менеджмента проекта,
-                обработки данных и подготовки аналитического отчета.
+                Также оценке подлежат услуги менеджмента проекта, обработки данных и&nbsp;подготовки аналитического
+                отчета.
               </p>
-              <button class="btn btn--black" type="button">Получить консультацию</button>
+            </div>
+            <div class="calculator__note">
+              <svg class="calculator__note-icon" width="50" height="50" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-calculator-note"></use>
+              </svg>
+              <p class="calculator__note-text">
+                Для вашего проекта также доступны <button class="calculator__note-btn" type="button"
+                  data-services-open>дополнительные
+                  услуги</button>
+                и&nbsp;индивидуальная настройка. Мы&nbsp;можем
+                адаптировать платформу под ваши задачи.
+              </p>
+              <button class="btn btn--black btn--black-wh" type="button">Получить консультацию</button>
             </div>
           </div>
 
@@ -585,7 +595,7 @@
                   <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
                     <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
                   </svg>
-                  <p class="advantages__text">Базовый функционал платформы</p>
+                  <p class="advantages__text">Доступ к&nbsp;платформе</p>
                 </div>
               </li>
               <li class="advantages__item">
@@ -601,14 +611,6 @@
                   <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
                     <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
                   </svg>
-                  <p class="advantages__text">Помощь в настройке рассылки</p>
-                </div>
-              </li>
-              <li class="advantages__item">
-                <div class="advantages__wrapper">
-                  <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
-                    <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
-                  </svg>
                   <p class="advantages__text">Личный кабинет участника</p>
                 </div>
               </li>
@@ -617,7 +619,7 @@
                   <svg class="advantages__icon" width="24" height="24" aria-hidden="true">
                     <use xlink:href="images/sprite.svg#icon-advantages-item"></use>
                   </svg>
-                  <p class="advantages__text"> Базовая аналитика</p>
+                  <p class="advantages__text">Базовая аналитика</p>
                 </div>
               </li>
               <li class="advantages__item">
@@ -1248,7 +1250,7 @@
               </span>
               <span class="payment-help__text"><strong>Нужна помощь с оформлением?</strong><small>Менеджер ответит на
                   вопросы и поможет подобрать способ оплаты.</small></span>
-              <button class="payment-help__button" type="button">Получить консультацию</button>
+              <button class="btn btn--white " type="button">Получить консультацию</button>
             </div>
           </div>
 
@@ -1437,6 +1439,182 @@
         </div>
       </div>
     </section>
+
+    <dialog class="services-modal" data-services-modal aria-labelledby="services-modal-title">
+      <div class="services-modal__header">
+        <div>
+          <span class="services-modal__eyebrow">Индивидуальная настройка</span>
+          <h2 class="services-modal__title" id="services-modal-title">Дополнительные услуги</h2>
+          <p class="services-modal__description">Выберите услуги — их стоимость сразу добавится к расчёту проекта.</p>
+        </div>
+        <button class="services-modal__close" type="button" aria-label="Закрыть окно" data-services-close>×</button>
+      </div>
+
+      <div class="services-modal__body">
+        <ul class="calculator__options services-modal__list">
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-report">
+                <input class="checkbox__input visually-hidden" id="service-report" type="checkbox"
+                  data-calculator-option data-price="20000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Подготовка полного <span
+                      class="checkbox__text-bold">аналитического отчёта</span> с оценкой цифровой грамотности и
+                    рекомендациями</span></span>
+              </label>
+              <span class="checkbox__price">+20 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-mailing">
+                <input class="checkbox__input visually-hidden" id="service-mailing" type="checkbox"
+                  data-calculator-option data-price="5000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Помощь в настройке рассылки и
+                    подготовке текстов приглашений</span></span>
+              </label>
+              <span class="checkbox__price">+5 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-processing">
+                <input class="checkbox__input visually-hidden" id="service-processing" type="checkbox"
+                  data-calculator-option data-price="5000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Обработка результатов</span></span>
+              </label>
+              <span class="checkbox__price">+5 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-microlearning">
+                <input class="checkbox__input visually-hidden" id="service-microlearning" type="checkbox"
+                  data-calculator-option data-price="10000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Микрообучение через комментарии к
+                    ответам сразу после ответа или в конце тестирования</span></span>
+              </label>
+              <span class="checkbox__price">+10 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-hints">
+                <input class="checkbox__input visually-hidden" id="service-hints" type="checkbox" data-calculator-option
+                  data-price="1500">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Вывод подсказок в
+                    результатах</span></span>
+              </label>
+              <span class="checkbox__price">+1 500 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-industry">
+                <input class="checkbox__input visually-hidden" id="service-industry" type="checkbox"
+                  data-calculator-option data-price="15000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Дополнение теста вопросами с учётом
+                    отраслевой специфики</span></span>
+              </label>
+              <span class="checkbox__price">+15 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-proctoring">
+                <input class="checkbox__input visually-hidden" id="service-proctoring" type="checkbox"
+                  data-calculator-option data-price="12000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Организация прокторинга на время
+                    проведения диагностики</span></span>
+              </label>
+              <span class="checkbox__price">+12 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-waves">
+                <input class="checkbox__input visually-hidden" id="service-waves" type="checkbox" data-calculator-option
+                  data-price="25000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Несколько волн тестирования для оценки
+                    эффективности обучения и сравнения показателей</span></span>
+              </label>
+              <span class="checkbox__price">+25 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-training">
+                <input class="checkbox__input visually-hidden" id="service-training" type="checkbox"
+                  data-calculator-option data-price="30000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Корпоративный тренинг по итогам
+                    диагностики для команды</span></span>
+              </label>
+              <span class="checkbox__price">+30 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-custom-questions">
+                <input class="checkbox__input visually-hidden" id="service-custom-questions" type="checkbox"
+                  data-calculator-option data-price="15000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Добавление вопросов внутрикорпоративных
+                    исследований для решения ваших задач</span></span>
+              </label>
+              <span class="checkbox__price">+15 000 ₽</span>
+            </div>
+          </li>
+          <li class="calculator__option">
+            <div class="checkbox">
+              <label class="checkbox__label" for="service-hr-brand">
+                <input class="checkbox__input visually-hidden" id="service-hr-brand" type="checkbox"
+                  data-calculator-option data-price="20000">
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__info"><span class="checkbox__description">Подготовка истории успеха HR-бренда и
+                    распространение пресс-релиза в СМИ</span></span>
+              </label>
+              <span class="checkbox__price">+20 000 ₽</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="services-modal__footer">
+        <span class="services-modal__summary"><small>Выбрано: <span data-services-count>0</span></small><strong
+            data-services-total>0 ₽</strong></span>
+        <button class="btn btn--total services-modal__apply" type="button" data-services-apply>Добавить услуги</button>
+      </div>
+    </dialog>
 
     <dialog class="contract-modal" data-contract-modal>
       <div class="contract-modal__header">
