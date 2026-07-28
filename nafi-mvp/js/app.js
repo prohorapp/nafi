@@ -10,6 +10,68 @@ const getPricePerEmployee = (employees) => {
   return 340;
 };
 
+const initBurgerMenu = () => {
+  const header = document.querySelector('.header');
+  const toggle = header?.querySelector('[data-menu-toggle]');
+  const menu = header?.querySelector('#main-menu');
+
+  if (!header || !toggle || !menu) {
+    return;
+  }
+
+  const closeMenu = (restoreFocus = false) => {
+    header.classList.remove('header--menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Открыть меню');
+
+    if (restoreFocus) {
+      toggle.focus();
+    }
+  };
+
+  const openMenu = () => {
+    header.classList.add('header--menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'Закрыть меню');
+  };
+
+  toggle.addEventListener('click', () => {
+    if (header.classList.contains('header--menu-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  menu.querySelectorAll('a, button').forEach((item) => {
+    item.addEventListener('click', () => closeMenu());
+  });
+
+  document.addEventListener('click', (event) => {
+    if (
+      header.classList.contains('header--menu-open') &&
+      !header.contains(event.target)
+    ) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (
+      event.key === 'Escape' &&
+      header.classList.contains('header--menu-open')
+    ) {
+      closeMenu(true);
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1023) {
+      closeMenu();
+    }
+  });
+};
+
 const initCalculator = () => {
   const calculator = document.querySelector('.calculator');
 
@@ -213,6 +275,83 @@ const initServicesModal = () => {
   });
 
   updateSummary();
+};
+
+const initConsultationModal = () => {
+  const modal = document.querySelector('[data-consultation-modal]');
+  const openButtons = document.querySelectorAll('[data-consultation-open]');
+
+  if (!modal || !openButtons.length) {
+    return;
+  }
+
+  const form = modal.querySelector('[data-consultation-form]');
+  const content = modal.querySelector('.consultation-form__content');
+  const success = modal.querySelector('[data-consultation-success]');
+  const closeButton = modal.querySelector('[data-consultation-close]');
+  const doneButton = modal.querySelector('[data-consultation-done]');
+  const agreement = modal.querySelector('#consultation-agreement');
+  const submitButton = form?.querySelector('button[type="submit"]');
+  let lastOpenButton = null;
+
+  const updateSubmit = () => {
+    if (submitButton) {
+      submitButton.disabled = !agreement?.checked;
+    }
+  };
+
+  const closeModal = () => {
+    modal.close();
+  };
+
+  openButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      lastOpenButton = button;
+
+      if (content) content.hidden = false;
+      if (success) success.hidden = true;
+
+      modal.showModal();
+      document.body.classList.add('scroll-lock');
+      modal.querySelector('input:not([type="checkbox"])')?.focus();
+    });
+  });
+
+  agreement?.addEventListener('change', updateSubmit);
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (content) content.hidden = true;
+    if (success) success.hidden = false;
+    success?.querySelector('h2')?.setAttribute('tabindex', '-1');
+    success?.querySelector('h2')?.focus();
+  });
+
+  closeButton?.addEventListener('click', closeModal);
+  doneButton?.addEventListener('click', () => {
+    form?.reset();
+    updateSubmit();
+    closeModal();
+  });
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+
+  modal.addEventListener('close', () => {
+    document.body.classList.remove('scroll-lock');
+    lastOpenButton?.focus();
+  });
+
+  updateSubmit();
 };
 
 const initFormSwitcher = () => {
@@ -627,8 +766,10 @@ const initPayment = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  initBurgerMenu();
   initCalculator();
   initServicesModal();
+  initConsultationModal();
   initFormSwitcher();
   initContract();
   initConnectionAgreements();

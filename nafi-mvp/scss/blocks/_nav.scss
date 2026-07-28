@@ -2,6 +2,7 @@
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
+    align-items: center;
 
     &__link {
         color: $color-white;
@@ -10,5 +11,9 @@
 
     &__link:hover {
         color: $color-white;
+    }
+
+    &__action {
+        display: none;
     }
 }

@@ -19,14 +19,20 @@
           <img class="header__logo" src="images/logo.png" alt="НАФИ" height="40" width="113">
         </a>
         <div class="header__right">
-          <nav class="nav nav--main" aria-label="Главная навигация">
+          <nav class="nav nav--main" id="main-menu" aria-label="Главная навигация">
             <a class="nav__link" href="#advantages">Преимущества</a>
             <a class="nav__link" href="#calculator">Тарифы</a>
             <a class="nav__link" href="#connection">Оформление</a>
             <a class="nav__link" href="#footer">Контакты</a>
+            <button class="btn" type="button" aria-label="Подключить платформу" data-go-calculator>Подключить
+              платформу</button>
           </nav>
-          <button class="btn" type="button" aria-label="Подключить платформу" data-go-calculator>Подключить
-            платформу</button>
+          <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false"
+            aria-controls="main-menu" data-menu-toggle>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </div>
     </div>
@@ -42,7 +48,7 @@
             дня без сложной интеграции.</p>
           <div class="hero__actions">
             <button class="btn btn--primary" type="button" data-go-calculator>Подключить платформу</button>
-            <button class="btn btn--ghost" type="button">Получить консультацию</button>
+            <button class="btn btn--ghost" type="button" data-consultation-open>Получить консультацию</button>
           </div>
 
           <ul class="hero__list">
@@ -478,87 +484,6 @@
                     <span class="checkbox__price">+2500 ₽</span>
                   </div>
                 </li>
-
-                <!-- <li class="calculator__option">
-                  <div class="checkbox">
-                    <label class="checkbox__label" for="recommendations">
-                      <input class="checkbox__input visually-hidden" type="checkbox" id="recommendations"
-                        data-price="3000">
-                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
-                      </svg>
-                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-5"></use>
-                      </svg>
-                      <div class="checkbox__info">
-                        <span class="checkbox____description">Рекомендации по&nbsp;развитию</span>
-                      </div>
-                    </label>
-                    <span class="checkbox__price">+3000 ₽</span>
-                  </div>
-                </li>
-
-                <li class="calculator__option">
-                  <div class="checkbox">
-                    <label class="checkbox__label" for="organization">
-                      <input class="checkbox__input visually-hidden" type="checkbox" id="organization"
-                        data-price="8500">
-                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
-                      </svg>
-                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-6"></use>
-                      </svg>
-                      <div class="checkbox__info">
-                        <span class="checkbox__description">
-                          Организация доступа к&nbsp;платформе по&nbsp;индивидуальным ссылкам или интеграция через API
-                          или фреймворк-интерфейсы в&nbsp;вашу LMS
-                        </span>
-                      </div>
-                    </label>
-                    <span class="checkbox__price">8500 ₽</span>
-                  </div>
-                </li>
-
-                <li class="calculator__option">
-                  <div class="checkbox">
-                    <label class="checkbox__label" for="conclusion">
-                      <input class="checkbox__input visually-hidden" type="checkbox" id="conclusion" data-price="2500">
-                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
-                      </svg>
-                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-7"></use>
-                      </svg>
-                      <div class="checkbox__info">
-                        <span class="checkbox__description">
-                          Вывод подсказок после неверного ответа
-                        </span>
-                      </div>
-                    </label>
-                    <span class="checkbox__price">+2500 ₽</span>
-                  </div>
-                </li>
-
-                <li class="calculator__option">
-                  <div class="checkbox">
-                    <label class="checkbox__label" for="results">
-                      <input class="checkbox__input visually-hidden" type="checkbox" id="results" data-price="1500">
-                      <svg class="checkbox__icon-check" width="24" height="24" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
-                      </svg>
-                      <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
-                        <use xlink:href="images/sprite.svg#icon-calculator-checkbox-8"></use>
-                      </svg>
-                      <div class="checkbox__info">
-                        <span class="checkbox__description">
-                          Вывод подсказок в&nbsp;результатах
-                        </span>
-                      </div>
-                    </label>
-                    <span class="checkbox__price">+1500 ₽</span>
-                  </div>
-                </li> -->
               </ul>
             </div>
             <div class="calculator__note">
@@ -581,7 +506,8 @@
                 и&nbsp;индивидуальная настройка. Мы&nbsp;можем
                 адаптировать платформу под ваши задачи.
               </p>
-              <button class="btn btn--black btn--black-wh" type="button">Получить консультацию</button>
+              <button class="btn btn--black btn--black-wh" type="button" data-consultation-open>Получить
+                консультацию</button>
             </div>
           </div>
 
@@ -958,15 +884,20 @@
                       </label>
                     </div>
                   </div>
-                  <div class="custom-input">
-                    <label class="custom-input__label">
-                      <span class="custom-input__text">Комментарий</span>
+                  <fieldset class="connection-form__fieldset">
+                  <legend class="connection-form__legend connection-form__legend--lines">
+                    Дополнительные данные
+                  </legend>
 
-                      <textarea class="custom-input__input custom-input__input--textarea" name="company-comment"
-                        placeholder="Введите значение" rows="4"></textarea>
-                    </label>
-                  </div>
-                </fieldset>connection-form__agreement
+                  <label class="custom-input__label">
+                    <span class="custom-input__text">Комментарий</span>
+
+                    <textarea class="custom-input__input custom-input__input--textarea" name="person-comment"
+                      placeholder="Введите значение" rows="4"></textarea>
+                  </label>
+                </fieldset>
+                </fieldset>
+                
                 <div class="checkbox checkbox--agreement connection-form__agreement">
                   <label class="checkbox__label" for="personal-data-consent">
                     <input class="checkbox__input visually-hidden" id="personals-data-consent"
@@ -1250,7 +1181,7 @@
               </span>
               <span class="payment-help__text"><strong>Нужна помощь с оформлением?</strong><small>Менеджер ответит на
                   вопросы и поможет подобрать способ оплаты.</small></span>
-              <button class="btn btn--white " type="button">Получить консультацию</button>
+              <button class="btn btn--white " type="button" data-consultation-open>Получить консультацию</button>
             </div>
           </div>
 
@@ -1395,7 +1326,7 @@
             <span class="payment-success__footer-icon" aria-hidden="true">?</span>
             <span><strong>Остались вопросы?</strong><small>Персональный менеджер поможет с началом
                 работы.</small></span>
-            <button type="button">Получить консультацию</button>
+            <button type="button" data-consultation-open>Получить консультацию</button>
           </footer>
         </div>
 
@@ -1439,6 +1370,94 @@
         </div>
       </div>
     </section>
+
+    <dialog class="consultation-modal" data-consultation-modal aria-labelledby="consultation-modal-title">
+      <div class="consultation-modal__panel">
+        <button class="consultation-modal__close" type="button" aria-label="Закрыть форму"
+          data-consultation-close>×</button>
+
+        <form class="consultation-form" action="#" method="post" data-consultation-form>
+          <div class="consultation-form__content">
+            <header class="consultation-form__header">
+              <span class="consultation-form__eyebrow">Поможем разобраться</span>
+              <h2 class="consultation-form__title" id="consultation-modal-title">Получить консультацию</h2>
+              <p class="consultation-form__description">Оставьте заявку — наш менеджер свяжется с вами и ответит на все
+                вопросы.</p>
+            </header>
+
+            <div class="consultation-form__grid">
+              <label class="custom-input__label">
+                <span class="custom-input__text">Фамилия</span>
+                <input class="custom-input__input" type="text" name="consultation-surname"
+                  placeholder="Введите значение" autocomplete="family-name" required>
+              </label>
+              <label class="custom-input__label">
+                <span class="custom-input__text">Имя</span>
+                <input class="custom-input__input" type="text" name="consultation-name" placeholder="Введите значение"
+                  autocomplete="given-name" required>
+              </label>
+              <label class="custom-input__label">
+                <span class="custom-input__text">E-mail</span>
+                <input class="custom-input__input" type="email" name="consultation-email" placeholder="Введите значение"
+                  autocomplete="email" required>
+              </label>
+              <label class="custom-input__label">
+                <span class="custom-input__text">Телефон</span>
+                <input class="custom-input__input" type="tel" name="consultation-phone" placeholder="+7 (___) ___-__-__"
+                  autocomplete="tel" required>
+              </label>
+            </div>
+
+            <fieldset class="consultation-form__additional">
+              <legend>Дополнительные данные</legend>
+              <label class="custom-input__label">
+                <span class="custom-input__text">Компания</span>
+                <input class="custom-input__input" type="text" name="consultation-company"
+                  placeholder="Введите значение" autocomplete="organization">
+              </label>
+              <label class="custom-input__label">
+                <span class="custom-input__text">Комментарий</span>
+                <textarea class="custom-input__input custom-input__input--textarea" name="consultation-comment"
+                  placeholder="Расскажите, чем мы можем помочь" rows="3"></textarea>
+              </label>
+            </fieldset>
+
+            <div class="checkbox checkbox--agreement consultation-form__agreement">
+              <label class="checkbox__label" for="consultation-agreement">
+                <input class="checkbox__input visually-hidden" id="consultation-agreement" name="consultation-agreement"
+                  type="checkbox" required>
+                <svg class="checkbox__icon-check" aria-hidden="true">
+                  <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
+                </svg>
+                <span class="checkbox__text">
+                  Я принимаю <a class="checkbox__link" href="agreement.html" target="_blank"
+                    rel="noopener">пользовательское соглашение</a>
+                  и ознакомлен(а) с <a class="checkbox__link" href="privacy.html" target="_blank"
+                    rel="noopener">политикой обработки персональных данных</a>.
+                </span>
+              </label>
+            </div>
+
+            <button class="btn btn--total consultation-form__submit" type="submit" disabled>Отправить данные <span
+                aria-hidden="true">→</span></button>
+
+            <div class="consultation-form__security">
+              <svg width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#icon-lock"></use>
+              </svg>
+              <span>Ваши данные защищены и не передаются третьим лицам</span>
+            </div>
+          </div>
+
+          <div class="consultation-form__success" hidden data-consultation-success>
+            <span class="consultation-form__success-icon" aria-hidden="true">✓</span>
+            <h2>Заявка отправлена</h2>
+            <p>Спасибо! Менеджер свяжется с вами в ближайшее рабочее время.</p>
+            <button class="btn btn--total" type="button" data-consultation-done>Хорошо</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
 
     <dialog class="services-modal" data-services-modal aria-labelledby="services-modal-title">
       <div class="services-modal__header">
@@ -1802,6 +1821,48 @@
       </div>
     </dialog>
   </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__main">
+        <div class="footer__intro">
+          <a class="footer__logo-link" href="#home" aria-label="НАФИ — на главную">
+            <img class="footer__logo" src="images/logo.png" alt="НАФИ" width="113" height="40">
+          </a>
+          <p class="footer__operator">Оператор проекта «Цифровой гражданин» — <strong>Аналитический центр НАФИ</strong>
+          </p>
+          <p class="footer__text">Если у вас есть вопросы, комментарии, пожелания или замечания, пожалуйста, свяжитесь с
+            нами.</p>
+        </div>
+
+        <div class="footer__contacts">
+          <p class="footer__label">Контакты</p>
+          <address class="footer__address">
+            <span class="footer__contact">
+              <span class="footer__contact-label">Адрес</span>
+              <span>Россия, г. Москва, ул. 1-я Брестская, д. 29</span>
+            </span>
+            <a class="footer__contact" href="tel:+74951520887">
+              <span class="footer__contact-label">Телефон</span>
+              <span>+7 (495) 152-08-87</span>
+            </a>
+            <a class="footer__contact" href="mailto:welcome@it-gramota.ru">
+              <span class="footer__contact-label">Email</span>
+              <span>welcome@it-gramota.ru</span>
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© Аналитический центр НАФИ</span>
+        <nav class="footer__legal" aria-label="Правовая информация">
+          <a href="privacy.html">Политика обработки данных</a>
+          <a href="agreement.html">Пользовательское соглашение</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
