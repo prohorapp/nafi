@@ -7,33 +7,26 @@
         0 4px 16px rgba(200, 169, 106, 0.12);
 
     &__points {
+        padding: 12px 8px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        background: #fffaf0;
+        border-radius: 12px;
         gap: 12px;
         margin-bottom: 32px;
+        justify-items: center
     }
 
     &__point {
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 4px;
-        padding: 12px 8px;
-        text-align: center;
-        border-radius: 12px;
-        background: #fffaf0;
     }
 
     &__point-value {
         color: $color-primary;
         font-size: 22px;
         font-weight: 700;
-    }
-
-    &__point-text {
-        color: $color-dim-gray;
-        font-size: 12px;
-        font-weight: 600;
     }
 
     &__price {

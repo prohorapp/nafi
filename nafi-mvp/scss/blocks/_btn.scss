@@ -51,6 +51,9 @@
         border-radius: 10px;
         width: 300px;
         padding: 10px 50px;
+        @include vp-1023{
+            width: 100%;
+        }
     }
 
     &--black {

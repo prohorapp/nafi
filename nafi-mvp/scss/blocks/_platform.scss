@@ -61,26 +61,24 @@
 
         &::after {
             content: counter(step);
-
             position: absolute;
             top: -55px;
             left: 50%;
             transform: translateX(-50%);
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             width: 40px;
             height: 40px;
-
             background-color: $color-primary;
             color: $color-white;
-
             border-radius: 50%;
-
             font-size: 22px;
             font-weight: 700;
+
+            @include vp-767{
+                top: 10px;
+            }
         }
 
 
@@ -238,12 +236,17 @@
             flex-wrap: wrap;
         }
 
-        &__list > li {
+        &__list>li {
             flex: 1 1 calc(50% - 12px);
         }
 
         &__flex-lf {
             flex-direction: column;
+        }
+
+        &__inner {
+            min-width: 100%;
+            min-height: 177px;
         }
 
         &__key,
@@ -260,7 +263,7 @@
             font-size: 29px;
         }
 
-        &__list > li {
+        &__list>li {
             flex-basis: 100%;
         }
 
@@ -268,7 +271,12 @@
             grid-template-columns: 1fr;
         }
 
-        &__inner,
+        &__inner {
+            padding: 18px;
+            border-radius: 20px;
+            min-height: auto;
+        }
+
         &__key,
         &__fast {
             padding: 18px;
