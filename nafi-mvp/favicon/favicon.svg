@@ -1,9 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><mask id="mask0_1_796" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
-<path d="M32 0H0V32H32V0Z" fill="white"></path>
-</mask><g mask="url(#mask0_1_796)">
-<path d="M16 32C24.8366 32 32 24.8366 32 16C32 7.16344 24.8366 0 16 0C7.16344 0 0 7.16344 0 16C0 24.8366 7.16344 32 16 32Z" fill="#1919EF"></path>
-<path d="M22.2153 20.3204C29.0469 13.9973 24.7096 6.00637 15.6758 8.45139C20.173 8.45139 23.5284 11.7598 23.5284 16.0546C23.5342 17.578 23.076 19.0667 22.2153 20.3204Z" fill="white"></path>
-<path d="M17.9323 13.1875H17.9454C14.1889 9.34752 10.233 7.27961 8.93474 8.52338C8.57694 8.88778 8.47023 9.49632 8.59007 10.2804C8.16227 7.79281 14.4811 10.8212 17.9323 13.1875Z" fill="white"></path>
-<path d="M23.0669 23.3703C23.4122 23.0181 23.5313 22.4297 23.4122 21.6844C23.7167 24.0768 17.5054 21.1357 14.0687 18.8742C14.0669 18.8743 14.0651 18.8741 14.0634 18.8735C14.0617 18.8729 14.0602 18.872 14.0588 18.8708C14.0575 18.8696 14.0565 18.8681 14.0558 18.8665C14.055 18.8648 14.0547 18.8631 14.0547 18.8613C17.8107 22.5734 21.7661 24.5859 23.0669 23.3703Z" fill="white"></path>
-<path d="M16.3243 23.5922C11.8166 23.5922 8.46048 20.2994 8.46048 15.9924C8.45412 14.4698 8.9115 12.9818 9.77112 11.7285C2.93308 18.1121 7.34732 26.0459 16.3243 23.5922Z" fill="white"></path>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><defs>
+    <linearGradient id="favicon-gold" x1="18" y1="12" x2="47" y2="53" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0D68D"></stop>
+      <stop offset="0.48" stop-color="#D6AE50"></stop>
+      <stop offset="1" stop-color="#B88925"></stop>
+    </linearGradient>
+  </defs><rect width="64" height="64" rx="15" fill="#171717"></rect><path d="M32 10.5 49 17v13.1c0 10.7-6.6 19.6-17 23.4-10.4-3.8-17-12.7-17-23.4V17l17-6.5Z" fill="none" stroke="url(#favicon-gold)" stroke-width="4" stroke-linejoin="round"></path><path d="m23.5 31.5 5.6 5.7 11.8-12" fill="none" stroke="url(#favicon-gold)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>

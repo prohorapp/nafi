@@ -3,11 +3,11 @@
   margin: 0 auto;
   padding-inline: 30px;
 
-  @media (max-width: 1023px) {
+  @include vp-1023 {
     padding-inline: 32px;
   }
 
-  @media (max-width: 767px) {
+  @include vp-767 {
     padding-inline: 16px;
   }
 }

@@ -6,6 +6,7 @@
             rgba(218, 181, 105, 0.16),
             transparent 28%),
         linear-gradient(135deg, #faf8f4 0%, #f3efe9 50%, #ebe7e1 100%);
+    $root: &;
 
     &__header {
         margin-bottom: 25px;
@@ -36,7 +37,7 @@
         justify-content: center;
         gap: 14px;
 
-        span:not(.connection__decor-diamond) {
+        span:not(#{$root}__decor-diamond) {
             width: 110px;
             height: 1px;
             background: linear-gradient(90deg,

@@ -5,33 +5,37 @@
   border: 1px solid rgba(78, 66, 48, 0.1);
   border-radius: 20px;
   box-shadow: 0 18px 55px rgba(57, 47, 31, 0.08);
-}
+  $root: &;
 
-.payment-methods__legend {
-  width: 100%;
-  margin: 0 0 22px;
-  padding: 0;
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.payment--company .payment-methods {
-  display: flex;
-  flex-direction: column;
-}
-
-.payment--company .payment-methods__legend {
-  order: -2;
-}
-
-@media (max-width: 767px) {
-  .payment-methods {
+  @media (max-width: 767px) {
     padding: 20px;
     border-radius: 16px;
   }
 
-  .payment-methods__legend {
+  &--company {
+    #{$root} {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &--company {
+    #{$root}__legend {
+      order: -2;
+    }
+  }
+
+  &__legend {
+    width: 100%;
+    margin: 0 0 22px;
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+
+    @media (max-width: 767px) {
+
       margin-bottom: 16px;
       font-size: 19px;
-      }
+    }
+  }
 }

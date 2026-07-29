@@ -1,6 +1,6 @@
 .hero {
     min-height: calc(100vh - 40px);
-    padding: 60px 0;
+    padding: 50px 0;
 
     background-image: url("../images/bg-hero.png");
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
     &__content {
         display: flex;
         flex-direction: column;
-        gap: 55px;
+        gap: 45px;
     }
 
     &__title {
@@ -37,7 +37,7 @@
 
     &__actions {
         display: flex;
-        gap: 80px;
+        gap: 90px;
         margin: 0;
     }
 
@@ -46,7 +46,7 @@
         padding: 0;
         display: flex;
         flex-wrap: wrap;
-        gap: 21px;
+        gap: 30px;
         list-style: none;
     }
 

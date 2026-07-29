@@ -63,6 +63,7 @@
     }
 
     &__icon {
+        padding: 5px;
         position: absolute;
         top: 44px;
         left: 50%;
@@ -72,9 +73,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
-        width: 60px;
-        height: 60px;
 
         color: $color-primary;
         background-color: #fff;

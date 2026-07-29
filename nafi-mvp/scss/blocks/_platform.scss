@@ -5,6 +5,7 @@
         radial-gradient(circle at 8% 10%, rgba($color-primary, 0.14), transparent 25%),
         radial-gradient(circle at 92% 90%, rgba($color-primary, 0.08), transparent 25%),
         #f7f4ee;
+    $root: &;
 
     &__wrapper {
         position: relative;
@@ -174,12 +175,12 @@
     &__key {
         background: #24211d;
 
-        .platform__subtitle,
-        .platform__text-top {
+        #{$root}__subtitle,
+        #{$root}__text-top {
             color: $color-white;
         }
 
-        .platform__text {
+        #{$root}__text {
             color: rgba($color-white, 0.58);
         }
     }
@@ -227,7 +228,7 @@
             border: 1px solid rgba(108, 91, 62, 0.1);
             border-radius: 14px;
 
-            .platform__logo-icon {
+            #{$root}__logo-icon {
                 display: none;
             }
         }
@@ -250,17 +251,17 @@
             left: 18px;
             z-index: 1;
             color: $color-primary;
-            font-size: 13px;
+            font-size: 20px;
             font-weight: 800;
         }
     }
 
     &__btn {
-        width: 100%;
-        margin: 0;
+        width: 400px;
+        margin: 0 auto;
     }
 
-    @media (max-width: 1023px) {
+    @include vp-1023 {
         padding: 70px 0;
 
         &__list:not(&__list--key):not(&__list--fast) {
@@ -276,7 +277,7 @@
         }
     }
 
-    @media (max-width: 767px) {
+    @include vp-767 {
         padding: 52px 0;
 
         &__text-header,

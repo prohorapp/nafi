@@ -1,0 +1,148 @@
+.consultation-form {
+    &__content[hidden] {
+        display: none;
+    }
+
+    &__content {
+        padding: 38px 44px 32px;
+    }
+
+    &__header {
+        margin-bottom: 26px;
+        padding-right: 44px;
+    }
+
+    &__eyebrow {
+        display: block;
+        margin-bottom: 6px;
+        color: $color-primary;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    &__title {
+        margin: 0 0 10px;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.15;
+    }
+
+    &__description {
+        max-width: 500px;
+        margin: 0;
+        color: $color-dim-gray;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.55;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 24px;
+    }
+
+    &__additional {
+        margin: 6px 0 8px;
+        padding: 22px 0 0;
+        border: 0;
+        border-top: 1px solid rgba(200, 169, 106, 0.3);
+
+        legend {
+            padding: 0 12px 0 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    &__agreement {
+        margin: 10px 0 24px;
+    }
+
+    &__submit {
+        width: auto;
+        min-width: 230px;
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+
+    &__security {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 24px;
+        color: $color-dim-gray;
+        font-size: 11px;
+
+        svg {
+            flex: 0 0 24px;
+            color: $color-primary;
+        }
+    }
+
+    &__success[hidden] {
+        display: none;
+    }
+
+    &__success {
+        display: flex;
+        min-height: 480px;
+        padding: 50px 32px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        h2 {
+            margin: 18px 0 8px;
+            font-size: 36px;
+            font-weight: 400;
+        }
+
+        p {
+            max-width: 390px;
+            margin: 0 0 28px;
+            color: $color-dim-gray;
+            line-height: 1.55;
+        }
+    }
+
+    &__success-icon {
+        display: grid;
+        width: 72px;
+        height: 72px;
+        color: $color-white;
+        font-size: 32px;
+        background: #49a865;
+        border-radius: 50%;
+        place-items: center;
+    }
+
+    @media (max-width: 767px) {
+        &__content {
+            padding: 28px 16px 24px;
+        }
+
+        &__header {
+            padding-right: 45px;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+
+        &__submit {
+            width: 100%;
+            min-width: 0;
+        }
+
+        &__security {
+            align-items: flex-start;
+        }
+    }
+}
