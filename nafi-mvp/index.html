@@ -352,7 +352,8 @@
         </div>
       </div>
     </section>
-    <section class="calculator" id="calculator">
+    <!-- Калькулятор -->
+    <section class="calculator" id="calculator" data-step="calculator">
       <div class="container">
         <div class="calculator__wrapper">
           <div class="calculator__content">
@@ -590,7 +591,10 @@
                 </div>
               </dl>
             </div>
-            <button class="btn btn--total" type="button" data-calculator-continue>Продолжить</button>
+            <button class="btn btn--total" type="button" data-step-next="connection" disabled>
+              Продолжить
+              <span aria-hidden="true">→</span>
+            </button>
             <span class="summary__secure">
               <svg class="summary__lock-icon" width="24" height="24" aria-hidden="true">
                 <use xlink:href="images/sprite.svg#icon-lock"></use>
@@ -601,7 +605,8 @@
         </div>
       </div>
     </section>
-    <section class="connection" id="connection">
+    <!-- Формы -->
+    <section class="connection" id="connection" data-step="connection" hidden style="display: none;">
       <div class="container">
 
         <header class="connection__header">
@@ -737,7 +742,10 @@
                   </span>
                 </div>
 
-                <button class="btn btn--total" type="submit">Продолжить <span aria-hidden="true">→</span></button>
+                <button class="btn btn--total" type="button" data-step-next="contract" disabled>
+                  Продолжить
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </form>
 
@@ -804,9 +812,9 @@
                       <label class="custom-input__label">
                         <span class="custom-input__text">Телефон</span>
 
-                        <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
-                        required>
+                        <input class="custom-input__input" type="tel" name="person-phone"
+                          placeholder="+7 (___) ___-__-__" inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16"
+                          autocomplete="tel" data-phone required>
                       </label>
                     </div>
 
@@ -860,9 +868,9 @@
                       <label class="custom-input__label">
                         <span class="custom-input__text">Телефон</span>
 
-                        <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
-                        required>
+                        <input class="custom-input__input" type="tel" name="person-phone"
+                          placeholder="+7 (___) ___-__-__" inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16"
+                          autocomplete="tel" data-phone required>
                       </label>
                     </div>
 
@@ -941,14 +949,18 @@
                   </span>
                 </div>
 
-                <button class="btn btn--total" type="submit">Продолжить <span aria-hidden="true">→</span></button>
+                <button class="btn btn--total" type="button" data-step-next="contract" disabled>
+                  Продолжить
+                  <span aria-hidden="true">→</span>
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <section class="contract" id="contract">
+    <!-- Договор -->
+    <section class="contract" id="contract" data-step="contract" hidden style="display: none;">
       <div class="container">
         <div class="contract__header">
           <h2 class="contract__title">Ознакомьтесь с договором-офертой</h2>
@@ -1082,7 +1094,7 @@
               </span>
             </div>
 
-            <button class="btn btn--total contract__submit" type="button" disabled data-contract-submit>
+            <button class="btn btn--total" type="button" data-step-next="payment" disabled>
               Продолжить
               <span aria-hidden="true">→</span>
             </button>
@@ -1090,7 +1102,8 @@
         </div>
       </div>
     </section>
-    <section class="payment" id="payment">
+    <!-- Оплата -->
+    <section class="payment" id="payment" data-step="payment" hidden style="display: none;">
       <div class="container">
         <div class="payment__header">
           <h2 class="payment__title">Выберите способ оплаты</h2>
@@ -1379,8 +1392,7 @@
               <label class="custom-input__label">
                 <span class="custom-input__text">Телефон</span>
                 <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
-                        required>
+                  inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone required>
               </label>
             </div>
 

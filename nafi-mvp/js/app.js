@@ -1,3 +1,29 @@
+const resetPagePosition = () => {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  if (window.location.hash) {
+    history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}${window.location.search}`
+    );
+  }
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'auto'
+  });
+};
+
+resetPagePosition();
+
+window.addEventListener('pageshow', () => {
+  requestAnimationFrame(resetPagePosition);
+});
+
 const getPricePerEmployee = (employees) => {
   if (employees <= 500) {
     return 390;
@@ -441,14 +467,6 @@ const initContract = () => {
     '[data-contract-print]'
   );
 
-  const agreement = contract.querySelector(
-    '#contract-agreement'
-  );
-
-  const submitButton = contract.querySelector(
-    '[data-contract-submit]'
-  );
-
   openButton?.addEventListener('click', () => {
     modal.showModal();
     document.body.classList.add('scroll-lock');
@@ -478,111 +496,6 @@ const initContract = () => {
     });
   });
 
-  agreement?.addEventListener('change', () => {
-    submitButton.disabled = !agreement.checked;
-  });
-
-};
-const initConnectionAgreements = () => {
-  const forms = document.querySelectorAll(
-    '.connection-form'
-  );
-
-  if (!forms.length) {
-    return;
-  }
-
-  forms.forEach((form) => {
-    const requiredCheckboxes = form.querySelectorAll(
-      'input[type="checkbox"][required]'
-    );
-
-    const submitButton = form.querySelector(
-      'button[type="submit"]'
-    );
-
-    if (!requiredCheckboxes.length || !submitButton) {
-      return;
-    }
-
-    const updateSubmitButton = () => {
-      const allChecked = Array.from(
-        requiredCheckboxes
-      ).every((checkbox) => checkbox.checked);
-
-      submitButton.disabled = !allChecked;
-    };
-
-    requiredCheckboxes.forEach((checkbox) => {
-      checkbox.addEventListener(
-        'change',
-        updateSubmitButton
-      );
-    });
-
-    updateSubmitButton();
-  });
-};
-
-const initCheckoutFlow = () => {
-  const calculator = document.querySelector('#calculator');
-  const connection = document.querySelector('#connection');
-  const contract = document.querySelector('#contract');
-  const payment = document.querySelector('#payment');
-
-  const scrollToSection = (section) => {
-    if (!section) {
-      return;
-    }
-
-    const headerHeight =
-      document.querySelector('.header')?.offsetHeight || 0;
-    const top =
-      section.getBoundingClientRect().top +
-      window.scrollY -
-      headerHeight -
-      16;
-
-    window.scrollTo({
-      top: Math.max(0, top),
-      behavior: 'smooth'
-    });
-  };
-
-  document.querySelectorAll('[data-go-calculator]').forEach((button) => {
-    button.addEventListener('click', () => {
-      scrollToSection(calculator);
-    });
-  });
-
-  calculator
-    ?.querySelector('[data-calculator-continue]')
-    ?.addEventListener('click', () => {
-      scrollToSection(connection);
-    });
-
-  connection?.querySelectorAll('.connection-form').forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      scrollToSection(contract);
-    });
-  });
-
-  contract
-    ?.querySelector('[data-contract-submit]')
-    ?.addEventListener('click', (event) => {
-      if (event.currentTarget.disabled) {
-        return;
-      }
-
-      scrollToSection(payment);
-    });
 };
 
 const initPayment = () => {
@@ -806,21 +719,204 @@ const initPhoneInputs = () => {
   });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  initCalculator();
-  initFormSwitcher();
-  initConnectionAgreements();
-  initPhoneInputs();
-});
+const initSteps = () => {
+  const steps = Array.from(
+    document.querySelectorAll('[data-step]')
+  );
+
+  if (!steps.length) {
+    return;
+  }
+
+  const getActiveForm = (step) => {
+    return step.querySelector(
+      '.connection-form--active'
+    );
+  };
+
+  const getRequiredElements = (step) => {
+    const validationRoot =
+      step.dataset.step === 'connection'
+        ? getActiveForm(step)
+        : step;
+
+    if (!validationRoot) {
+      return [];
+    }
+
+    return Array.from(
+      validationRoot.querySelectorAll(
+        'input[required], select[required], textarea[required]'
+      )
+    ).filter((element) => !element.disabled);
+  };
+
+  const isStepValid = (step) => {
+    if (step.dataset.step === 'calculator') {
+      const employees = step.querySelector(
+        '.calculator-employees__input'
+      );
+
+      return Boolean(employees) &&
+        Number(employees.value) > 0;
+    }
+
+    const requiredElements = getRequiredElements(step);
+
+    if (!requiredElements.length) {
+      return true;
+    }
+
+    return requiredElements.every((element) => {
+      return element.checkValidity();
+    });
+  };
+
+  const updateStepButtons = (step) => {
+    const nextButtons = step.querySelectorAll(
+      '[data-step-next]'
+    );
+
+    const stepIsValid = isStepValid(step);
+
+    nextButtons.forEach((button) => {
+      button.disabled = !stepIsValid;
+    });
+  };
+
+  const showStep = (stepName) => {
+    const targetStep = document.querySelector(
+      `[data-step="${stepName}"]`
+    );
+
+    if (!targetStep) {
+      return;
+    }
+
+    const targetIndex = steps.indexOf(targetStep);
+
+    steps.forEach((step, index) => {
+      const isActive = step === targetStep;
+      const isAvailable = index <= targetIndex;
+
+      step.hidden = !isAvailable;
+      step.style.display = isAvailable ? '' : 'none';
+      step.classList.toggle('is-active', isActive);
+      step.setAttribute(
+        'aria-hidden',
+        String(!isAvailable)
+      );
+    });
+
+    updateStepButtons(targetStep);
+
+    targetStep.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
+  steps.forEach((step) => {
+    step.addEventListener('input', (event) => {
+      if (
+        event.target.matches(
+          '.calculator-employees__input'
+        )
+      ) {
+        event.target.setCustomValidity('');
+      }
+
+      updateStepButtons(step);
+    });
+
+    step.addEventListener('change', () => {
+      updateStepButtons(step);
+    });
+
+    step.addEventListener('click', (event) => {
+      if (
+        event.target.closest('.connection__switch')
+      ) {
+        requestAnimationFrame(() => {
+          updateStepButtons(step);
+        });
+      }
+
+      const nextButton = event.target.closest(
+        '[data-step-next]'
+      );
+
+      if (!nextButton || !step.contains(nextButton)) {
+        return;
+      }
+
+      if (!isStepValid(step)) {
+        if (step.dataset.step === 'calculator') {
+          const employees = step.querySelector(
+            '.calculator-employees__input'
+          );
+
+          employees?.setCustomValidity(
+            'Укажите количество сотрудников больше 0'
+          );
+          employees?.reportValidity();
+          employees?.focus();
+
+          return;
+        }
+
+        const firstInvalid = getRequiredElements(step)
+          .find((element) => !element.checkValidity());
+
+        firstInvalid?.reportValidity();
+        firstInvalid?.focus();
+
+        return;
+      }
+
+      const employees = step.querySelector(
+        '.calculator-employees__input'
+      );
+      employees?.setCustomValidity('');
+
+      showStep(nextButton.dataset.stepNext);
+    });
+
+    updateStepButtons(step);
+  });
+
+  document
+    .querySelectorAll('[data-go-calculator]')
+    .forEach((button) => {
+      button.addEventListener('click', () => {
+        showStep('calculator');
+      });
+    });
+
+  showStep('calculator');
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-  initBurgerMenu();
-  initCalculator();
-  initServicesModal();
-  initConsultationModal();
-  initFormSwitcher();
-  initContract();
-  initConnectionAgreements();
-  initCheckoutFlow();
-  initPayment();
+  const initializers = [
+    initSteps,
+    initBurgerMenu,
+    initCalculator,
+    initServicesModal,
+    initConsultationModal,
+    initFormSwitcher,
+    initContract,
+    initPhoneInputs,
+    initPayment,
+  ];
+
+  initializers.forEach((initialize) => {
+    try {
+      initialize();
+    } catch (error) {
+      console.error(
+        `Ошибка инициализации ${initialize.name}:`,
+        error
+      );
+    }
+  });
 });
