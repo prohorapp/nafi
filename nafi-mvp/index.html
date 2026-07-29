@@ -30,8 +30,8 @@
         <div class="header__right">
           <nav class="nav nav--main" id="main-menu" aria-label="Главная навигация">
             <a class="nav__link" href="#advantages">Преимущества</a>
+            <a class="nav__link" href="#steps">Путь подключения</a>
             <a class="nav__link" href="#calculator">Тарифы</a>
-            <a class="nav__link" href="#connection">Оформление</a>
             <a class="nav__link" href="#footer">Контакты</a>
             <button class="btn" type="button" aria-label="Подключить платформу" data-go-calculator>Подключить
               платформу</button>
@@ -276,7 +276,7 @@
         </div>
       </div>
     </section>
-    <section class="steps">
+    <section class="steps" id="steps">
       <div class="container">
         <div class="steps__header">
           <h2 class="steps__title">
@@ -662,9 +662,9 @@
 
                     <label class="custom-input__label">
                       <span class="custom-input__text">Телефон</span>
-
                       <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
+                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
+                        required>
                     </label>
                   </div>
                 </fieldset>
@@ -805,7 +805,8 @@
                         <span class="custom-input__text">Телефон</span>
 
                         <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
+                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
+                        required>
                       </label>
                     </div>
 
@@ -860,7 +861,8 @@
                         <span class="custom-input__text">Телефон</span>
 
                         <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
+                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
+                        required>
                       </label>
                     </div>
 
@@ -1377,7 +1379,8 @@
               <label class="custom-input__label">
                 <span class="custom-input__text">Телефон</span>
                 <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
+                        inputmode="tel" pattern="\+[1-9][0-9]{7,14}" maxlength="16" autocomplete="tel" data-phone
+                        required>
               </label>
             </div>
 

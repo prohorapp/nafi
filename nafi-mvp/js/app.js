@@ -771,19 +771,37 @@ const initPhoneInputs = () => {
   );
 
   phoneInputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      // Удаляем буквы, пробелы и любые другие символы
-      input.value = input.value
+    const formatPhone = () => {
+      const hadPlus = input.value.trim().startsWith('+');
+
+      // Оставляем только цифры
+      const digits = input.value
         .replace(/\D/g, '')
-        .slice(0, 11);
+        .slice(0, 15);
+
+      if (digits) {
+        input.value = `+${digits}`;
+      } else {
+        input.value = hadPlus ? '+' : '';
+      }
+    };
+
+    input.addEventListener('focus', () => {
+      if (!input.value) {
+        input.value = '+';
+      }
     });
 
+    input.addEventListener('input', formatPhone);
+
     input.addEventListener('paste', () => {
-      requestAnimationFrame(() => {
-        input.value = input.value
-          .replace(/\D/g, '')
-          .slice(0, 11);
-      });
+      requestAnimationFrame(formatPhone);
+    });
+
+    input.addEventListener('blur', () => {
+      if (input.value === '+') {
+        input.value = '';
+      }
     });
   });
 };
