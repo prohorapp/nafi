@@ -1,0 +1,13 @@
+.container {
+  width: min(100%, 1260px);
+  margin: 0 auto;
+  padding-inline: 30px;
+
+  @include vp-1023 {
+    padding-inline: 32px;
+  }
+
+  @include vp-767 {
+    padding-inline: 16px;
+  }
+}

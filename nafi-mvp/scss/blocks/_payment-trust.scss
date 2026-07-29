@@ -1,0 +1,51 @@
+.payment-trust {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+
+
+  &__item {
+    display: flex;
+    min-width: 0;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 18px;
+    color: #fff;
+    background: linear-gradient(145deg, #26231f, #171614);
+    border-radius: 14px;
+  }
+
+  &__item>span {
+    color: #e5a81d;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  &__item div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  &__item strong {
+    margin-bottom: 7px;
+    font-size: 13px;
+  }
+
+  &__item small {
+    color: #aaa69f;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}

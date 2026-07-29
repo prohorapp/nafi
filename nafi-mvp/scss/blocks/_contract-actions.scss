@@ -1,0 +1,72 @@
+.contract-actions {
+    padding: 24px;
+
+    background-color: rgba($color-white, 0.9);
+    border: 1px solid rgba($color-primary, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 16px 45px rgba(50, 41, 28, 0.07);
+
+    &__title {
+        margin: 0 0 20px;
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        width: 100%;
+        min-height: 64px;
+        margin-bottom: 12px;
+        padding: 10px 15px;
+
+        color: #202020;
+        font: inherit;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: left;
+        text-decoration: none;
+
+        background-color: #f3f3f3;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+
+        transition:
+            border-color $transition-300,
+            background-color $transition-300,
+            transform $transition-300;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background-color: $color-white;
+            border-color: rgba($color-primary, 0.45);
+            transform: translateY(-2px);
+        }
+
+        &__icon {
+            flex-shrink: 0;
+            color: $color-primary;
+        }
+
+        span {
+            display: flex;
+            flex-direction: column;
+        }
+
+        strong {
+            font-size: 14px;
+        }
+
+        small {
+            margin-top: 2px;
+            color: $color-dim-gray;
+            font-size: 11px;
+        }
+    }
+}

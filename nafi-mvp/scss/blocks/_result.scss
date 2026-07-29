@@ -1,0 +1,56 @@
+.result {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &--bord {
+        border-bottom: 1px solid $color-dim-gray;
+        padding: 0 0 15px;
+    }
+
+    &__row {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__term {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    &__value {
+        text-align: right;
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &__colum {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 5px;
+    }
+
+    &__total {
+        margin: 0;
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    &__total-row {
+        font-weight: 600;
+        font-size: 16px
+    }
+
+    &__total-nds {
+        color: $color-dim-gray;
+        font-weight: 400;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,135 @@
+.hero {
+    min-height: calc(100vh - 40px);
+    padding: 50px 0;
+    position: relative;
+
+    // background-image: url("../images/bg-hero.png");
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0;
+        max-width: 689px;
+        font-weight: 400;
+        font-size: 48px;
+        color: $color-white;
+    }
+
+    &__color {
+        color: $color-primary;
+    }
+
+    &__description {
+        margin: 0;
+        padding: 0;
+        max-width: 400px;
+        font-weight: 400;
+        font-size: 20px;
+        color: $color-white;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 90px;
+        margin: 0;
+    }
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        list-style: none;
+    }
+
+    &__wrap {
+        width: 279px;
+        min-height: 120px;
+        padding: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 20px;
+        background-color: $color-shadow;
+    }
+
+    &__text-title {
+        font-size: 36px;
+        color: $color-white;
+    }
+
+    &__text {
+        font-size: 20px;
+        color: $color-white;
+    }
+
+    @media (max-width: 1023px) {
+        min-height: auto;
+        padding: 70px 0;
+
+        &__title {
+            font-size: 42px;
+        }
+
+        &__actions {
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        padding: 50px 0;
+
+        &__content {
+            gap: 28px;
+        }
+
+        &__title {
+            font-size: clamp(32px, 10vw, 40px);
+            line-height: 1.08;
+        }
+
+        &__description {
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        &__actions {
+            flex-direction: column;
+        }
+
+        &__actions .btn {
+            width: 100%;
+            padding: 10px;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+
+        &__wrap {
+            width: 100%;
+            min-height: 100px;
+        }
+    }
+}

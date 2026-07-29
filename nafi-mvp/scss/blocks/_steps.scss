@@ -1,0 +1,137 @@
+.steps {
+    padding: 60px 0 40px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 15%,
+            rgba(200, 169, 106, 0.18),
+            transparent 30%),
+        radial-gradient(circle at 88% 55%,
+            rgba(255, 224, 148, 0.24),
+            transparent 28%),
+        linear-gradient(135deg,
+            #faf8f4 0%,
+            #f2eee8 45%,
+            #e5e2dd 100%);
+
+
+    @include vp-1023 {
+        padding: 50px 0 35px;
+    }
+
+    @include vp-767 {
+        padding: 40px 0 30px;
+    }
+
+    &__header {
+        margin-bottom: 50px;
+
+        @include vp-1023 {
+            margin-bottom: 40px;
+        }
+
+        @include vp-767 {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__subtitle {
+        margin: 0 0 10px;
+        color: $color-primary;
+        font-size: 26px;
+        text-align: center;
+
+        @include vp-767 {
+            font-size: 20px;
+        }
+    }
+
+    &__title {
+        max-width: 1000px;
+        margin: 0 auto 14px;
+
+        color: #111;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: center;
+
+    }
+
+    &__gold {
+        color: $color-primary;
+        font-size: 40px;
+
+        @include vp-767 {
+            font-size: inherit;
+        }
+    }
+
+    &__header-text {
+        margin: 0;
+        color: $color-suva-grey;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+
+    }
+
+    &__wrapper {
+        display: grid;
+        // grid-template-columns: minmax(0, 2fr) minmax(360px, 1fr);
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 40px;
+
+        @include vp-1023 {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__list {
+        counter-reset: step;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 40px 54px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include vp-1023 {
+            gap: 30px;
+        }
+
+        @include vp-767 {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__preview {
+        position: relative;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include vp-1023 {
+            display: none;
+        }
+    }
+
+    // &__image {
+    //     position: absolute;
+    //     bottom: 10px;
+    //     right: 0;
+    //     z-index: 1;
+    //     display: block;
+    //     max-width: 620px;
+    //     height: auto;
+
+    //     @include vp-1023 {
+    //         display: none;
+    //     }
+    // }
+
+
+}

@@ -1,0 +1,77 @@
+.calculator-slider {
+    padding: 32px;
+    border-radius: 24px;
+    background: $color-white;
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.06),
+        0 4px 16px rgba(200, 169, 106, 0.12);
+
+    &__points {
+        padding: 12px 8px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        background: #fffaf0;
+        border-radius: 12px;
+        gap: 12px;
+        margin-bottom: 32px;
+        justify-items: center
+    }
+
+    &__point {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    &__point-value {
+        color: $color-primary;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price-text {
+        font-weight: 400;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__price-nds {
+        font-weight: 400;
+        font-size: 14px;
+        color: $color-dim-gray;
+    }
+
+    &__price-value {
+        font-size: 30px;
+        font-weight: 700;
+        color: $color-primary;
+    }
+
+    @include vp-767 {
+        padding: 20px;
+
+        &__points {
+            grid-template-columns: 1fr;
+            margin-bottom: 24px;
+        }
+
+        &__point {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        &__price {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

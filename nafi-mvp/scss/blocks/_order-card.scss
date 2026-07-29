@@ -1,0 +1,90 @@
+.order-card {
+    padding: 30px 28px;
+
+    background-color: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(200, 169, 106, 0.42);
+    border-radius: 16px;
+    box-shadow: 0 14px 35px rgba(76, 61, 38, 0.08);
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+
+        margin: 0 0 40px;
+
+        color: #202020;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        color: $color-primary;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__details {
+        margin: 0;
+    }
+
+    &__item {
+        margin-bottom: 25px;
+
+        dt {
+            margin-bottom: 6px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        dd {
+            margin: 0;
+            color: #181818;
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &__security {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+
+        margin-top: 30px;
+        padding: 20px;
+
+        background-color: #f7f3eb;
+        border-radius: 9px;
+
+        h3 {
+            margin: 0 0 7px;
+            color: #242424;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0;
+            color: #777;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+    }
+
+    &__security-icon {
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        color: $color-primary;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

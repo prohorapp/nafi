@@ -1,0 +1,46 @@
+/* Global */
+/* ------------------------------------ */
+@import "global/_normalize.scss";
+@import "global/_variables";
+@import "global/_mixins";
+@import "global/_fonts";
+@import "global/_reboot";
+@import "global/_container";
+@import "global/_visually-hidden";
+
+
+/* Blocks */
+/* ------------------------------------ */
+
+@import "blocks/_header";
+@import "blocks/_nav";
+@import "blocks/_hero";
+@import "blocks/_btn";
+@import "blocks/_platform";
+@import "blocks/_calculator";
+@import "blocks/_calculator-slider";
+@import "blocks/_calculator-range";
+@import "blocks/_calculator-employees";
+@import "blocks/_checkbox";
+@import "blocks/_summary";
+@import "blocks/_advantages";
+@import "blocks/_result";
+@import "blocks/_steps";
+@import "blocks/_steps-card";
+@import "blocks/_connection";
+@import "blocks/_connection-form ";
+@import "blocks/_custom-input";
+@import "blocks/_contract";
+@import "blocks/_contract-actions";
+@import "blocks/_contract-modal";
+@import "blocks/_payment";
+@import "blocks/_payment-methods";
+@import "blocks/_payment-method";
+@import "blocks/_payment-help";
+@import "blocks/_payment-trust";
+@import "blocks/_payment-success";
+@import "blocks/_payment-failure";
+@import "blocks/_services-modal";
+@import "blocks/_consultation-modal";
+@import "blocks/_consultation-form";
+@import "blocks/_footer";

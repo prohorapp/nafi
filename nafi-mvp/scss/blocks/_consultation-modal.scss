@@ -1,0 +1,62 @@
+.consultation-modal {
+  width: min(720px, calc(100% - 40px));
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  color: $color-black;
+  background: transparent;
+  border: 0;
+
+  &::backdrop {
+    background: rgba(22, 20, 17, 0.68);
+    backdrop-filter: blur(4px);
+  }
+
+  &__panel {
+    position: relative;
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    background: #faf8f3;
+    border-radius: 22px;
+    box-shadow: 0 30px 90px rgba(28, 23, 16, 0.28);
+  }
+
+  &__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: #312d27;
+    font: inherit;
+    font-size: 25px;
+    background: #f0ece4;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    place-items: center;
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+
+    &__panel {
+      min-height: 100dvh;
+      max-height: 100dvh;
+      border-radius: 0;
+    }
+
+    &__close {
+      top: 12px;
+      right: 12px;
+    }
+  }
+}
+

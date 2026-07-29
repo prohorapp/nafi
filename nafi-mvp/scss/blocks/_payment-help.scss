@@ -1,0 +1,69 @@
+.payment-help {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 18px 20px;
+  background: $color-white;
+  border-radius: 16px;
+
+
+  &__icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    color: $color-primary;
+    background: rgba(242, 169, 0, 0.1);
+    border-radius: 50%;
+    place-items: center;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text strong {
+    margin-bottom: 4px;
+    color: $color-black;
+    font-size: 16px;
+  }
+
+  &__text small {
+    max-width: 350px;
+    color: #aaa69f;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__button {
+    padding: 10px 15px;
+    color: $color-black;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    font-size: 12px;
+    background-color: $color-white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-black;
+      background-color: $color-black;
+    }
+  }
+
+  @include vp-767 {
+    & {
+      grid-template-columns: 38px 1fr;
+      padding: 16px;
+    }
+
+    &__button {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+  }
+}

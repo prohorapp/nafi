@@ -1,0 +1,75 @@
+.payment {
+  padding: 92px 0 80px;
+  color: #202020;
+  background:
+    radial-gradient(circle at 8% 5%, rgba(242, 169, 0, 0.14), transparent 25%),
+    linear-gradient(145deg, #fbfaf7 0%, #f3efe7 100%);
+
+
+  &__header[hidden],
+  &__layout[hidden],
+  &-trust[hidden] {
+    display: none;
+  }
+
+  &__header {
+    max-width: 760px;
+    margin: 0 auto 46px;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    margin: 0 0 10px;
+    color: #b98000;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.08;
+  }
+
+  &__description {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #6f6b63;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+    align-items: start;
+    gap: 28px;
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  @include vp-1023 {
+    &__layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include vp-767 {
+    padding: 64px 0 50px;
+
+    &__header {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+  }
+}
