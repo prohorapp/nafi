@@ -2,19 +2,19 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="НАФИ — цифровой продукт для проверки и повышения цифровой грамотности сотрудников. Лендниг для подключения платформы Цифровой гражданин." />
+    content="НАФИ — цифровой продукт для проверки и повышения цифровой грамотности сотрудников. Лендниг для подключения платформы Цифровой гражданин.">
   <title>НАФИ — цифровой гражданин</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 
 
-  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
-  <link rel="shortcut icon" href="favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <script src="js/app.js" defer></script>
 </head>
 
@@ -23,7 +23,9 @@
     <div class="container">
       <div class="header__inner">
         <a class="header__logo-link" href="#home">
-          <img class="header__logo" src="images/logo.png" alt="НАФИ" height="40" width="113">
+          <svg class="header__logo" width="113" height="40" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#logo-nafi"></use>
+          </svg>
         </a>
         <div class="header__right">
           <nav class="nav nav--main" id="main-menu" aria-label="Главная навигация">
@@ -46,6 +48,20 @@
   </header>
   <main>
     <section class="hero" id="home">
+      <picture>
+        <!-- <source media="(max-width: 767px)"
+          srcset="images/bg-hero-mobile.webp 1x, images/bg-hero-mobile@2x.webp 2x" type="image/webp">
+        <source media="(max-width: 767px)"
+          srcset="images/bg-hero-mobile.png 1x, images/bg-hero-mobile@2x.png 2x" type="image/png">
+        <source media="(max-width: 1023px)"
+          srcset="images/bg-hero-tablet.webp 1x, images/bg-hero-tablet@2x.webp 2x" type="image/webp">
+        <source media="(max-width: 1023px)"
+          srcset="images/bg-hero-tablet.png 1x, images/bg-hero-tablet@2x.png 2x" type="image/png"> -->
+        <source srcset="images/bg-hero.webp" type="image/webp">
+        <img class="hero__bg" src="images/bg-hero.png" srcset="images/bg-hero.png" alt="" fetchpriority="high"
+          loading="lazy">
+      </picture>
+
       <div class="container">
         <div class="hero__content">
           <h1 class="hero__title">Готовое решение для <span class="hero__color"> оценки и&nbsp;развития цифровых
@@ -330,9 +346,9 @@
               </p>
             </li>
           </ol>
-          <div class="steps__preview">
+          <!-- <div class="steps__preview">
             <img class="steps__image" src="images/laptop-platform.png" alt="Интерфейс платформы на ноутбуке">
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -357,10 +373,10 @@
                 </div>
 
                 <div class="calculator-range">
-                  <input class="calculator-range__input" type="range" min="1" max="5000" step="1" value="1250">
+                  <input class="calculator-range__input" type="range" min="0" max="5000" step="1" value="0">
                   <div class="calculator-range__marks" aria-hidden="true">
-                    <span class="calculator-range__mark" style="--mark-position: 10%"></span>
-                    <span class="calculator-range__mark" style="--mark-position: 80%"></span>
+                    <span class="calculator-range__mark" style="--mark-position: 12%"></span>
+                    <span class="calculator-range__mark" style="--mark-position: 79%"></span>
                   </div>
                   <div class="calculator-range__tooltip">
                     <span class="calculator-range__value"></span>
@@ -381,7 +397,7 @@
                 <label class="calculator-employees__label" for="employees">
                   Количество сотрудников :
                 </label>
-                <input class="calculator-employees__input" type="number" min="1" max="5000" value="1250" id="employees">
+                <input class="calculator-employees__input" type="number" min="0" max="5000" value="0" id="employees">
               </div>
             </div>
             <div class="calculator__step">
@@ -400,13 +416,13 @@
                       <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-1"></use>
                       </svg>
-                      <div class="checkbox__info">
+                      <span class="checkbox__info">
 
                         <span class="checkbox__description">
                           Автоматическое<span class="checkbox__text-bold">
                             формирование сертификатов</span> для сотрудников с&nbsp;результатами диагностики
                         </span>
-                      </div>
+                      </span>
                     </label>
                     <span class="checkbox__price">+2500 ₽</span>
                   </div>
@@ -422,9 +438,9 @@
                       <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-2"></use>
                       </svg>
-                      <div class="checkbox__info">
+                      <span class="checkbox__info">
                         <span class="checkbox__description">Рекомендации по&nbsp;развитию</span>
-                      </div>
+                      </span>
                     </label>
                     <span class="checkbox__price">+3000 ₽</span>
                   </div>
@@ -441,12 +457,12 @@
                       <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-3"></use>
                       </svg>
-                      <div class="checkbox__info">
-                        <span class="checkbox___description">
+                      <span class="checkbox__info">
+                        <span class="checkbox__description">
                           Организация доступа к&nbsp;платформе по&nbsp;индивидуальным ссылкам или интеграция через API
                           или фреймворк-интерфейсы в&nbsp;вашу LMS
                         </span>
-                      </div>
+                      </span>
                     </label>
                     <span class="checkbox__price">+8500 ₽</span>
                   </div>
@@ -462,9 +478,9 @@
                       <svg class="checkbox__icon" width="48" height="48" aria-hidden="true">
                         <use xlink:href="images/sprite.svg#icon-calculator-checkbox-4"></use>
                       </svg>
-                      <div class="checkbox__info">
+                      <span class="checkbox__info">
                         <span class="checkbox__description">Вывод подсказок после неверного ответа</span>
-                      </div>
+                      </span>
                     </label>
                     <span class="checkbox__price">+2500 ₽</span>
                   </div>
@@ -594,21 +610,13 @@
 
         <!-- Переключатель форм -->
         <div class="connection__switcher" role="tablist">
-          <button class="connection__switch connection__switch--active" type="button" role="tab" aria-selected="true"
-            aria-controls="person-form" data-form="person">
-            <span class="connection__switch-icon" aria-hidden="true">
-              <!-- SVG физического лица -->
-            </span>
-
+          <button class="connection__switch connection__switch--active" id="person-tab" type="button" role="tab"
+            aria-selected="true" aria-controls="person-form" data-form="person">
             Физическое лицо
           </button>
 
-          <button class="connection__switch" type="button" role="tab" aria-selected="false" aria-controls="company-form"
-            data-form="company">
-            <span class="connection__switch-icon" aria-hidden="true">
-              <!-- SVG компании -->
-            </span>
-
+          <button class="connection__switch" id="company-tab" type="button" role="tab" aria-selected="false"
+            aria-controls="company-form" data-form="company" tabindex="-1">
             ИП / Юр. лицо
           </button>
         </div>
@@ -619,7 +627,7 @@
 
             <!-- Физическое лицо -->
             <form class="connection-form connection-form--person connection-form--active" id="person-form" action="#"
-              method="post">
+              method="post" role="tabpanel" aria-labelledby="person-tab">
               <div class="connection-form__body">
                 <h2 class="connection-form__title">
                   Заполните ваши данные
@@ -656,7 +664,7 @@
                       <span class="custom-input__text">Телефон</span>
 
                       <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
-                        autocomplete="tel" required>
+                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
                     </label>
                   </div>
                 </fieldset>
@@ -734,7 +742,8 @@
             </form>
 
             <!-- ИП / юридическое лицо -->
-            <form class="connection-form connection-form--company" id="company-form" action="#" method="post" hidden>
+            <form class="connection-form connection-form--company" id="company-form" action="#" method="post"
+              role="tabpanel" aria-labelledby="company-tab" hidden>
               <div class="connection-form__body connection-form__body--company">
 
                 <fieldset class="connection-form__fieldset connection-form__company-details">
@@ -795,8 +804,8 @@
                       <label class="custom-input__label">
                         <span class="custom-input__text">Телефон</span>
 
-                        <input class="custom-input__input" type="tel" name="company-phone"
-                          placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+                        <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
+                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
                       </label>
                     </div>
 
@@ -806,7 +815,7 @@
                       <span class="custom-input__text">Юридический адрес</span>
 
                       <input class="custom-input__input" type="text" name="company-address"
-                        placeholder="Введите значение" autocomplete="street-address" required>
+                        placeholder="Введите значение" required>
                     </label>
                   </div>
                 </fieldset>
@@ -850,8 +859,8 @@
                       <label class="custom-input__label">
                         <span class="custom-input__text">Телефон</span>
 
-                        <input class="custom-input__input" type="tel" name="contact-phone"
-                          placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+                        <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
+                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
                       </label>
                     </div>
 
@@ -879,9 +888,9 @@
                 </fieldset>
 
                 <div class="checkbox checkbox--agreement connection-form__agreement">
-                  <label class="checkbox__label" for="personal-data-consent">
-                    <input class="checkbox__input visually-hidden" id="personals-data-consent"
-                      name="personal-data-consent" type="checkbox" required>
+                  <label class="checkbox__label" for="company-personal-data-consent">
+                    <input class="checkbox__input visually-hidden" id="company-personal-data-consent"
+                      name="company-personal-data-consent" type="checkbox" required>
 
                     <svg class="checkbox__icon-check" aria-hidden="true">
                       <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
@@ -897,9 +906,9 @@
                 </div>
 
                 <div class="checkbox checkbox--agreement connection-form__agreement">
-                  <label class="checkbox__label" for="user-agreement">
-                    <input class="checkbox__input visually-hidden" id="users-agreement" name="users-agreement"
-                      type="checkbox" required>
+                  <label class="checkbox__label" for="company-user-agreement">
+                    <input class="checkbox__input visually-hidden" id="company-user-agreement"
+                      name="company-user-agreement" type="checkbox" required>
 
                     <svg class="checkbox__icon-check" aria-hidden="true">
                       <use xlink:href="images/sprite.svg#icon-checkbox-check"></use>
@@ -1103,7 +1112,7 @@
                   <strong>Банковской картой онлайн</strong>
                   <small>Мгновенное подтверждение платежа</small>
                 </span>
-                <span class="payment-method__badges" aria-label="Поддерживаются карты МИР, Visa и Mastercard">
+                <span class="payment-method__badges">
                   <span class="payment-method__badge payment-method__badge--mir">МИР</span>
                   <span class="payment-method__badge">VISA</span>
                   <span class="payment-method__mastercard" aria-hidden="true"></span>
@@ -1235,7 +1244,7 @@
               </svg>
             </span>
             <span><strong>Доступ к платформе активен</strong><small>Можно начинать работу прямо сейчас</small></span>
-            <a class="payment-success__cabinet" href="#home">Перейти в личный кабинет <span
+            <a class="payment-success__cabinet" href="https://it-gramota.ru/">Перейти в личный кабинет <span
                 aria-hidden="true">→</span></a>
           </div>
 
@@ -1367,8 +1376,8 @@
               </label>
               <label class="custom-input__label">
                 <span class="custom-input__text">Телефон</span>
-                <input class="custom-input__input" type="tel" name="consultation-phone" placeholder="+7 (___) ___-__-__"
-                  autocomplete="tel" required>
+                <input class="custom-input__input" type="tel" name="person-phone" placeholder="+7 (___) ___-__-__"
+                        inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="tel" data-phone required>
               </label>
             </div>
 
@@ -1791,7 +1800,9 @@
       <div class="footer__main">
         <div class="footer__intro">
           <a class="footer__logo-link" href="#home" aria-label="НАФИ — на главную">
-            <img class="footer__logo" src="images/logo.png" alt="НАФИ" width="113" height="40">
+            <svg class="footer__logo" width="113" height="40" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#logo-nafi"></use>
+            </svg>
           </a>
           <p class="footer__operator">Оператор проекта «Цифровой гражданин» — <strong>Аналитический центр НАФИ</strong>
           </p>

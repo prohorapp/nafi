@@ -765,6 +765,36 @@ const initPayment = () => {
   }
 };
 
+const initPhoneInputs = () => {
+  const phoneInputs = document.querySelectorAll(
+    '[data-phone]'
+  );
+
+  phoneInputs.forEach((input) => {
+    input.addEventListener('input', () => {
+      // Удаляем буквы, пробелы и любые другие символы
+      input.value = input.value
+        .replace(/\D/g, '')
+        .slice(0, 11);
+    });
+
+    input.addEventListener('paste', () => {
+      requestAnimationFrame(() => {
+        input.value = input.value
+          .replace(/\D/g, '')
+          .slice(0, 11);
+      });
+    });
+  });
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCalculator();
+  initFormSwitcher();
+  initConnectionAgreements();
+  initPhoneInputs();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
   initCalculator();

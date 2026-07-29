@@ -451,6 +451,7 @@ textarea {
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
 }
 .header__inner {
+  padding: 5px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -580,10 +581,17 @@ textarea {
 .hero {
   min-height: calc(100vh - 40px);
   padding: 50px 0;
-  background-image: url("../images/bg-hero.png");
+  position: relative;
+}
+.hero__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 .hero__content {
   display: flex;
@@ -711,6 +719,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .btn {
+    width: 100%;
     padding: 10px;
   }
 }
@@ -759,6 +768,17 @@ textarea {
   padding: 10px 60px;
   font-weight: 500;
   font-size: 18px;
+}
+@media (max-width: 1023px) {
+  .btn--total {
+    width: 300px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 767px) {
+  .btn--total {
+    width: 100%;
+  }
 }
 
 .platform {
@@ -1022,6 +1042,10 @@ textarea {
   .platform__wrap--col {
     min-height: 0;
   }
+  .platform__btn {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .calculator {
@@ -1142,6 +1166,12 @@ textarea {
     gap: 26px;
     padding: 18px;
     border-radius: 20px;
+  }
+  .calculator__title {
+    font-size: 26px;
+  }
+  .calculator__subtitle {
+    font-size: 15px;
   }
   .calculator__content {
     gap: 30px;
@@ -1285,8 +1315,8 @@ textarea {
   position: absolute;
   top: 50%;
   left: var(--mark-position);
-  width: 3px;
-  height: 16px;
+  width: 5px;
+  height: 20px;
   background: #ffffff;
   border: 1px solid #F2A900;
   border-radius: 2px;
@@ -1335,6 +1365,14 @@ textarea {
   transform: translateY(0);
   transition: 2s ease-in;
   padding: 5px 20px 5px 0px;
+}
+@media (max-width: 425px) {
+  .checkbox {
+    padding: 10px 20px 10px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
 }
 .checkbox__label:has(.checkbox__input:checked)::after {
   background: #F2A900;
@@ -1434,6 +1472,20 @@ textarea {
   border: 1px solid #737373;
   transition: border ease-in 0.3s, background-color ease-in 0.3s;
 }
+@media (max-width: 767px) {
+  .checkbox__label::after {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 425px) {
+  .checkbox__label {
+    width: 100%;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 .checkbox__icon-check {
   position: absolute;
   left: 13px;
@@ -1445,6 +1497,13 @@ textarea {
   z-index: 1;
   opacity: 0;
   transition: opacity ease-in 0.3s;
+}
+@media (max-width: 767px) {
+  .checkbox__icon-check {
+    left: 15px;
+    width: 20px;
+    height: 20px;
+  }
 }
 .checkbox__icon {
   display: flex;
@@ -1481,6 +1540,11 @@ textarea {
   justify-content: end;
   min-width: 80px;
 }
+@media (max-width: 425px) {
+  .checkbox__price {
+    padding: 0 0 0 55px;
+  }
+}
 
 .summary {
   position: relative;
@@ -1488,7 +1552,7 @@ textarea {
   flex-direction: column;
   gap: 15px;
   position: sticky;
-  top: 30px;
+  top: 63px;
   align-self: start;
   padding: 36px;
   border-radius: 30px;
@@ -1724,6 +1788,7 @@ textarea {
   font-size: 14px;
 }
 .result__value {
+  text-align: right;
   margin: 0;
   font-weight: 600;
   font-size: 16px;
@@ -1816,7 +1881,7 @@ textarea {
 }
 .steps__wrapper {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(360px, 1fr);
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 40px;
 }
@@ -1854,20 +1919,6 @@ textarea {
 }
 @media (max-width: 1023px) {
   .steps__preview {
-    display: none;
-  }
-}
-.steps__image {
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  z-index: 1;
-  display: block;
-  max-width: 620px;
-  height: auto;
-}
-@media (max-width: 1023px) {
-  .steps__image {
     display: none;
   }
 }
@@ -2064,16 +2115,6 @@ textarea {
 .connection__switch:focus-visible {
   outline: 2px solid #F2A900;
   outline-offset: 3px;
-}
-.connection__switch-icon {
-  display: flex;
-  width: 22px;
-  height: 22px;
-  color: #F2A900;
-}
-.connection__switch-icon svg {
-  width: 100%;
-  height: 100%;
 }
 .connection__content {
   display: grid;

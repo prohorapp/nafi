@@ -15,6 +15,14 @@
     $root: &;
 
 
+    @media (max-width: 425px) {
+        padding: 10px 20px 10px 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+
     &__label:has(#{$root}__input:checked)::after {
         background: $color-primary;
         border-color: $color-primary;
@@ -138,6 +146,18 @@
             border: 1px solid $color-dim-gray;
             transition: border $transition-300, background-color $transition-300;
 
+            @include vp-767 {
+                width: 20px;
+                height: 20px;
+            }
+
+        }
+
+        @media (max-width: 425px) {
+            width: 100%;
+            align-items: start;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
@@ -152,6 +172,12 @@
         z-index: 1;
         opacity: 0;
         transition: opacity $transition-300;
+
+        @include vp-767 {
+            left: 15px;
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__icon {
@@ -195,5 +221,11 @@
 
         justify-content: end;
         min-width: 80px;
+
+        @media (max-width: 425px) {
+            padding: 0 0 0 55px;
+        }
     }
+
+
 }

@@ -1,11 +1,22 @@
 .hero {
     min-height: calc(100vh - 40px);
     padding: 50px 0;
+    position: relative;
 
-    background-image: url("../images/bg-hero.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    // background-image: url("../images/bg-hero.png");
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -2;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
 
     &__content {
         display: flex;
